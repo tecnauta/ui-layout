@@ -1,0 +1,42 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
+  "editor.rulers": [
+    {
+      "color": "#fd3e3e78",
+      "column": 120
+    }
+  ],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "files.exclude": {
+    "**/*.js": true,
+    "**/*.lock.json": true,
+    "**/*?.d.ts": true,
+    "**/*?.js": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.gradle/**": true,
+    "**/.idea/**": true,
+    "**/.svn": true,
+    "**/.tmp": true,
+    "**/Pods/**": true,
+    "**/bin/**": true,
+    "**/build/**": true,
+    "**/dist/**": true,
+    "**/node_modules": true,
+    "**/obj/**": true,
+    "**/vendor/**": true,
+    ".docker-data": true,
+    ".vscode": true,
+    "tsconfig.tsbuildinfo": true
+  }
+}
