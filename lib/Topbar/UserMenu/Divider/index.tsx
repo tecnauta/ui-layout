@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-const UserMenuDivider = ({ className }: { className: string }) => {
+const UserMenuDivider = ({ className }: { className?: string }) => {
   return <hr className={className} />;
 };
 

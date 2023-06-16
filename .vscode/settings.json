@@ -18,10 +18,9 @@
     "typescriptreact"
   ],
   "files.exclude": {
-    "**/*.js": true,
     "**/*.lock.json": true,
     "**/*?.d.ts": true,
-    "**/*?.js": true,
+    "lib/**/*?.js": true,
     "**/.DS_Store": true,
     "**/.git": true,
     "**/.gradle/**": true,
@@ -36,7 +35,6 @@
     "**/obj/**": true,
     "**/vendor/**": true,
     ".docker-data": true,
-    ".vscode": true,
     "tsconfig.tsbuildinfo": true
   }
 }
