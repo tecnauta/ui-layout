@@ -6,7 +6,6 @@ import { cx } from '@emotion/css';
 import styled from '@emotion/styled';
 import { useContextSelector } from 'use-context-selector';
 
-import { mediaQuery } from '../../hooks/useMediaQuery';
 import IconBullet from '../../Icons/Bullet';
 import IconExternalLink from '../../Icons/ExternalLink';
 import SidebarContext from '../context';
@@ -99,7 +98,7 @@ export default styled(memo(SidebarItem), { label: 'ui-eduzz-sidebar-item' })`
     white-space: nowrap;
     transition: 0.3s;
 
-    ${mediaQuery.down('lg')} {
+    @media (max-width: 1199px) {
       padding: 0.3rem 1rem;
     }
 

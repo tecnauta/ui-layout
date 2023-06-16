@@ -5,10 +5,9 @@ import styled from '@emotion/styled';
 import { useContextSelector } from 'use-context-selector';
 
 import TopbarActionsContext, { TopbarActionsContextType } from './context';
-import { TOPBAR_HEIGHT } from '../..';
+import { TOPBAR_HEIGHT } from '../../context';
 import useBoolean from '../../hooks/useBoolean';
 import useClickOutside from '../../hooks/useClickOutside';
-import { mediaQuery } from '../../hooks/useMediaQuery';
 import IconChevronLeft from '../../Icons/ChevronLeft';
 import IconChevronRight from '../../Icons/ChevronRight';
 import Action from '../Action';
@@ -41,47 +40,47 @@ const Actions = ({ children, className }: ActionsProps) => {
     <div
       ref={ref}
       className={cx(className, {
-        '--hts-enabled': actions.length > 2,
-        '--ui-eduzz-has-user': hasUser,
-        '--ui-eduzz-expanded': expanded
+        '--ui-eduzz-layout-enabled': actions.length > 2,
+        '--ui-eduzz-layout-has-user': hasUser,
+        '--ui-eduzz-layout-expanded': expanded
       })}
     >
-      <div className='ui-eduzz-topbar-actions-content'>
+      <div className='ui-eduzz-layout-topbar-actions-content'>
         <Action
-          className='ui-eduzz-topbar-actions-content-expand'
+          className='ui-eduzz-layout-topbar-actions-content-expand'
           badgeCount={expanded ? 0 : badgeCount}
           badgeDot={expanded ? false : badgeDot}
           icon={expanded ? <IconChevronRight size={19} /> : <IconChevronLeft size={19} />}
           onClick={toggleExpanded}
         />
         <TopbarActionsContext.Provider value={registerAction}>
-          <div className='ui-eduzz-topbar-actions-content-icons'>{children}</div>
+          <div className='ui-eduzz-layout-topbar-actions-content-icons'>{children}</div>
         </TopbarActionsContext.Provider>
       </div>
     </div>
   );
 };
 
-export default styled(React.memo(Actions), { label: 'ui-eduzz-topbar-actions' })`
-  .ui-eduzz-topbar-actions-content,
-  .ui-eduzz-topbar-actions-content-icons {
+export default styled(React.memo(Actions), { label: 'ui-eduzz-layout-topbar-actions' })`
+  .ui-eduzz-layout-topbar-actions-content,
+  .ui-eduzz-layout-topbar-actions-content-icons {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 4px;
   }
 
-  .ui-eduzz-topbar-actions-content-expand {
+  .ui-eduzz-layout-topbar-actions-content-expand {
     display: none;
   }
 
-  &.--hts-enabled {
-    ${mediaQuery.down('xs')} {
-      .ui-eduzz-topbar-actions-content-expand {
+  &.--ui-eduzz-layout-enabled {
+    @media (max-width: 575px) {
+      .ui-eduzz-layout-topbar-actions-content-expand {
         display: block;
       }
 
-      .ui-eduzz-topbar-actions-content {
+      .ui-eduzz-layout-topbar-actions-content {
         height: calc(${TOPBAR_HEIGHT}px - 3px);
         background-color: rgba(255, 255, 255, 0.8);
         backdrop-filter: blur(0.5rem);
@@ -92,27 +91,27 @@ export default styled(React.memo(Actions), { label: 'ui-eduzz-topbar-actions' })
         padding: 0 8px;
       }
 
-      .ui-eduzz-topbar-actions-content-icons {
+      .ui-eduzz-layout-topbar-actions-content-icons {
         width: 0;
         opacity: 0;
         transition: 0.3s;
         pointer-events: none;
       }
 
-      &.--ui-eduzz-has-user .ui-eduzz-topbar-actions-content {
+      &.--ui-eduzz-layout-has-user .ui-eduzz-layout-topbar-actions-content {
         right: 40px;
         padding: 0;
       }
 
-      &.--ui-eduzz-expanded {
-        .ui-eduzz-topbar-actions-content-icons {
+      &.--ui-eduzz-layout-expanded {
+        .ui-eduzz-layout-topbar-actions-content-icons {
           width: calc(100vw - 65px);
           opacity: 1;
           pointer-events: all;
           margin-right: 8px;
         }
 
-        &.--ui-eduzz-has-user .ui-eduzz-topbar-actions-content-icons {
+        &.--ui-eduzz-layout-has-user .ui-eduzz-layout-topbar-actions-content-icons {
           width: calc(100vw - 100px);
         }
       }

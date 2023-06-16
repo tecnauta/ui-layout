@@ -52,7 +52,7 @@ const TopbarApps = React.memo<TopbarAppsProps>(({ id, className, ...rest }) => {
   }, [openedDropdown]);
 
   return (
-    <div id={`ui-eduzz-topbar-apps${id ?? ''}`} ref={wrapperDropdownRef} className={className} {...rest}>
+    <div id={`ui-eduzz-layout-topbar-apps${id ?? ''}`} ref={wrapperDropdownRef} className={className} {...rest}>
       <Action icon={<IconApps size={19} />} active={openedDropdown} onClick={toogleDropdown} />
 
       <Dropdown
@@ -65,7 +65,7 @@ const TopbarApps = React.memo<TopbarAppsProps>(({ id, className, ...rest }) => {
   );
 });
 
-export default styled(TopbarApps, { label: 'ui-eduzz-topbar-apps' })`
+export default styled(TopbarApps, { label: 'ui-eduzz-layout-topbar-apps' })`
   width: auto;
   position: relative;
   box-sizing: border-box;

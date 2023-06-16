@@ -16,7 +16,6 @@ import type { InputStatus } from 'antd/lib/_util/statusUtils';
 import { useContextSelector } from 'use-context-selector';
 
 import LayoutContext from '../../context';
-import { mediaQuery } from '../../hooks/useMediaQuery';
 import Portal from '../../Portal';
 
 export interface TopbarSearchProps {
@@ -112,7 +111,7 @@ export default styled(memo(TopbarSearch))`
   display: flex;
   flex: 1;
 
-  ${mediaQuery.down('md')} {
+  @media (max-width: 991px) {
     display: none;
   }
 `;

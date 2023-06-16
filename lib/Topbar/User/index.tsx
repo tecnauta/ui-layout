@@ -10,7 +10,6 @@ import { useContextSelector } from 'use-context-selector';
 import LayoutContext from '../../context';
 import useClickOutside from '../../hooks/useClickOutside';
 import useEscapeKey from '../../hooks/useEscapeKey';
-import { mediaQuery } from '../../hooks/useMediaQuery';
 import TopbarContext from '../context';
 
 const User = React.memo(({ className }: { className?: string }) => {
@@ -35,27 +34,27 @@ const User = React.memo(({ className }: { className?: string }) => {
       <div
         ref={wrapperMenuUser}
         className={cx(className, {
-          'ui-eduzz-topbar-user-active': hasMenu && opened,
-          'ui-eduzz-topbar-user-has-menu': hasMenu
+          'ui-eduzz-layout-topbar-user-active': hasMenu && opened,
+          'ui-eduzz-layout-topbar-user-has-menu': hasMenu
         })}
       >
-        <div className='ui-eduzz-topbar-user-label'>
-          <div className='ui-eduzz-topbar-user-default'>
+        <div className='ui-eduzz-layout-topbar-user-label'>
+          <div className='ui-eduzz-layout-topbar-user-default'>
             <Button
-              className='ui-eduzz-topbar-user-button'
+              className='ui-eduzz-layout-topbar-user-button'
               icon={<Avatar src={user.avatar}>{user.name?.charAt(0)}</Avatar>}
               type='text'
               shape='round'
               onClick={toogleOpened}
             >
-              <span className='ui-eduzz-topbar-user-name'>
+              <span className='ui-eduzz-layout-topbar-user-name'>
                 {user.name} {!!user.isSupport && '(Suporte)'}
               </span>
-              {hasMenu && <CaretDownOutlined className='ui-eduzz-topbar-user-menu-arrow' />}
+              {hasMenu && <CaretDownOutlined className='ui-eduzz-layout-topbar-user-menu-arrow' />}
             </Button>
           </div>
 
-          <div className='ui-eduzz-topbar-user-mobile'>
+          <div className='ui-eduzz-layout-topbar-user-mobile'>
             <Avatar src={user.avatar} onClick={toogleOpened}>
               {user.name?.charAt(0)}
             </Avatar>
@@ -68,33 +67,33 @@ const User = React.memo(({ className }: { className?: string }) => {
   );
 });
 
-export default styled(User, { label: 'ui-eduzz-topbar-user' })`
+export default styled(User, { label: 'ui-eduzz-layout-topbar-user' })`
   position: relative;
   z-index: 1100;
   margin-left: 8px;
   pointer-events: none;
 
-  &.ui-eduzz-topbar-user-has-menu {
+  &.ui-eduzz-layout-topbar-user-has-menu {
     pointer-events: all;
   }
 
-  &.ui-eduzz-topbar-user-active {
-    & .ui-eduzz-topbar-user-button {
+  &.ui-eduzz-layout-topbar-user-active {
+    & .ui-eduzz-layout-topbar-user-button {
       background-color: rgba(0, 0, 0, 0.05);
     }
 
-    & .ui-eduzz-topbar-user-menu-arrow {
+    & .ui-eduzz-layout-topbar-user-menu-arrow {
       transform: rotateX(-180deg);
       margin-bottom: 0;
       margin-top: -5px;
     }
   }
 
-  & .ui-eduzz-topbar-user-default {
+  & .ui-eduzz-layout-topbar-user-default {
     display: none;
     position: relative;
 
-    & .ui-eduzz-topbar-user-button {
+    & .ui-eduzz-layout-topbar-user-button {
       display: flex;
       gap: 5px;
       align-items: center;
@@ -108,7 +107,7 @@ export default styled(User, { label: 'ui-eduzz-topbar-user' })`
         margin-right: 0;
       }
 
-      & .ui-eduzz-topbar-user-name {
+      & .ui-eduzz-layout-topbar-user-name {
         max-width: 100px;
         white-space: nowrap;
         overflow: hidden;
@@ -124,12 +123,12 @@ export default styled(User, { label: 'ui-eduzz-topbar-user' })`
     }
   }
 
-  ${mediaQuery.up('lg')} {
-    & .ui-eduzz-topbar-user-default {
+  @media (min-width: 992px) {
+    & .ui-eduzz-layout-topbar-user-default {
       display: block;
     }
 
-    & .ui-eduzz-topbar-user-mobile {
+    & .ui-eduzz-layout-topbar-user-mobile {
       display: none;
     }
   }

@@ -2,8 +2,7 @@ import * as React from 'react';
 
 import styled from '@emotion/styled';
 
-import { TOPBAR_HEIGHT } from '../..';
-import { mediaQuery } from '../../hooks/useMediaQuery';
+import { TOPBAR_HEIGHT } from '../../context';
 
 export interface LogoProps {
   logo?: string;
@@ -34,21 +33,21 @@ const Logo = ({ logo, logoMobile, logoDarkMode, logoMobileDarkMode, className, w
   if (Wrapper) {
     return (
       <Wrapper className={className as string}>
-        <img className='ui-eduzz-topbar-logo-default' src={logos.desktop} />
-        <img className='ui-eduzz-topbar-logo-mobile' src={logos.mobile} />
+        <img className='ui-eduzz-layout-topbar-logo-default' src={logos.desktop} />
+        <img className='ui-eduzz-layout-topbar-logo-mobile' src={logos.mobile} />
       </Wrapper>
     );
   }
 
   return (
     <div className={className}>
-      <img className='ui-eduzz-topbar-logo-default' src={logos.desktop} />
-      <img className='ui-eduzz-topbar-logo-mobile' src={logos.mobile} />
+      <img className='ui-eduzz-layout-topbar-logo-default' src={logos.desktop} />
+      <img className='ui-eduzz-layout-topbar-logo-mobile' src={logos.mobile} />
     </div>
   );
 };
 
-export default styled(Logo, { label: 'ui-eduzz-topbar-logo' })`
+export default styled(Logo, { label: 'ui-eduzz-layout-topbar-logo' })`
   height: 80%;
   width: auto;
   margin-inline: 0.5rem;
@@ -59,18 +58,18 @@ export default styled(Logo, { label: 'ui-eduzz-topbar-logo' })`
     height: ${TOPBAR_HEIGHT}px;
   }
 
-  & > .ui-eduzz-topbar-logo-mobile {
+  & > .ui-eduzz-layout-topbar-logo-mobile {
     display: none;
   }
 
-  ${mediaQuery.down('lg')} {
+  @media (max-width: 1199px) {
     width: 2rem;
 
-    & .ui-eduzz-topbar-logo-default {
+    & .ui-eduzz-layout-topbar-logo-default {
       display: none;
     }
 
-    & .ui-eduzz-topbar-logo-mobile {
+    & .ui-eduzz-layout-topbar-logo-mobile {
       display: block;
     }
   }

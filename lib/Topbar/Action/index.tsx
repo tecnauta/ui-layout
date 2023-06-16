@@ -49,7 +49,7 @@ const Action = forwardRef<HTMLDivElement, ActionProps>(
   }
 );
 
-export default styled(memo(Action), { label: 'ui-eduzz-topbar-action' })`
+export default styled(memo(Action), { label: 'ui-eduzz-layout-topbar-action' })`
   & .anticon {
     font-size: 20px;
     vertical-align: text-bottom;

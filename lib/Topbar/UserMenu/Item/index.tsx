@@ -1,8 +1,5 @@
-import * as React from 'react';
+import { ElementType, ReactNode, forwardRef, useCallback, MouseEvent } from 'react';
 
-import { Button } from 'antd';
-
-import styled from '@emotion/styled';
 import { useContextSelector } from 'use-context-selector';
 
 import LayoutContext from '../../../context';
@@ -16,22 +13,21 @@ export interface UserMenuItemProps {
    * Component that wraps the item.
    * @example a, NavLink, Link (react-router-dom)
    */
-  as?: React.ElementType;
-  icon?: React.ReactNode;
-  onClick?: (e: React.MouseEvent) => void;
+  as?: ElementType;
+  icon?: ReactNode;
+  onClick?: (e: MouseEvent) => void;
   disabled?: boolean;
   preventClose?: boolean;
   id?: string;
   children: string;
-  className?: string;
 }
 
-const UserMenuItem = React.forwardRef<HTMLButtonElement, UserMenuItemProps>(
-  ({ id, className, icon, disabled, onClick, children, preventClose, as: Tag, ...rest }, ref) => {
+const UserMenuItem = forwardRef<HTMLButtonElement, UserMenuItemProps>(
+  ({ id, icon, disabled, onClick, children, preventClose, as: Tag, ...rest }, ref) => {
     const close = useContextSelector(LayoutContext, context => context.userMenu.falseOpened);
 
-    const handleClick = React.useCallback(
-      (e: React.MouseEvent) => {
+    const handleClick = useCallback(
+      (e: MouseEvent) => {
         onClick && onClick(e);
         !preventClose && close();
       },
@@ -39,18 +35,10 @@ const UserMenuItem = React.forwardRef<HTMLButtonElement, UserMenuItemProps>(
     );
 
     let content = (
-      <Button
-        id={id}
-        icon={icon}
-        ref={ref}
-        block
-        type='text'
-        onClick={handleClick}
-        className={className}
-        disabled={disabled}
-      >
+      <button id={id} ref={ref} onClick={handleClick} className='ui-eduzz-user-menu-item' disabled={disabled}>
+        {icon}
         {children}
-      </Button>
+      </button>
     );
 
     if (Tag) {
@@ -65,30 +53,4 @@ const UserMenuItem = React.forwardRef<HTMLButtonElement, UserMenuItemProps>(
   }
 );
 
-export default styled(UserMenuItem, { label: 'ui-eduzz-user-menu-item' })`
-  justify-content: start;
-  align-items: center;
-  text-align: left;
-  font-size: 16px;
-  padding: 8px 16px;
-  display: flex;
-
-  & > span:not(.anticon, .ant-avatar) {
-    max-width: 235px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-
-  & > .anticon {
-    font-size: 20px;
-  }
-
-  & > svg {
-    width: 24px;
-    margin-right: 5px;
-  }
-
-  &.ui-eduzz-button-disabled {
-    background-color: transparent;
-  }
-`;
+export default UserMenuItem;

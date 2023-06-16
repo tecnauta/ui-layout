@@ -7,9 +7,8 @@ import { useContextSelector } from 'use-context-selector';
 import SidebarContext, { SidebarContextType } from './context';
 import Group from './Group';
 import Item from './Item';
-import { MENU_WIDTH, TOPBAR_HEIGHT } from '..';
-import LayoutContext from '../context';
-import { mediaQuery, useMediaQueryDown } from '../hooks/useMediaQuery';
+import LayoutContext, { MENU_WIDTH, TOPBAR_HEIGHT } from '../context';
+import { useMediaQueryDown } from '../hooks/useMediaQuery';
 import Overlay from '../Overlay';
 import nestedComponent from '../utils/nestedComponent';
 
@@ -119,7 +118,7 @@ const SidebarStyled = styled(Sidebar, { label: 'ui-eduzz-sidebar' })`
     top: ${TOPBAR_HEIGHT}px;
   }
 
-  ${mediaQuery.down('lg')} {
+  @media (max-width: 1199px) {
     width: 0;
 
     & .ui-eduzz-sidebar-container {

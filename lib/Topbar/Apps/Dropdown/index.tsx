@@ -7,9 +7,8 @@ import { cx } from '@emotion/css';
 import styled from '@emotion/styled';
 
 import { TopbarApplication } from '..';
-import { TOPBAR_DROPDOWN_WIDTH, TOPBAR_HEIGHT } from '../../..';
+import { TOPBAR_DROPDOWN_WIDTH, TOPBAR_HEIGHT } from '../../../context';
 import useBoolean from '../../../hooks/useBoolean';
-import { mediaQuery } from '../../../hooks/useMediaQuery';
 import IconClose from '../../../Icons/Close';
 
 export type AppsDropdownProps = React.HTMLAttributes<HTMLDivElement> & {
@@ -42,19 +41,19 @@ const AppsDropdown = React.memo<AppsDropdownProps>(
     return (
       <div
         className={cx(className, {
-          'ui-eduzz-topbar-apps-dropdown-opened': opened,
-          'ui-eduzz-topbar-apps-dropdown-expanded': expanded
+          'ui-eduzz-layout-topbar-apps-dropdown-opened': opened,
+          'ui-eduzz-layout-topbar-apps-dropdown-expanded': expanded
         })}
         {...rest}
       >
-        <div className='ui-eduzz-topbar-apps-dropdown-header'>
+        <div className='ui-eduzz-layout-topbar-apps-dropdown-header'>
           <Typography.Title level={5}>Lista de Apps</Typography.Title>
           <Button icon={<IconClose size={18} />} shape='circle' type='text' onClick={toggleExpanded} />
         </div>
 
-        <div className='ui-eduzz-topbar-apps-dropdown-list-apps'>
+        <div className='ui-eduzz-layout-topbar-apps-dropdown-list-apps'>
           {!applications?.length && (
-            <div className='ui-eduzz-topbar-apps-dropdown-loader'>
+            <div className='ui-eduzz-layout-topbar-apps-dropdown-loader'>
               <Spin />
             </div>
           )}
@@ -65,8 +64,8 @@ const AppsDropdown = React.memo<AppsDropdownProps>(
             return (
               <a
                 className={cx(
-                  'ui-eduzz-topbar-apps-dropdown-item',
-                  isCurrent && 'ui-eduzz-topbar-apps-dropdown-current'
+                  'ui-eduzz-layout-topbar-apps-dropdown-item',
+                  isCurrent && 'ui-eduzz-layout-topbar-apps-dropdown-current'
                 )}
                 key={app.application}
                 href={isCurrent ? undefined : app.url}
@@ -74,17 +73,17 @@ const AppsDropdown = React.memo<AppsDropdownProps>(
                 target='_blank'
                 onClick={isCurrent ? onClose : undefined}
               >
-                <img src={app.icon} className='ui-eduzz-topbar-apps-dropdown-icon' />
+                <img src={app.icon} className='ui-eduzz-layout-topbar-apps-dropdown-icon' />
 
-                <Typography className='ui-eduzz-topbar-apps-dropdown-label'>{app.label}</Typography>
-                <Typography className='ui-eduzz-topbar-apps-dropdown-description'>{app.description}</Typography>
+                <Typography className='ui-eduzz-layout-topbar-apps-dropdown-label'>{app.label}</Typography>
+                <Typography className='ui-eduzz-layout-topbar-apps-dropdown-description'>{app.description}</Typography>
               </a>
             );
           })}
         </div>
 
         {!!applications?.length && (
-          <div className='ui-eduzz-topbar-apps-dropdown-expand'>
+          <div className='ui-eduzz-layout-topbar-apps-dropdown-expand'>
             <Button icon={<FullscreenOutlined />} type='text' block onClick={toggleExpanded}>
               Expandir
             </Button>
@@ -95,7 +94,7 @@ const AppsDropdown = React.memo<AppsDropdownProps>(
   }
 );
 
-export default styled(AppsDropdown, { label: 'ui-eduzz-topbar-apps-dropdown' })`
+export default styled(AppsDropdown, { label: 'ui-eduzz-layout-topbar-apps-dropdown' })`
   width: ${TOPBAR_DROPDOWN_WIDTH / 16}rem;
   position: fixed;
   background: rgb(255, 255, 255);
@@ -111,26 +110,26 @@ export default styled(AppsDropdown, { label: 'ui-eduzz-topbar-apps-dropdown' })`
   max-height: calc(100vh - ${TOPBAR_HEIGHT / 16}rem);
   overflow-y: auto;
 
-  ${mediaQuery.down('sm')} {
+  @media (max-width: 767px) {
     width: 100%;
     left: 0;
   }
 
-  &.ui-eduzz-topbar-apps-dropdown-opened {
+  &.ui-eduzz-layout-topbar-apps-dropdown-opened {
     opacity: 1;
     visibility: visible;
     user-select: initial;
   }
 
-  .ui-eduzz-topbar-apps-dropdown-header {
+  .ui-eduzz-layout-topbar-apps-dropdown-header {
     display: none;
   }
 
-  .ui-eduzz-topbar-apps-dropdown-expand button {
+  .ui-eduzz-layout-topbar-apps-dropdown-expand button {
     height: 50px;
   }
 
-  .ui-eduzz-topbar-apps-dropdown-list-apps {
+  .ui-eduzz-layout-topbar-apps-dropdown-list-apps {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0.5rem 0.5rem;
@@ -139,7 +138,7 @@ export default styled(AppsDropdown, { label: 'ui-eduzz-topbar-apps-dropdown' })`
     box-sizing: border-box;
     padding: 1rem;
 
-    .ui-eduzz-topbar-apps-dropdown-loader {
+    .ui-eduzz-layout-topbar-apps-dropdown-loader {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -149,7 +148,7 @@ export default styled(AppsDropdown, { label: 'ui-eduzz-topbar-apps-dropdown' })`
       padding: 3rem;
     }
 
-    .ui-eduzz-topbar-apps-dropdown-item {
+    .ui-eduzz-layout-topbar-apps-dropdown-item {
       width: 100%;
       text-align: center;
       border-radius: 0.25rem;
@@ -158,13 +157,13 @@ export default styled(AppsDropdown, { label: 'ui-eduzz-topbar-apps-dropdown' })`
       padding: 1rem 0.5rem;
       display: block;
 
-      .ui-eduzz-topbar-apps-dropdown-icon {
+      .ui-eduzz-layout-topbar-apps-dropdown-icon {
         max-width: 2.5rem;
         max-height: 2.5rem;
         margin-bottom: 0.5rem;
       }
 
-      .ui-eduzz-topbar-apps-dropdown-description {
+      .ui-eduzz-layout-topbar-apps-dropdown-description {
         display: none;
         overflow: hidden;
         opacity: 0.8;
@@ -173,7 +172,7 @@ export default styled(AppsDropdown, { label: 'ui-eduzz-topbar-apps-dropdown' })`
         margin-top: 2px;
       }
 
-      &.ui-eduzz-topbar-apps-dropdown-current {
+      &.ui-eduzz-layout-topbar-apps-dropdown-current {
         background: rgba(0, 0, 0, 0.04);
       }
 
@@ -183,7 +182,7 @@ export default styled(AppsDropdown, { label: 'ui-eduzz-topbar-apps-dropdown' })`
     }
   }
 
-  &.ui-eduzz-topbar-apps-dropdown-expanded {
+  &.ui-eduzz-layout-topbar-apps-dropdown-expanded {
     width: 100%;
     left: 0;
     height: calc(100% - ${TOPBAR_HEIGHT}px);
@@ -191,7 +190,7 @@ export default styled(AppsDropdown, { label: 'ui-eduzz-topbar-apps-dropdown' })`
     box-shadow: none;
     border-radius: 0;
 
-    .ui-eduzz-topbar-apps-dropdown-header {
+    .ui-eduzz-layout-topbar-apps-dropdown-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -210,16 +209,16 @@ export default styled(AppsDropdown, { label: 'ui-eduzz-topbar-apps-dropdown' })`
       }
     }
 
-    .ui-eduzz-topbar-apps-dropdown-expand {
+    .ui-eduzz-layout-topbar-apps-dropdown-expand {
       display: none;
     }
 
-    .ui-eduzz-topbar-apps-dropdown-list-apps {
+    .ui-eduzz-layout-topbar-apps-dropdown-list-apps {
       padding: 0;
       grid-template-columns: repeat(1, 1fr);
       grid-gap: 0;
 
-      .ui-eduzz-topbar-apps-dropdown-item {
+      .ui-eduzz-layout-topbar-apps-dropdown-item {
         height: 100%;
         display: grid;
         grid-template-columns: 1.56rem 1fr;
@@ -230,7 +229,7 @@ export default styled(AppsDropdown, { label: 'ui-eduzz-topbar-apps-dropdown' })`
         border-bottom: 1px solid rgba(0, 0, 0, 0.12);
         align-items: center;
 
-        .ui-eduzz-topbar-apps-dropdown-icon {
+        .ui-eduzz-layout-topbar-apps-dropdown-icon {
           max-width: 1.56rem;
           max-height: 1.56rem;
           grid-column: 1;
@@ -238,13 +237,13 @@ export default styled(AppsDropdown, { label: 'ui-eduzz-topbar-apps-dropdown' })`
           margin-bottom: 0;
         }
 
-        .ui-eduzz-topbar-apps-dropdown-label {
+        .ui-eduzz-layout-topbar-apps-dropdown-label {
           font-size: 16px;
           grid-column: 2;
           grid-row: 1;
         }
 
-        .ui-eduzz-topbar-apps-dropdown-description {
+        .ui-eduzz-layout-topbar-apps-dropdown-description {
           grid-column-start: 1;
           grid-column-end: 3;
           grid-row: 2;
@@ -252,12 +251,12 @@ export default styled(AppsDropdown, { label: 'ui-eduzz-topbar-apps-dropdown' })`
         }
       }
 
-      ${mediaQuery.up('md')} {
+      @media (min-width: 768px) {
         padding: 2rem;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 1.5rem;
 
-        .ui-eduzz-topbar-apps-dropdown-item {
+        .ui-eduzz-layout-topbar-apps-dropdown-item {
           margin: auto;
           border: 1px solid rgba(0, 0, 0, 0.12);
           grid-template-columns: 3.75rem 1fr;
@@ -266,25 +265,25 @@ export default styled(AppsDropdown, { label: 'ui-eduzz-topbar-apps-dropdown' })`
           grid-gap: 0.25rem;
           align-items: start;
 
-          .ui-eduzz-topbar-apps-dropdown-icon {
+          .ui-eduzz-layout-topbar-apps-dropdown-icon {
             grid-row-start: 1;
             grid-row-end: 3;
             max-width: 3.125rem;
             max-height: 3.125rem;
           }
 
-          .ui-eduzz-topbar-apps-dropdown-description {
+          .ui-eduzz-layout-topbar-apps-dropdown-description {
             grid-column-start: 2;
             grid-column-end: 2;
           }
         }
       }
 
-      ${mediaQuery.up('lg')} {
+      @media (min-width: 992px) {
         grid-template-columns: repeat(3, 1fr);
       }
 
-      ${mediaQuery.up('xl')} {
+      @media (min-width: 1200px) {
         grid-template-columns: repeat(4, 1fr);
       }
     }

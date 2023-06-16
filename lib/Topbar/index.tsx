@@ -1,7 +1,6 @@
-import * as React from 'react';
+import { HTMLAttributes, JSXElementConstructor, ReactNode, memo, useEffect, useMemo } from 'react';
 
 import { cx } from '@emotion/css';
-import styled from '@emotion/styled';
 import { useContextSelector } from 'use-context-selector';
 
 import Action from './Action';
@@ -17,23 +16,19 @@ import UserMenu from './UserMenu';
 import UserMenuDivider from './UserMenu/Divider';
 import UserMenuItem from './UserMenu/Item';
 import UserMenuGroup from './UserMenu/ItemGroup';
-import { TOPBAR_HEIGHT } from '..';
 import LayoutContext from '../context';
-import { mediaQuery } from '../hooks/useMediaQuery';
 import IconClose from '../Icons/Close';
 import IconMenu from '../Icons/Menu';
-import Typography from '../Typography';
 import nestedComponent from '../utils/nestedComponent';
 
-export interface TopbarProps extends React.HTMLAttributes<HTMLDivElement> {
-  children?: React.ReactNode;
-  className?: string;
+export interface TopbarProps extends HTMLAttributes<HTMLDivElement> {
+  children?: ReactNode;
   disableApps?: boolean;
   logo?: string;
   logoMobile?: string;
   logoDarkMode?: string;
   logoMobileDarkMode?: string;
-  logoWrapper?: React.JSXElementConstructor<{ children: React.ReactNode; className: string }>;
+  logoWrapper?: JSXElementConstructor<{ children: ReactNode; className: string }>;
   currentApplication?: string;
   user?: {
     id?: number;
@@ -48,7 +43,7 @@ export interface TopbarProps extends React.HTMLAttributes<HTMLDivElement> {
   };
 }
 
-const Topbar = React.memo<TopbarProps>(
+const Topbar = memo<TopbarProps>(
   ({
     children,
     currentApplication,
@@ -57,7 +52,6 @@ const Topbar = React.memo<TopbarProps>(
     logoDarkMode,
     logoMobileDarkMode,
     logoWrapper,
-    className,
     user,
     disableApps,
     ...rest
@@ -67,38 +61,35 @@ const Topbar = React.memo<TopbarProps>(
     const registerCenterPortal = useContextSelector(LayoutContext, context => context.topbar.registerCenterPortal);
     const sidebarOpened = useContextSelector(LayoutContext, context => context.sidebar.opened);
 
-    React.useEffect(() => {
+    useEffect(() => {
       const unregister = register();
       return () => unregister();
     }, [register]);
 
-    React.useEffect(() => {
-      document.body.classList.add('ui-eduzz-topbar-applied');
+    useEffect(() => {
+      document.body.classList.add('ui-eduzz-layout-topbar-applied');
 
       return () => {
-        document.body.classList.remove('ui-eduzz-topbar-applied');
+        document.body.classList.remove('ui-eduzz-layout-topbar-applied');
       };
     }, []);
 
-    const contextValue = React.useMemo<TopbarContextType>(
-      () => ({ currentApplication, user }),
-      [currentApplication, user]
-    );
+    const contextValue = useMemo<TopbarContextType>(() => ({ currentApplication, user }), [currentApplication, user]);
 
     return (
       <TopbarContext.Provider value={contextValue}>
-        <div className={className} {...rest}>
-          <header className='ui-eduzz-topbar-header'>
-            {user?.isSupport && <div className='ui-eduzz-topbar-user-support'>Suporte</div>}
+        <div className='eduzz-ui-layout-topbar' {...rest}>
+          <header className='ui-eduzz-layout-topbar-header'>
+            {user?.isSupport && <div className='ui-eduzz-layout-topbar-user-support'>Suporte</div>}
 
-            <div className='ui-eduzz-topbar-start'>
+            <div className='ui-eduzz-layout-topbar-start'>
               <Action
-                className='ui-eduzz-topbar-mobile-menu'
+                className='ui-eduzz-layout-topbar-mobile-menu'
                 icon={
                   sidebarOpened ? (
                     <IconClose size={18} />
                   ) : (
-                    <IconMenu size={22} className='ui-eduzz-topbar-mobile-menu-icon' />
+                    <IconMenu size={22} className='ui-eduzz-layout-topbar-mobile-menu-icon' />
                   )
                 }
                 onClick={sidebarToogleOpened}
@@ -115,15 +106,13 @@ const Topbar = React.memo<TopbarProps>(
               />
 
               {!!user?.tag && (
-                <Typography className={cx('ui-eduzz-topbar-tag', `ui-eduzz-topbar-tag-${user.tag}`)}>
-                  {user.tag}
-                </Typography>
+                <p className={cx('ui-eduzz-layout-topbar-tag', `ui-eduzz-layout-topbar-tag-${user.tag}`)}>{user.tag}</p>
               )}
             </div>
 
-            <div className='hts-topbar-center' ref={registerCenterPortal} />
+            <div className='ui-eduzz-layout-topbar-center' ref={registerCenterPortal} />
 
-            <div className='ui-eduzz-topbar-quick-access'>
+            <div className='ui-eduzz-layout-topbar-quick-access'>
               <Belt />
               <Actions>{children}</Actions>
               <User />
@@ -134,107 +123,7 @@ const Topbar = React.memo<TopbarProps>(
     );
   }
 );
-
-const TopbarStyled = styled(Topbar, { label: 'ui-eduzz-topbar' })`
-  height: ${TOPBAR_HEIGHT / 16}rem;
-
-  .ui-eduzz-topbar-user-support {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #fbcd02;
-    padding: 4px 8px;
-    color: white;
-    text-transform: uppercase;
-    font-size: 11px;
-    border-bottom-left-radius: 5px;
-  }
-
-  & > .ui-eduzz-topbar-header {
-    background-color: rgb(255, 255, 255);
-    color: rgba(0, 0, 0, 0.88);
-    border-bottom: 3px solid rgba(217, 217, 217, 0.3);
-    box-sizing: border-box;
-    position: fixed;
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: ${TOPBAR_HEIGHT / 16}rem;
-    display: flex;
-    justify-content: space-between;
-    z-index: 105;
-    gap: 1rem;
-    transition: 0.15s ease-out, background-color 0.3s, border-bottom-color 0.3s;
-
-    ${mediaQuery.down('xs')} {
-      padding: 0.5rem 0.5rem 0.5rem 0.3rem;
-    }
-
-    & > .ui-eduzz-topbar-start {
-      display: flex;
-      align-items: center;
-
-      & .ui-eduzz-topbar-mobile-menu {
-        cursor: pointer;
-
-        & .ui-eduzz-topbar-mobile-menu-icon {
-          margin-top: -2px;
-        }
-
-        ${mediaQuery.up('xl')} {
-          display: none;
-        }
-      }
-
-      .ui-eduzz-topbar-tag {
-        text-transform: capitalize;
-        padding: 4px 8px 4px 8px;
-        letter-spacing: 0.5px;
-        display: block;
-        border-radius: 3px;
-        font-size: 14px;
-        text-transform: uppercase;
-        margin-left: 0.5rem;
-        line-height: 14px;
-
-        &.ui-eduzz-topbar-tag-pro {
-          border: 1px solid #bababa;
-        }
-
-        &.ui-eduzz-topbar-tag-unity {
-          border: 1px solid #000;
-          background: #000;
-          color: white;
-        }
-
-        &.ui-eduzz-topbar-tag-partner {
-          background: #ededed;
-        }
-
-        ${mediaQuery.down('xs')} {
-          display: none;
-        }
-      }
-    }
-
-    & > .hts-topbar-center {
-      display: flex;
-      flex: 1;
-      align-items: center;
-      justify-content: center;
-      max-width: 400px;
-    }
-
-    & > .ui-eduzz-topbar-quick-access {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-`;
-
-export default nestedComponent(TopbarStyled, {
+export default nestedComponent(Topbar, {
   Action,
   UnitySupportChat,
   UserMenu,

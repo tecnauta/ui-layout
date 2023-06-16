@@ -1,9 +1,7 @@
-import * as React from 'react';
+import { HTMLAttributes, ReactNode, useState, useCallback, useMemo } from 'react';
 
 import { cx } from '@emotion/css';
-import styled from '@emotion/styled';
 
-import { TOPBAR_HEIGHT } from '.';
 import Content from './Content';
 import LayoutContext, { LayoutContextType } from './context';
 import useBoolean from './hooks/useBoolean';
@@ -11,45 +9,45 @@ import Sidebar from './Sidebar';
 import Topbar from './Topbar';
 import nestedComponent from './utils/nestedComponent';
 
-export type LayoutProps = React.HTMLAttributes<HTMLDivElement> & {
+export type LayoutProps = HTMLAttributes<HTMLDivElement> & {
   className?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
 const Layout = ({ className, children, ...rest }: LayoutProps) => {
-  const [hasTopbar, setHasTopbar] = React.useState(false);
-  const [hasSidebar, setHasSidebar] = React.useState(false);
-  const [hasUserMenu, setHasUserMenu] = React.useState(false);
-  const [topbarCenterContainer, setTopbarCenterContainer] = React.useState<HTMLDivElement | null>(null);
-  const [userMenuContainer, setUserMenuContainer] = React.useState<HTMLDivElement | null>(null);
+  const [hasTopbar, setHasTopbar] = useState(false);
+  const [hasSidebar, setHasSidebar] = useState(false);
+  const [hasUserMenu, setHasUserMenu] = useState(false);
+  const [topbarCenterContainer, setTopbarCenterContainer] = useState<HTMLDivElement | null>(null);
+  const [userMenuContainer, setUserMenuContainer] = useState<HTMLDivElement | null>(null);
 
   const [userMenuOpened, toogleUserMenuOpened, trueUserMenuOpened, falseUserMenuOpened] = useBoolean(false);
   const [sidebarOpened, toogleSidebarOpened, trueSidebarOpened, falseSidebarOpened] = useBoolean(false);
 
-  const registerTopbar = React.useCallback(() => {
+  const registerTopbar = useCallback(() => {
     setHasTopbar(true);
     return () => setHasTopbar(false);
   }, []);
 
-  const registerSidebar = React.useCallback(() => {
+  const registerSidebar = useCallback(() => {
     setHasSidebar(true);
     return () => setHasSidebar(false);
   }, []);
 
-  const registerTopbarCenterContainer = React.useCallback((div: HTMLDivElement) => {
+  const registerTopbarCenterContainer = useCallback((div: HTMLDivElement) => {
     setTopbarCenterContainer(div);
   }, []);
 
-  const registerUserMenu = React.useCallback(() => {
+  const registerUserMenu = useCallback(() => {
     setHasUserMenu(true);
     return () => setHasUserMenu(false);
   }, []);
 
-  const registerUserMenuContainer = React.useCallback((div: HTMLDivElement) => {
+  const registerUserMenuContainer = useCallback((div: HTMLDivElement) => {
     setUserMenuContainer(div);
   }, []);
 
-  const contextValue = React.useMemo<LayoutContextType>(
+  const contextValue = useMemo<LayoutContextType>(
     () => ({
       topbar: {
         exists: hasTopbar,
@@ -100,24 +98,14 @@ const Layout = ({ className, children, ...rest }: LayoutProps) => {
 
   return (
     <LayoutContext.Provider value={contextValue}>
-      <div className={cx(className, { 'ui-eduzz-layout-has-topbar': hasTopbar })} {...rest}>
+      <div className={cx('eduzz-ui-layout', className, { 'eduzz-ui-layout-has-topbar': hasTopbar })} {...rest}>
         {children}
       </div>
     </LayoutContext.Provider>
   );
 };
 
-const LayoutWrapper = styled(Layout, { label: 'ui-eduzz-layout' })`
-  display: flex;
-  width: 100%;
-  min-height: 100vh;
-
-  &.ui-eduzz-layout-has-topbar {
-    padding-top: ${TOPBAR_HEIGHT / 16}rem;
-  }
-`;
-
-export default nestedComponent(LayoutWrapper, {
+export default nestedComponent(Layout, {
   Sidebar,
   Content,
   Topbar

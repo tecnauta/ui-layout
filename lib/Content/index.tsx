@@ -3,8 +3,6 @@ import { ReactNode } from 'react';
 import { cx } from '@emotion/css';
 import styled from '@emotion/styled';
 
-import { mediaQuery } from '../hooks/useMediaQuery';
-
 export interface LayoutContentProps {
   children?: ReactNode;
   disablePadding?: boolean;
@@ -24,7 +22,7 @@ export default styled(LayoutContent, { label: 'ui-eduzz-layout-content' })`
   &:not(.ui-eduzz-layout-content-disable-padding) {
     padding: 2rem;
 
-    ${mediaQuery.down('sm')} {
+    @media (max-width: 767px) {
       padding: 1rem;
     }
   }
