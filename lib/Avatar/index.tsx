@@ -4,7 +4,7 @@ export interface AvatarProps {
 }
 
 const Avatar = ({ src }: AvatarProps) => {
-  return <div className='w-8 h-8 bg-[var(--eduzz-theme-primary)] rounded-[50%]'>{!!src && <img src={src} />}</div>;
+  return <div className='h-8 w-8 rounded-[50%] bg-[var(--eduzz-theme-primary)]'>{!!src && <img src={src} />}</div>;
 };
 
 export default Avatar;

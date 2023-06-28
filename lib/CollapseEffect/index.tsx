@@ -1,8 +1,6 @@
 import * as React from 'react';
 
-import { Collapse as AntdCollapse } from 'antd';
-
-import './styles.css';
+import cx from '../utils/cx';
 
 export interface CollapseProps {
   id?: string;
@@ -12,16 +10,9 @@ export interface CollapseProps {
 
 const CollapseEffect = ({ children, visibled, id }: CollapseProps) => {
   return (
-    <AntdCollapse
-      ghost
-      bordered={false}
-      activeKey={visibled ? '1' : undefined}
-      className='eduzz-ui-layout-collapse-effect'
-    >
-      <AntdCollapse.Panel key={'1'} header='' id={id}>
-        {children}
-      </AntdCollapse.Panel>
-    </AntdCollapse>
+    <div id={id} className={cx('h-0 overflow-hidden', { 'h-auto': visibled })}>
+      {children}
+    </div>
   );
 };
 

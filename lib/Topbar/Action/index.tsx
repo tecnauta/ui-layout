@@ -1,9 +1,9 @@
 import { forwardRef, memo, useEffect } from 'react';
 
-import { Badge, Tooltip } from 'antd';
-
 import { useContext } from 'use-context-selector';
 
+import Badge from '../../Badge';
+import Tooltip from '../../Tooltip';
 import cx from '../../utils/cx';
 import TopbarActionsContext from '../Actions/context';
 
@@ -40,7 +40,7 @@ const Action = forwardRef<HTMLDivElement, ActionProps>(
         ref={ref}
       >
         <Tooltip title={tooltip}>
-          <Badge count={badgeCount === 0 ? undefined : badgeCount} dot={badgeCount ? false : badgeDot} offset={[-4, 8]}>
+          <Badge count={badgeCount === 0 ? undefined : badgeCount} dot={badgeCount ? false : badgeDot}>
             <div className='eduzz-ui-layout-topbar-action-button'>
               {icon}
               <span className='eduzz-ui-layout-topbar-action-button-text'>{label}</span>

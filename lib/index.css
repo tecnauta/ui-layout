@@ -27,16 +27,5 @@
 
 html,
 body {
-  margin: 0;
   font-family: Roboto, Albert Sans, sans-serif;
-}
-
-.eduzz-ui-layout {
-  display: flex;
-  width: 100%;
-  min-height: 100vh;
-}
-
-.eduzz-ui-layout.eduzz-ui-layout-has-topbar {
-  padding-top: var(--eduzz-ui-layout-topbar-height-rem);
 }

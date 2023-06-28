@@ -1,15 +1,18 @@
 {
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
   "[css]": {
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "editor.formatOnType": true,
+    "editor.formatOnType": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
   },
   "editor.formatOnPaste": false,
   "editor.formatOnSave": false,
   "editor.formatOnType": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
   "editor.rulers": [
     {
       "color": "#fd3e3e78",
@@ -22,24 +25,27 @@
     "typescript",
     "typescriptreact"
   ],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
   "files.exclude": {
-    "**/*.lock.json": false,
-    "**/*?.d.ts": false,
-    "lib/**/*?.js": false,
-    "**/.DS_Store": false,
-    "**/.git": false,
-    "**/.gradle/**": false,
-    "**/.idea/**": false,
-    "**/.svn": false,
-    "**/.tmp": false,
-    "**/Pods/**": false,
-    "**/bin/**": false,
-    "**/build/**": false,
-    "**/dist/**": false,
-    "**/node_modules": false,
-    "**/obj/**": false,
-    "**/vendor/**": false,
-    ".docker-data": false,
-    "tsconfig.tsbuildinfo": false
+    "**/*.lock.json": true,
+    "**/*?.d.ts": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.gradle/**": true,
+    "**/.idea/**": true,
+    "**/.svn": true,
+    "**/.tmp": true,
+    "**/Pods/**": true,
+    "**/bin/**": true,
+    "**/build/**": true,
+    "**/dist/**": true,
+    "**/node_modules": true,
+    "**/obj/**": true,
+    "**/vendor/**": true,
+    ".docker-data": true,
+    "lib/**/*?.js": true,
+    "tsconfig.tsbuildinfo": true
   }
 }

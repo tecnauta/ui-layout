@@ -1,9 +1,12 @@
 {
   "name": "@eduzz/ui-layout-workspace",
   "private": true,
-  "workspaces": ["lib", "dev"],
+  "workspaces": [
+    "lib",
+    "dev"
+  ],
   "scripts": {
-    "dev": "(cd dev && yarn dev)", 
+    "dev": "(cd dev && yarn dev)",
     "lint": "eslint . --ext ts,tsx"
   },
   "devDependencies": {
@@ -22,6 +25,7 @@
     "eslint-plugin-sonarjs": "^0.19.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
     "typescript": "^5.1.3"
