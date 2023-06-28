@@ -5,6 +5,8 @@ import CollapseEffect from '../../CollapseEffect';
 import useBoolean from '../../hooks/useBoolean';
 import cx from '../../utils/cx';
 
+import './styles.css';
+
 export interface SidebarGroupProps {
   label?: ReactNode;
   children: ReactNode;

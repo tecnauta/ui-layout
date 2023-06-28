@@ -2,7 +2,8 @@ import Content from './Content';
 import Layout from './Layout';
 import Sidebar, { SidebarProps as SidebarPropsExport } from './Sidebar';
 import Topbar, { TopbarProps as TopbarPropsExport } from './Topbar';
-import './styles.css';
+
+import './index.css';
 
 export { Sidebar, Content, Topbar };
 

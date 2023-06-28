@@ -9,11 +9,6 @@
   pointer-events: all;
 }
 
-
-.eduzz-ui-layout-topbar-user.eduzz-ui-layout-topbar-user-active .eduzz-ui-layout-topbar-user-button {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
 .eduzz-ui-layout-topbar-user.eduzz-ui-layout-topbar-user-active .eduzz-ui-layout-topbar-user-menu-arrow {
   transform: rotateX(-180deg);
   margin-bottom: 0;

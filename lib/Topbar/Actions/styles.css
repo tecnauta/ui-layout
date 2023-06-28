@@ -10,7 +10,6 @@
   display: none;
 }
 
-
 @media (max-width: 575px) {
   .eduzz-ui-layout-topbar-actions.--eduzz-ui-layout-enabled .eduzz-ui-layout-topbar-actions-content-expand {
     display: block;

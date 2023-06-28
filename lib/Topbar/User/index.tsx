@@ -35,11 +35,11 @@ const User = memo(() => {
     <div
       ref={wrapperMenuUser}
       className={cx('eduzz-ui-layout-topbar-user', {
-        'eduzz-ui-layout-topbar-user-active': hasMenu && opened,
         'eduzz-ui-layout-topbar-user-has-menu': hasMenu
       })}
     >
       <Action
+        active={hasMenu && opened}
         className='eduzz-ui-layout-topbar-user-menu-action'
         icon={<Avatar src={user.avatar}>{user.name}</Avatar>}
         right={hasMenu && <CaretDownOutlined className='eduzz-ui-layout-topbar-user-menu-arrow' />}

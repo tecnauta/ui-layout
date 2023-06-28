@@ -3,7 +3,6 @@
   vertical-align: text-bottom;
 }
 
-
 .eduzz-ui-layout-topbar-action .eduzz-ui-layout-topbar-action-button {
   min-width: 40px;
   height: 40px;
@@ -21,8 +20,6 @@
   user-select: none;
 }
 
-
-
 .eduzz-ui-layout-topbar-action .eduzz-ui-layout-topbar-action-button:hover,
 .eduzz-ui-layout-topbar-action.--eduzz-ui-layout-active .eduzz-ui-layout-topbar-action-button {
   background-color: rgba(0, 0, 0, 0.03);
@@ -33,6 +30,10 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.eduzz-ui-layout-topbar-action .eduzz-ui-layout-topbar-action-button .eduzz-ui-layout-topbar-action-button-text:empty {
+  display: none;
 }
 
 
