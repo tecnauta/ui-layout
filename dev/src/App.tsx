@@ -1,10 +1,9 @@
 import { useCallback } from 'react';
 
 import { MessageOutlined, BellOutlined, BulbOutlined, NotificationOutlined } from '@ant-design/icons';
-import { Avatar } from 'antd';
 
 import Layout from '@eduzz/ui-layout';
-import ResetCss from '@eduzz/ui-layout/ResetCss';
+import Avatar from '@eduzz/ui-layout/Avatar';
 
 import houston from './assets/houston.png';
 
@@ -19,7 +18,6 @@ function App() {
 
   return (
     <>
-      <ResetCss />
       <Layout>
         <Topbar
           currentApplication='orbita'

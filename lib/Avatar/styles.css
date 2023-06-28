@@ -1,0 +1,7 @@
+.eduzz-ui-layout-avatar img {
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  background-color: var(--eduzz-theme-primary);
+  border-radius: 50%;
+}

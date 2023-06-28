@@ -1,6 +1,5 @@
-import * as React from 'react';
+import { HTMLAttributes, memo, useRef } from 'react';
 
-import styled from '@emotion/styled';
 import { useContextSelector } from 'use-context-selector';
 
 import Dropdown from './Dropdown';
@@ -12,7 +11,9 @@ import IconApps from '../../Icons/Apps';
 import Action from '../Action';
 import TopbarContext from '../context';
 
-export type TopbarApplication = React.HTMLAttributes<HTMLDivElement> & {
+import './styles.css';
+
+export type TopbarApplication = HTMLAttributes<HTMLDivElement> & {
   application: string;
   label: string;
   icon: string;
@@ -23,15 +24,14 @@ export type TopbarApplication = React.HTMLAttributes<HTMLDivElement> & {
 
 type TopbarAppsProps = {
   id?: string;
-  className?: string;
 };
 
-const TopbarApps = React.memo<TopbarAppsProps>(({ id, className, ...rest }) => {
+const TopbarApps = memo<TopbarAppsProps>(({ id, ...rest }) => {
   const isSupport = useContextSelector(TopbarContext, context => context.user?.isSupport ?? false);
   const currentApplication = useContextSelector(TopbarContext, context => context.currentApplication);
 
   const [openedDropdown, toogleDropdown, , closeDropdown] = useBoolean();
-  const wrapperDropdownRef = React.useRef<HTMLDivElement>(null);
+  const wrapperDropdownRef = useRef<HTMLDivElement>(null);
 
   const [applications] = usePromise(async () => {
     const request = await fetch('https://eduzz-houston.s3.amazonaws.com/topbar/applications.json');
@@ -52,7 +52,12 @@ const TopbarApps = React.memo<TopbarAppsProps>(({ id, className, ...rest }) => {
   }, [openedDropdown]);
 
   return (
-    <div id={`ui-eduzz-layout-topbar-apps${id ?? ''}`} ref={wrapperDropdownRef} className={className} {...rest}>
+    <div
+      id={`eduzz-ui-layout-topbar-apps${id ?? ''}`}
+      ref={wrapperDropdownRef}
+      className='eduzz-ui-layout-topbar-apps'
+      {...rest}
+    >
       <Action icon={<IconApps size={19} />} active={openedDropdown} onClick={toogleDropdown} />
 
       <Dropdown
@@ -65,9 +70,4 @@ const TopbarApps = React.memo<TopbarAppsProps>(({ id, className, ...rest }) => {
   );
 });
 
-export default styled(TopbarApps, { label: 'ui-eduzz-layout-topbar-apps' })`
-  width: auto;
-  position: relative;
-  box-sizing: border-box;
-  height: 100%;
-`;
+export default TopbarApps;

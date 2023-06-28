@@ -1,0 +1,36 @@
+.eduzz-ui-layout-user-menu-item {
+  justify-content: start;
+  align-items: center;
+  text-align: left;
+  font-size: 16px;
+  padding: 8px 16px;
+  display: flex;
+  background: none;
+  gap: 8px;
+  border: none;
+  transition: background-color 0.15s ease-in;
+  border-radius: 4px;
+}
+
+.eduzz-ui-layout-user-menu-item:hover {
+  background-color: rgba(0, 0, 0, 0.03)
+}
+
+.eduzz-ui-layout-user-menu-item>span:not(.anticon, .ant-avatar) {
+  max-width: 235px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.eduzz-ui-layout-user-menu-item>.anticon {
+  font-size: 20px;
+}
+
+.eduzz-ui-layout-user-menu-item>svg {
+  width: 24px;
+  margin-right: 5px;
+}
+
+.eduzz-ui-layout-user-menu-item.eduzz-ui-layout-button-disabled {
+  background-color: transparent;
+}

@@ -9,7 +9,7 @@ export interface PortalProps {
 function createWrapper(id: string) {
   const element = document.createElement('div');
   element.setAttribute('id', id);
-  element.classList.add('ui-eduzz-portal');
+  element.classList.add('eduzz-ui-layout-portal');
   document.body.appendChild(element);
   return element;
 }

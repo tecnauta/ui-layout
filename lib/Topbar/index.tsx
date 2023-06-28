@@ -1,6 +1,5 @@
 import { HTMLAttributes, JSXElementConstructor, ReactNode, memo, useEffect, useMemo } from 'react';
 
-import { cx } from '@emotion/css';
 import { useContextSelector } from 'use-context-selector';
 
 import Action from './Action';
@@ -19,7 +18,10 @@ import UserMenuGroup from './UserMenu/ItemGroup';
 import LayoutContext from '../context';
 import IconClose from '../Icons/Close';
 import IconMenu from '../Icons/Menu';
+import cx from '../utils/cx';
 import nestedComponent from '../utils/nestedComponent';
+
+import './style.css';
 
 export interface TopbarProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
@@ -67,10 +69,10 @@ const Topbar = memo<TopbarProps>(
     }, [register]);
 
     useEffect(() => {
-      document.body.classList.add('ui-eduzz-layout-topbar-applied');
+      document.body.classList.add('eduzz-ui-layout-topbar-applied');
 
       return () => {
-        document.body.classList.remove('ui-eduzz-layout-topbar-applied');
+        document.body.classList.remove('eduzz-ui-layout-topbar-applied');
       };
     }, []);
 
@@ -79,17 +81,17 @@ const Topbar = memo<TopbarProps>(
     return (
       <TopbarContext.Provider value={contextValue}>
         <div className='eduzz-ui-layout-topbar' {...rest}>
-          <header className='ui-eduzz-layout-topbar-header'>
-            {user?.isSupport && <div className='ui-eduzz-layout-topbar-user-support'>Suporte</div>}
+          <header className='eduzz-ui-layout-topbar-header'>
+            {user?.isSupport && <div className='eduzz-ui-layout-topbar-user-support'>Suporte</div>}
 
-            <div className='ui-eduzz-layout-topbar-start'>
+            <div className='eduzz-ui-layout-topbar-start'>
               <Action
-                className='ui-eduzz-layout-topbar-mobile-menu'
+                className='eduzz-ui-layout-topbar-mobile-menu'
                 icon={
                   sidebarOpened ? (
                     <IconClose size={18} />
                   ) : (
-                    <IconMenu size={22} className='ui-eduzz-layout-topbar-mobile-menu-icon' />
+                    <IconMenu size={22} className='eduzz-ui-layout-topbar-mobile-menu-icon' />
                   )
                 }
                 onClick={sidebarToogleOpened}
@@ -106,13 +108,13 @@ const Topbar = memo<TopbarProps>(
               />
 
               {!!user?.tag && (
-                <p className={cx('ui-eduzz-layout-topbar-tag', `ui-eduzz-layout-topbar-tag-${user.tag}`)}>{user.tag}</p>
+                <p className={cx('eduzz-ui-layout-topbar-tag', `eduzz-ui-layout-topbar-tag-${user.tag}`)}>{user.tag}</p>
               )}
             </div>
 
-            <div className='ui-eduzz-layout-topbar-center' ref={registerCenterPortal} />
+            <div className='eduzz-ui-layout-topbar-center' ref={registerCenterPortal} />
 
-            <div className='ui-eduzz-layout-topbar-quick-access'>
+            <div className='eduzz-ui-layout-topbar-quick-access'>
               <Belt />
               <Actions>{children}</Actions>
               <User />

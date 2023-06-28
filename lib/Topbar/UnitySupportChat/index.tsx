@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 
-import { css } from '@emotion/css';
-import { Global } from '@emotion/react';
 import { useContextSelector } from 'use-context-selector';
 
 import chatInit from './chat';
 import TopbarContext from '../context';
+
+import './style.css';
 
 const TopbarUnitySupportChat = () => {
   const user = useContextSelector(TopbarContext, context => context.user);
@@ -16,16 +16,6 @@ const TopbarUnitySupportChat = () => {
     return () => destroy();
   }, [user]);
 
-  return (
-    <Global
-      styles={css`
-        #lhc_status_widget_v2 {
-          left: auto !important;
-          bottom: 0 !important;
-          z-index: 102 !important;
-        }
-      `}
-    />
-  );
+  return null;
 };
 export default TopbarUnitySupportChat;

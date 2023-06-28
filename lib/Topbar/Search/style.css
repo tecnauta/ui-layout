@@ -1,0 +1,10 @@
+.eduzz-ui-layout-topbar-search {
+  display: flex;
+  flex: 1;
+}
+
+@media (max-width: 991px) {
+  .eduzz-ui-layout-topbar-search {
+    display: none;
+  }
+}

@@ -1,10 +1,7 @@
-import styled from '@emotion/styled';
+import './style.css';
 
-const UserMenuDivider = ({ className }: { className?: string }) => {
-  return <hr className={className} />;
+const UserMenuDivider = () => {
+  return <hr className='eduzz-ui-layout-user-menu-divider' />;
 };
 
-export default styled(UserMenuDivider)`
-  margin-top: 7px;
-  margin-bottom: 7px;
-`;
+export default UserMenuDivider;

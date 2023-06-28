@@ -1,0 +1,41 @@
+.eduzz-ui-layout-topbar-user-menu {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  min-width: var(--eduzz-ui-layout-topbar-menu-min-width-rem);
+  max-height: calc(95vh - var(--eduzz-ui-layout-topbar-height-rem));
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: fixed;
+  top: var(--eduzz-ui-layout-topbar-height-rem);
+  right: 0.5rem;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.16);
+  padding: 0.5rem;
+  box-sizing: border-box;
+  visibility: hidden;
+  opacity: 0;
+  user-select: none;
+  background: rgb(255, 255, 255);
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.eduzz-ui-layout-topbar-user-menu::-webkit-scrollbar {
+  width: 3px;
+  background: transparent;
+}
+
+.eduzz-ui-layout-topbar-user-menu::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+}
+
+.eduzz-ui-layout-topbar-user-menu:hover::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+}
+
+.eduzz-ui-layout-topbar-user-menu.--opened {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  user-select: auto;
+}

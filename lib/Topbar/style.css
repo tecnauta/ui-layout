@@ -1,0 +1,104 @@
+.eduzz-ui-layout-topbar {
+  height: var(--eduzz-ui-layout-topbar-height-rem);
+}
+
+.eduzz-ui-layout-topbar .eduzz-ui-layout-topbar-user-support {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #fbcd02;
+  padding: 4px 8px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 11px;
+  border-bottom-left-radius: 5px;
+}
+
+.eduzz-ui-layout-topbar>.eduzz-ui-layout-topbar-header {
+  background-color: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.88);
+  border-bottom: 3px solid rgba(217, 217, 217, 0.3);
+  box-sizing: border-box;
+  position: fixed;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--eduzz-ui-layout-topbar-height-rem);
+  display: flex;
+  justify-content: space-between;
+  z-index: 105;
+  gap: 1rem;
+  transition: 0.15s ease-out, background-color 0.3s, border-bottom-color 0.3s;
+}
+
+@media (max-width:575px) {
+  .eduzz-ui-layout-topbar>.eduzz-ui-layout-topbar-header {
+    padding: 0.5rem 0.5rem 0.5rem 0.3rem;
+  }
+}
+
+.eduzz-ui-layout-topbar>.eduzz-ui-layout-topbar-header>.eduzz-ui-layout-topbar-start {
+  display: flex;
+  align-items: center;
+}
+
+.eduzz-ui-layout-topbar>.eduzz-ui-layout-topbar-header>.eduzz-ui-layout-topbar-start .eduzz-ui-layout-topbar-mobile-menu {
+  cursor: pointer;
+}
+
+.eduzz-ui-layout-topbar>.eduzz-ui-layout-topbar-header>.eduzz-ui-layout-topbar-start .eduzz-ui-layout-topbar-mobile-menu .eduzz-ui-layout-topbar-mobile-menu-icon {
+  margin-top: -2px;
+}
+
+@media (min-width:1200px) {
+  .eduzz-ui-layout-topbar>.eduzz-ui-layout-topbar-header>.eduzz-ui-layout-topbar-start .eduzz-ui-layout-topbar-mobile-menu {
+    display: none;
+  }
+}
+
+.eduzz-ui-layout-topbar>.eduzz-ui-layout-topbar-header>.eduzz-ui-layout-topbar-start .eduzz-ui-layout-topbar-tag {
+  text-transform: capitalize;
+  padding: 4px 8px 4px 8px;
+  letter-spacing: 0.5px;
+  display: block;
+  border-radius: 3px;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-left: 0.5rem;
+  line-height: 14px;
+}
+
+.eduzz-ui-layout-topbar>.eduzz-ui-layout-topbar-header>.eduzz-ui-layout-topbar-start .eduzz-ui-layout-topbar-tag.eduzz-ui-layout-topbar-tag-pro {
+  border: 1px solid #bababa;
+}
+
+.eduzz-ui-layout-topbar>.eduzz-ui-layout-topbar-header>.eduzz-ui-layout-topbar-start .eduzz-ui-layout-topbar-tag.eduzz-ui-layout-topbar-tag-unity {
+  border: 1px solid #000;
+  background: #000;
+  color: white;
+}
+
+.eduzz-ui-layout-topbar>.eduzz-ui-layout-topbar-header>.eduzz-ui-layout-topbar-start .eduzz-ui-layout-topbar-tag.eduzz-ui-layout-topbar-tag-partner {
+  background: #ededed;
+}
+
+@media (max-width:575px) {
+  .eduzz-ui-layout-topbar>.eduzz-ui-layout-topbar-header>.eduzz-ui-layout-topbar-start .eduzz-ui-layout-topbar-tag {
+    display: none;
+  }
+}
+
+.eduzz-ui-layout-topbar>.eduzz-ui-layout-topbar-header>.eduzz-ui-layout-topbar-center {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+}
+
+.eduzz-ui-layout-topbar>.eduzz-ui-layout-topbar-header>.eduzz-ui-layout-topbar-quick-access {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

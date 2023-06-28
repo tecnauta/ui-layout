@@ -1,7 +1,30 @@
 :root {
-  --eduzz-ui-layout-topbar-height: 64px;
+  --eduzz-theme-primary: #0d2772;
+
   --eduzz-ui-layout-topbar-height-rem: 4rem;
   --eduzz-ui-layout-topbar-menu-min-width-rem: 16.25rem;
+  --eduzz-ui-layout-topbar-app-dropdown-width-rem: 21rem;
+  --eduzz-ui-layout-sidebar-width-rem: 15.5rem;
+
+  --eduzz-ui-layout-belt-color-white: #D9D9D9;
+  --eduzz-ui-layout-belt-color-red: #FF4141;
+  --eduzz-ui-layout-belt-color-orange: #FFA439;
+  --eduzz-ui-layout-belt-color-green: #33DB7A;
+  --eduzz-ui-layout-belt-color-black: #000000;
+  --eduzz-ui-layout-belt-color-golden: #FFCE0;
+
+  --eduzz-ui-layout-belt-foreground-white: #4D4D4D;
+  --eduzz-ui-layout-belt-foreground-red: #4D1414;
+  --eduzz-ui-layout-belt-foreground-orange: #4D3111;
+  --eduzz-ui-layout-belt-foreground-green: #124D2B;
+  --eduzz-ui-layout-belt-foreground-black: #FFFFFF;
+  --eduzz-ui-layout-belt-foreground-golden: #4D3E00;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: Roboto, Albert Sans, sans-serif;
 }
 
 .eduzz-ui-layout {
@@ -10,194 +33,6 @@
   min-height: 100vh;
 }
 
-.eduzz-ui-layout.ui-eduzz-layout-has-topbar {
+.eduzz-ui-layout.eduzz-ui-layout-has-topbar {
   padding-top: var(--eduzz-ui-layout-topbar-height-rem);
-}
-
-.eduzz-ui-layout-topbar {
-  height: var(--eduzz-ui-layout-topbar-height-rem);
-}
-
-.eduzz-ui-layout-topbar .ui-eduzz-layout-topbar-user-support {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: #fbcd02;
-  padding: 4px 8px;
-  color: white;
-  text-transform: uppercase;
-  font-size: 11px;
-  border-bottom-left-radius: 5px;
-}
-
-.eduzz-ui-layout-topbar>.ui-eduzz-layout-topbar-header {
-  background-color: rgb(255, 255, 255);
-  color: rgba(0, 0, 0, 0.88);
-  border-bottom: 3px solid rgba(217, 217, 217, 0.3);
-  box-sizing: border-box;
-  position: fixed;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: var(--eduzz-ui-layout-topbar-height-rem);
-  display: flex;
-  justify-content: space-between;
-  z-index: 105;
-  gap: 1rem;
-  transition: 0.15s ease-out, background-color 0.3s, border-bottom-color 0.3s;
-}
-
-@media (max-width:575px) {
-  .eduzz-ui-layout-topbar>.ui-eduzz-layout-topbar-header {
-    padding: 0.5rem 0.5rem 0.5rem 0.3rem;
-  }
-}
-
-.eduzz-ui-layout-topbar>.ui-eduzz-layout-topbar-header>.ui-eduzz-layout-topbar-start {
-  display: flex;
-  align-items: center;
-}
-
-.eduzz-ui-layout-topbar>.ui-eduzz-layout-topbar-header>.ui-eduzz-layout-topbar-start .ui-eduzz-layout-topbar-mobile-menu {
-  cursor: pointer;
-}
-
-.eduzz-ui-layout-topbar>.ui-eduzz-layout-topbar-header>.ui-eduzz-layout-topbar-start .ui-eduzz-layout-topbar-mobile-menu .ui-eduzz-layout-topbar-mobile-menu-icon {
-  margin-top: -2px;
-}
-
-@media (min-width:1200px) {
-  .eduzz-ui-layout-topbar>.ui-eduzz-layout-topbar-header>.ui-eduzz-layout-topbar-start .ui-eduzz-layout-topbar-mobile-menu {
-    display: none;
-  }
-}
-
-.eduzz-ui-layout-topbar>.ui-eduzz-layout-topbar-header>.ui-eduzz-layout-topbar-start .ui-eduzz-layout-topbar-tag {
-  text-transform: capitalize;
-  padding: 4px 8px 4px 8px;
-  letter-spacing: 0.5px;
-  display: block;
-  border-radius: 3px;
-  font-size: 14px;
-  text-transform: uppercase;
-  margin-left: 0.5rem;
-  line-height: 14px;
-}
-
-.eduzz-ui-layout-topbar>.ui-eduzz-layout-topbar-header>.ui-eduzz-layout-topbar-start .ui-eduzz-layout-topbar-tag.ui-eduzz-layout-topbar-tag-pro {
-  border: 1px solid #bababa;
-}
-
-.eduzz-ui-layout-topbar>.ui-eduzz-layout-topbar-header>.ui-eduzz-layout-topbar-start .ui-eduzz-layout-topbar-tag.ui-eduzz-layout-topbar-tag-unity {
-  border: 1px solid #000;
-  background: #000;
-  color: white;
-}
-
-.eduzz-ui-layout-topbar>.ui-eduzz-layout-topbar-header>.ui-eduzz-layout-topbar-start .ui-eduzz-layout-topbar-tag.ui-eduzz-layout-topbar-tag-partner {
-  background: #ededed;
-}
-
-@media (max-width:575px) {
-  .eduzz-ui-layout-topbar>.ui-eduzz-layout-topbar-header>.ui-eduzz-layout-topbar-start .ui-eduzz-layout-topbar-tag {
-    display: none;
-  }
-}
-
-.eduzz-ui-layout-topbar>.ui-eduzz-layout-topbar-header>.ui-eduzz-layout-topbar-center {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  max-width: 400px;
-}
-
-.eduzz-ui-layout-topbar>.ui-eduzz-layout-topbar-header>.ui-eduzz-layout-topbar-quick-access {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ui-eduzz-layout-topbar-user-menu {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  min-width: var(--eduzz-ui-layout-topbar-menu-min-width-rem);
-  max-height: calc(95vh - var(--eduzz-ui-layout-topbar-height-rem));
-  overflow-y: auto;
-  overflow-x: hidden;
-  position: fixed;
-  top: var(--eduzz-ui-layout-topbar-height-rem);
-  right: 0.5rem;
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.16);
-  padding: 0.5rem;
-  box-sizing: border-box;
-  visibility: hidden;
-  opacity: 0;
-  user-select: none;
-  background: rgb(255, 255, 255);
-  border-radius: 0 0 0.5rem 0.5rem;
-}
-
-.ui-eduzz-layout-topbar-user-menu::-webkit-scrollbar {
-  width: 3px;
-  background: transparent;
-}
-
-.ui-eduzz-layout-topbar-user-menu::-webkit-scrollbar-thumb {
-  background: transparent;
-  border-radius: 4px;
-}
-
-.ui-eduzz-layout-topbar-user-menu:hover::-webkit-scrollbar-thumb {
-  background: #e0e0e0;
-}
-
-.ui-eduzz-layout-topbar-user-menu.--opened {
-  visibility: visible;
-  opacity: 1;
-  transform: scale(1);
-  user-select: auto;
-}
-
-.ui-eduzz-layout-topbar-user-menu-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.ui-eduzz-layout-topbar-user-menu-group>.ui-eduzz-layout-topbar-user-menu-group-label {
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  cursor: default;
-  letter-spacing: 0.3px;
-  font-weight: bold;
-}
-
-.ui-eduzz-user-menu-item {
-  justify-content: start;
-  align-items: center;
-  text-align: left;
-  font-size: 16px;
-  padding: 8px 16px;
-  display: flex;
-}
-
-.ui-eduzz-user-menu-item>span:not(.anticon, .ant-avatar) {
-  max-width: 235px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-.ui-eduzz-user-menu-item>.anticon {
-  font-size: 20px;
-}
-
-.ui-eduzz-user-menu-item>svg {
-  width: 24px;
-  margin-right: 5px;
-}
-
-.ui-eduzz-user-menu-item.ui-eduzz-button-disabled {
-  background-color: transparent;
 }

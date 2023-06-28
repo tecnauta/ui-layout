@@ -4,6 +4,8 @@ import { useContextSelector } from 'use-context-selector';
 
 import LayoutContext from '../../../context';
 
+import './style.css';
+
 export interface UserMenuItemProps {
   /**
    * Allow to provide more props to the `as` Component
@@ -35,7 +37,7 @@ const UserMenuItem = forwardRef<HTMLButtonElement, UserMenuItemProps>(
     );
 
     let content = (
-      <button id={id} ref={ref} onClick={handleClick} className='ui-eduzz-user-menu-item' disabled={disabled}>
+      <button id={id} ref={ref} onClick={handleClick} className='eduzz-ui-layout-user-menu-item' disabled={disabled}>
         {icon}
         {children}
       </button>

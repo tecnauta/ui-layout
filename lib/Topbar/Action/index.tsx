@@ -1,13 +1,13 @@
 import { forwardRef, memo, useEffect } from 'react';
 
-import { Button, Badge, Tooltip } from 'antd';
+import { Badge, Tooltip } from 'antd';
 
-import { cx } from '@emotion/css';
-import styled from '@emotion/styled';
 import { useContext } from 'use-context-selector';
 
-import { useMediaQueryDown } from '../../hooks/useMediaQuery';
+import cx from '../../utils/cx';
 import TopbarActionsContext from '../Actions/context';
+
+import './style.css';
 
 export type ActionProps = React.HTMLAttributes<HTMLDivElement> & {
   /**
@@ -16,19 +16,16 @@ export type ActionProps = React.HTMLAttributes<HTMLDivElement> & {
   active?: boolean;
   tooltip?: string;
   icon: React.ReactNode;
+  right?: React.ReactNode;
   label?: React.ReactNode;
   badgeCount?: number;
   badgeDot?: boolean;
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
-  className?: string;
 };
 
 const Action = forwardRef<HTMLDivElement, ActionProps>(
-  ({ active, icon, label, onClick, className, tooltip, badgeCount, badgeDot, ...rest }, ref) => {
+  ({ active, icon, right, label, onClick, tooltip, className, badgeCount, badgeDot, ...rest }, ref) => {
     const registerAction = useContext(TopbarActionsContext);
-
-    const hideLabel = useMediaQueryDown('md');
-    label = hideLabel ? undefined : label;
 
     useEffect(() => {
       const unregister = registerAction({ badgeCount: badgeCount ?? 0, badgeDot: badgeDot ?? false });
@@ -36,12 +33,19 @@ const Action = forwardRef<HTMLDivElement, ActionProps>(
     }, [badgeCount, badgeDot, registerAction]);
 
     return (
-      <div className={cx(className, { '--ui-eduzz-active': active })} onClick={onClick} {...rest} ref={ref}>
+      <div
+        className={cx('eduzz-ui-layout-topbar-action', className, { '--eduzz-ui-layout-active': active })}
+        onClick={onClick}
+        {...rest}
+        ref={ref}
+      >
         <Tooltip title={tooltip}>
           <Badge count={badgeCount === 0 ? undefined : badgeCount} dot={badgeCount ? false : badgeDot} offset={[-4, 8]}>
-            <Button shape={!label ? 'circle' : 'round'} icon={icon} type='text'>
-              {label}
-            </Button>
+            <div className='eduzz-ui-layout-topbar-action-button'>
+              {icon}
+              <span className='eduzz-ui-layout-topbar-action-button-text'>{label}</span>
+              {right}
+            </div>
           </Badge>
         </Tooltip>
       </div>
@@ -49,21 +53,4 @@ const Action = forwardRef<HTMLDivElement, ActionProps>(
   }
 );
 
-export default styled(memo(Action), { label: 'ui-eduzz-layout-topbar-action' })`
-  & .anticon {
-    font-size: 20px;
-    vertical-align: text-bottom;
-  }
-
-  button {
-    color: rgba(0, 0, 0, 0.88);
-    margin-top: 2px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &.--ui-eduzz-active button {
-    background-color: rgba(0, 0, 0, 0.03);
-  }
-`;
+export default memo(Action);

@@ -1,19 +1,21 @@
-import * as React from 'react';
+import { memo, useRef } from 'react';
 
 import { CaretDownOutlined } from '@ant-design/icons';
-import { Avatar, Button } from 'antd';
 
-import { cx } from '@emotion/css';
-import styled from '@emotion/styled';
 import { useContextSelector } from 'use-context-selector';
 
+import Avatar from '../../Avatar';
 import LayoutContext from '../../context';
 import useClickOutside from '../../hooks/useClickOutside';
 import useEscapeKey from '../../hooks/useEscapeKey';
+import cx from '../../utils/cx';
+import Action from '../Action';
 import TopbarContext from '../context';
 
-const User = React.memo(({ className }: { className?: string }) => {
-  const wrapperMenuUser = React.useRef<HTMLDivElement>(null);
+import './style.css';
+
+const User = memo(() => {
+  const wrapperMenuUser = useRef<HTMLDivElement>(null);
   const user = useContextSelector(TopbarContext, context => context.user);
 
   const opened = useContextSelector(LayoutContext, context => context.userMenu.opened);
@@ -30,106 +32,24 @@ const User = React.memo(({ className }: { className?: string }) => {
   }
 
   return (
-    <>
-      <div
-        ref={wrapperMenuUser}
-        className={cx(className, {
-          'ui-eduzz-layout-topbar-user-active': hasMenu && opened,
-          'ui-eduzz-layout-topbar-user-has-menu': hasMenu
-        })}
-      >
-        <div className='ui-eduzz-layout-topbar-user-label'>
-          <div className='ui-eduzz-layout-topbar-user-default'>
-            <Button
-              className='ui-eduzz-layout-topbar-user-button'
-              icon={<Avatar src={user.avatar}>{user.name?.charAt(0)}</Avatar>}
-              type='text'
-              shape='round'
-              onClick={toogleOpened}
-            >
-              <span className='ui-eduzz-layout-topbar-user-name'>
-                {user.name} {!!user.isSupport && '(Suporte)'}
-              </span>
-              {hasMenu && <CaretDownOutlined className='ui-eduzz-layout-topbar-user-menu-arrow' />}
-            </Button>
-          </div>
+    <div
+      ref={wrapperMenuUser}
+      className={cx('eduzz-ui-layout-topbar-user', {
+        'eduzz-ui-layout-topbar-user-active': hasMenu && opened,
+        'eduzz-ui-layout-topbar-user-has-menu': hasMenu
+      })}
+    >
+      <Action
+        className='eduzz-ui-layout-topbar-user-menu-action'
+        icon={<Avatar src={user.avatar}>{user.name}</Avatar>}
+        right={hasMenu && <CaretDownOutlined className='eduzz-ui-layout-topbar-user-menu-arrow' />}
+        label={`${user.name} ${user.isSupport ? '(Suporte)' : ''}`.trim()}
+        onClick={toogleOpened}
+      />
 
-          <div className='ui-eduzz-layout-topbar-user-mobile'>
-            <Avatar src={user.avatar} onClick={toogleOpened}>
-              {user.name?.charAt(0)}
-            </Avatar>
-          </div>
-        </div>
-
-        <div ref={registerContainer} />
-      </div>
-    </>
+      <div ref={registerContainer} />
+    </div>
   );
 });
 
-export default styled(User, { label: 'ui-eduzz-layout-topbar-user' })`
-  position: relative;
-  z-index: 1100;
-  margin-left: 8px;
-  pointer-events: none;
-
-  &.ui-eduzz-layout-topbar-user-has-menu {
-    pointer-events: all;
-  }
-
-  &.ui-eduzz-layout-topbar-user-active {
-    & .ui-eduzz-layout-topbar-user-button {
-      background-color: rgba(0, 0, 0, 0.05);
-    }
-
-    & .ui-eduzz-layout-topbar-user-menu-arrow {
-      transform: rotateX(-180deg);
-      margin-bottom: 0;
-      margin-top: -5px;
-    }
-  }
-
-  & .ui-eduzz-layout-topbar-user-default {
-    display: none;
-    position: relative;
-
-    & .ui-eduzz-layout-topbar-user-button {
-      display: flex;
-      gap: 5px;
-      align-items: center;
-      padding: 10.5px 10.5px 10.5px 6px;
-
-      & .ant-avatar {
-        background-color: #0d2772;
-        text-transform: uppercase;
-        cursor: pointer;
-        margin-top: 0;
-        margin-right: 0;
-      }
-
-      & .ui-eduzz-layout-topbar-user-name {
-        max-width: 100px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        font-weight: bold;
-        font-size: 16px;
-      }
-
-      & .anticon {
-        font-size: 12px;
-        margin-bottom: -5px;
-      }
-    }
-  }
-
-  @media (min-width: 992px) {
-    & .ui-eduzz-layout-topbar-user-default {
-      display: block;
-    }
-
-    & .ui-eduzz-layout-topbar-user-mobile {
-      display: none;
-    }
-  }
-`;
+export default User;

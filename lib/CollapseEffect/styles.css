@@ -1,0 +1,7 @@
+.eduzz-ui-layout-collapse-effect .ant-collapse-header {
+  display: none !important;
+}
+
+.eduzz-ui-layout-collapse-effect .ant-collapse-content-box {
+  padding: 0 !important;
+}

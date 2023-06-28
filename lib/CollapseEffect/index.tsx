@@ -2,18 +2,22 @@ import * as React from 'react';
 
 import { Collapse as AntdCollapse } from 'antd';
 
-import styled from '@emotion/styled';
+import './styles.css';
 
 export interface CollapseProps {
   id?: string;
   visibled: boolean;
   children?: React.ReactNode;
-  className?: string;
 }
 
-const CollapseEffect = ({ children, visibled, id, className }: CollapseProps) => {
+const CollapseEffect = ({ children, visibled, id }: CollapseProps) => {
   return (
-    <AntdCollapse ghost bordered={false} activeKey={visibled ? '1' : undefined} className={className}>
+    <AntdCollapse
+      ghost
+      bordered={false}
+      activeKey={visibled ? '1' : undefined}
+      className='eduzz-ui-layout-collapse-effect'
+    >
       <AntdCollapse.Panel key={'1'} header='' id={id}>
         {children}
       </AntdCollapse.Panel>
@@ -21,12 +25,4 @@ const CollapseEffect = ({ children, visibled, id, className }: CollapseProps) =>
   );
 };
 
-export default styled(CollapseEffect)`
-  & .ant-collapse-header {
-    display: none !important;
-  }
-
-  & .ant-collapse-content-box {
-    padding: 0 !important;
-  }
-`;
+export default CollapseEffect;

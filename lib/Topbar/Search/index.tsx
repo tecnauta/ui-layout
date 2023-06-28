@@ -11,15 +11,15 @@ import {
 import { SearchOutlined } from '@ant-design/icons';
 import { Input, InputRef, Tag } from 'antd';
 
-import styled from '@emotion/styled';
 import type { InputStatus } from 'antd/lib/_util/statusUtils';
 import { useContextSelector } from 'use-context-selector';
 
 import LayoutContext from '../../context';
 import Portal from '../../Portal';
 
+import './style.css';
+
 export interface TopbarSearchProps {
-  className?: string;
   status?: InputStatus;
   placeholder?: string;
   disableEscape?: boolean;
@@ -30,7 +30,6 @@ export interface TopbarSearchProps {
 const isMacOS = typeof window !== 'undefined' ? navigator.userAgent.toLowerCase().includes('mac os') : false;
 
 const TopbarSearch = ({
-  className,
   disableShortcut,
   disableEscape,
   onEnter,
@@ -90,7 +89,7 @@ const TopbarSearch = ({
 
   return (
     <Portal target={container}>
-      <div className={className}>
+      <div className='eduzz-ui-layout-topbar-search'>
         <Input
           ref={inputRef}
           prefix={<SearchOutlined />}
@@ -107,11 +106,4 @@ const TopbarSearch = ({
   );
 };
 
-export default styled(memo(TopbarSearch))`
-  display: flex;
-  flex: 1;
-
-  @media (max-width: 991px) {
-    display: none;
-  }
-`;
+export default memo(TopbarSearch);
