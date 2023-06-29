@@ -3,3 +3,5 @@ node_modules
 *.d.ts
 !.prettierrc.js
 .DS_Store
+!**/tailwind.config.js
+!**/postcss.config.js

@@ -7,8 +7,6 @@ import Tooltip from '../../Tooltip';
 import cx from '../../utils/cx';
 import TopbarActionsContext from '../Actions/context';
 
-import './style.css';
-
 export type ActionProps = React.HTMLAttributes<HTMLDivElement> & {
   /**
    * If `true`, the item will be highlighted.
@@ -34,16 +32,20 @@ const Action = forwardRef<HTMLDivElement, ActionProps>(
 
     return (
       <div
-        className={cx('eduzz-ui-layout-topbar-action', className, { '--eduzz-ui-layout-active': active })}
+        className={cx('group/action [&_.anticon]:align-text-bottom [&_.anticon]:text-[20px]', className, {
+          '--active': active
+        })}
         onClick={onClick}
         {...rest}
         ref={ref}
       >
         <Tooltip title={tooltip}>
           <Badge count={badgeCount === 0 ? undefined : badgeCount} dot={badgeCount ? false : badgeDot}>
-            <div className='eduzz-ui-layout-topbar-action-button'>
+            <div className='mt-0.5 box-border flex h-10 min-w-[40px] cursor-pointer select-none items-center justify-center gap-2 rounded-[20px] px-2 py-0 text-center transition hover:bg-[rgba(0,0,0,0.03)] group-[.--active]/action:bg-[rgba(0,0,0,0.03)]'>
               {icon}
-              <span className='eduzz-ui-layout-topbar-action-button-text'>{label}</span>
+              <span className='eduzz-ui-layout-topbar-action-button-text hidden max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap empty:hidden md:block'>
+                {label}
+              </span>
               {right}
             </div>
           </Badge>

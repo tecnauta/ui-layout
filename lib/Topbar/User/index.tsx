@@ -1,18 +1,15 @@
 import { memo, useRef } from 'react';
 
-import { CaretDownOutlined } from '@ant-design/icons';
-
 import { useContextSelector } from 'use-context-selector';
 
 import Avatar from '../../Avatar';
 import LayoutContext from '../../context';
 import useClickOutside from '../../hooks/useClickOutside';
 import useEscapeKey from '../../hooks/useEscapeKey';
+import IconCaretDown from '../../Icons/CaretDown';
 import cx from '../../utils/cx';
 import Action from '../Action';
 import TopbarContext from '../context';
-
-import './style.css';
 
 const User = memo(() => {
   const wrapperMenuUser = useRef<HTMLDivElement>(null);
@@ -34,15 +31,17 @@ const User = memo(() => {
   return (
     <div
       ref={wrapperMenuUser}
-      className={cx('eduzz-ui-layout-topbar-user', {
-        'eduzz-ui-layout-topbar-user-has-menu': hasMenu
+      className={cx('pointer-events-none relative z-[1100] ml-2', {
+        '!pointer-events-auto': hasMenu
       })}
     >
       <Action
         active={hasMenu && opened}
-        className='eduzz-ui-layout-topbar-user-menu-action'
         icon={<Avatar src={user.avatar}>{user.name}</Avatar>}
-        right={hasMenu && <CaretDownOutlined className='eduzz-ui-layout-topbar-user-menu-arrow' />}
+        className='[&_.eduzz-ui-layout-topbar-action-button-text]:font-bold'
+        right={
+          hasMenu && <IconCaretDown size={16} className={cx(' hidden  md:inline-block', { 'rotate-180': opened })} />
+        }
         label={`${user.name} ${user.isSupport ? '(Suporte)' : ''}`.trim()}
         onClick={toogleOpened}
       />

@@ -3,18 +3,17 @@ import { HTMLAttributes, ReactNode, MouseEventHandler, useEffect } from 'react';
 import useScrollBlock from '../hooks/useScrollBlock';
 import cx from '../utils/cx';
 
-import './styles.css';
-
 export type OverlayColor = 'light' | 'dark' | 'auto';
 
 export type OverlayProps = HTMLAttributes<HTMLDivElement> & {
   children?: ReactNode;
   visible: boolean;
   underTopbar?: boolean;
+  className?: string;
   onClick?: MouseEventHandler<HTMLDivElement>;
 };
 
-const Overlay = ({ visible, children, underTopbar, ...rest }: OverlayProps) => {
+const Overlay = ({ visible, children, underTopbar, className, ...rest }: OverlayProps) => {
   const { disableScroll, enableScroll } = useScrollBlock();
 
   useEffect(() => {
@@ -27,18 +26,18 @@ const Overlay = ({ visible, children, underTopbar, ...rest }: OverlayProps) => {
     };
   }, [enableScroll, disableScroll, visible]);
 
-  if (!visible) {
-    return null;
-  }
-
   return (
     <div
       aria-hidden='true'
       tabIndex={-1}
-      className={cx('eduzz-ui-layout-overlay', {
-        'eduzz-ui-layout-visible': visible,
-        'eduzz-ui-layout-under-topbar': underTopbar
-      })}
+      className={cx(
+        className,
+        'invisible fixed inset-0 z-[106] h-screen w-screen bg-[rgba(255,255,255,0.32)] opacity-0 backdrop-blur transition',
+        {
+          '!visible opacity-100': visible,
+          '!z-[104]': underTopbar
+        }
+      )}
       {...rest}
     >
       {children}

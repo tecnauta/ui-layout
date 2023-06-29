@@ -4,8 +4,6 @@ import { useContextSelector } from 'use-context-selector';
 
 import LayoutContext from '../../../context';
 
-import './style.css';
-
 export interface UserMenuItemProps {
   /**
    * Allow to provide more props to the `as` Component
@@ -37,9 +35,15 @@ const UserMenuItem = forwardRef<HTMLButtonElement, UserMenuItemProps>(
     );
 
     let content = (
-      <button id={id} ref={ref} onClick={handleClick} className='eduzz-ui-layout-user-menu-item' disabled={disabled}>
+      <button
+        id={id}
+        ref={ref}
+        onClick={handleClick}
+        className='flex cursor-pointer items-center gap-2 rounded-md px-4 py-2 transition hover:bg-[rgba(0,0,0,0.03)] disabled:cursor-not-allowed disabled:opacity-25 [&>.anticon]:text-[20px] [&>svg]:mr-[5px] [&>svg]:w-6'
+        disabled={disabled}
+      >
         {icon}
-        {children}
+        <span className='max-w-[235px] overflow-hidden text-ellipsis whitespace-nowrap text-base'>{children}</span>
       </button>
     );
 

@@ -34,14 +34,22 @@ function App() {
 
           <Topbar.Action badgeDot icon={<BulbOutlined />} tooltip='Theme' />
           <Topbar.Action badgeCount={1} active icon={<NotificationOutlined size={25} />} />
-          <Topbar.Action badgeCount={3} icon={<MessageOutlined />} label='Chat' />
+          <Topbar.Action badgeCount={999} icon={<MessageOutlined />} label='Chat' />
 
           <Topbar.UserMenu>
             <Topbar.UserMenuItem icon={<BellOutlined />}>Meus Dados</Topbar.UserMenuItem>
             <Topbar.UserMenuItem icon={<NotificationOutlined />}>Minhas Compras</Topbar.UserMenuItem>
 
+            <Topbar.UserMenuDivider />
+
             <Topbar.UserMenuGroup label='Contas:'>
-              <Topbar.UserMenuItem disabled href='http://google.com' target='_blank' icon={<Avatar>J</Avatar>}>
+              <Topbar.UserMenuItem disabled href='http://google.com' target='_blank' icon={<Avatar>AB</Avatar>}>
+                John
+              </Topbar.UserMenuItem>
+              <Topbar.UserMenuItem href='http://google.com' target='_blank' icon={<Avatar>John</Avatar>}>
+                John
+              </Topbar.UserMenuItem>
+              <Topbar.UserMenuItem href='http://google.com' target='_blank' icon={<Avatar>John Doe</Avatar>}>
                 John DoeJohn DoeJohn DoeJohn DoeJohn DoeJohn Doe
               </Topbar.UserMenuItem>
               <Topbar.UserMenuItem>John Doe 2</Topbar.UserMenuItem>
@@ -75,6 +83,7 @@ function App() {
         </Sidebar>
 
         <Content>
+          <img src='https://picsum.photos/800/300' className='max-w-full' />
           <p>Teste</p>
         </Content>
       </Layout>

@@ -8,19 +8,15 @@ import {
   ChangeEvent
 } from 'react';
 
-import { SearchOutlined } from '@ant-design/icons';
-import { Input, InputRef, Tag } from 'antd';
-
-import type { InputStatus } from 'antd/lib/_util/statusUtils';
 import { useContextSelector } from 'use-context-selector';
 
 import LayoutContext from '../../context';
+import IconSearch from '../../Icons/Search';
 import Portal from '../../Portal';
-
-import './style.css';
+import cx from '../../utils/cx';
 
 export interface TopbarSearchProps {
-  status?: InputStatus;
+  status?: '' | 'warning' | 'error';
   placeholder?: string;
   disableEscape?: boolean;
   disableShortcut?: boolean;
@@ -36,7 +32,7 @@ const TopbarSearch = ({
   status,
   placeholder = 'Pesquisar'
 }: TopbarSearchProps) => {
-  const inputRef = useRef<InputRef>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const [value, setValue] = useState<string>();
   const container = useContextSelector(LayoutContext, context => context.topbar.centerPortal);
@@ -89,18 +85,28 @@ const TopbarSearch = ({
 
   return (
     <Portal target={container}>
-      <div className='eduzz-ui-layout-topbar-search'>
-        <Input
+      <div className='relative hidden h-10 flex-1 items-center justify-between gap-3 px-2 py-1 lg:flex'>
+        <IconSearch size={20} />
+        <input
           ref={inputRef}
-          prefix={<SearchOutlined />}
-          status={status}
-          allowClear
+          className={cx(
+            'h-10 flex-1 bg-transparent text-base focus-visible:outline-none [&:focus+div]:border-[var(--eduzz-theme-primary)] [&:focus+div]:outline-2 [&:hover+div]:border-[var(--eduzz-theme-primary)]',
+            {
+              '[&+div]:!border-red-500 [&:focus+div]:!outline-red-200 [&:hover+div]:!border-red-500':
+                status === 'error',
+              '[&+div]:!border-yellow-500 [&:focus+div]:!outline-yellow-200 [&:hover+div]:!border-yellow-500':
+                status === 'warning'
+            }
+          )}
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          suffix={disableShortcut ? undefined : <Tag>{`${isMacOS ? '⌘' : 'Ctrl'}+K`}</Tag>}
           onKeyDown={disableShortcut ? undefined : onKeyDown}
         />
+        <div className='pointer-events-none absolute inset-0 rounded border outline outline-0 outline-offset-0 outline-[rgba(var(--eduzz-theme-primary-rgb),0.3)] transition' />
+        {disableShortcut ? undefined : (
+          <div className='rounded border bg-gray-50 px-2 py-1 text-xs'>{`${isMacOS ? '⌘' : 'Ctrl'}+K`}</div>
+        )}
       </div>
     </Portal>
   );

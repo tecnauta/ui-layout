@@ -31,6 +31,9 @@
   "files.exclude": {
     "**/*.lock.json": true,
     "**/*?.d.ts": true,
+    "lib/**/*?.js": {
+      "when": "$(basename).ts"
+    },
     "**/.DS_Store": true,
     "**/.git": true,
     "**/.gradle/**": true,
@@ -45,7 +48,6 @@
     "**/obj/**": true,
     "**/vendor/**": true,
     ".docker-data": true,
-    "lib/**/*?.js": true,
     "tsconfig.tsbuildinfo": true
   }
 }

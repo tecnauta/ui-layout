@@ -12,6 +12,7 @@
   "dependencies": {
     "@eduzz/ui-layout": "*",
     "react": "^18.2.0",
+    "@ant-design/icons": "^5.1.4",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {

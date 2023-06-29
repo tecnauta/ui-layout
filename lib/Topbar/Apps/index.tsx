@@ -11,8 +11,6 @@ import IconApps from '../../Icons/Apps';
 import Action from '../Action';
 import TopbarContext from '../context';
 
-import './styles.css';
-
 export type TopbarApplication = HTMLAttributes<HTMLDivElement> & {
   application: string;
   label: string;
@@ -52,12 +50,7 @@ const TopbarApps = memo<TopbarAppsProps>(({ id, ...rest }) => {
   }, [openedDropdown]);
 
   return (
-    <div
-      id={`eduzz-ui-layout-topbar-apps${id ?? ''}`}
-      ref={wrapperDropdownRef}
-      className='eduzz-ui-layout-topbar-apps'
-      {...rest}
-    >
+    <div id={`eduzz-ui-layout-topbar-apps${id ?? ''}`} ref={wrapperDropdownRef} {...rest}>
       <Action icon={<IconApps size={19} />} active={openedDropdown} onClick={toogleDropdown} />
 
       <Dropdown

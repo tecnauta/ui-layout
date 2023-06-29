@@ -1,5 +1,3 @@
-import './style.css';
-
 export type UserMenuGroupProps = React.HTMLAttributes<HTMLDivElement> & {
   label: string;
   children: React.ReactNode;
@@ -7,8 +5,8 @@ export type UserMenuGroupProps = React.HTMLAttributes<HTMLDivElement> & {
 
 const UserMenuGroup = ({ label, children, ...rest }: UserMenuGroupProps) => {
   return (
-    <div className='eduzz-ui-layout-topbar-user-menu-group' {...rest}>
-      <p className='eduzz-ui-layout-topbar-user-menu-group-label'>{label}</p>
+    <div className='flex flex-col' {...rest}>
+      <p className='mt-2 px-4 py-2 text-sm font-bold tracking-[0.3px]'>{label}</p>
       {children}
     </div>
   );

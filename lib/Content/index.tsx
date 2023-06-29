@@ -2,8 +2,6 @@ import { ReactNode } from 'react';
 
 import cx from '../utils/cx';
 
-import './styles.css';
-
 export interface LayoutContentProps {
   children?: ReactNode;
   disablePadding?: boolean;
@@ -11,7 +9,7 @@ export interface LayoutContentProps {
 
 const LayoutContent = ({ children, disablePadding }: LayoutContentProps) => {
   return (
-    <div className={cx('eduzz-ui-layout-content', { 'eduzz-ui-layout-content-disable-padding': disablePadding })}>
+    <div className={cx('min-w-0 flex-1 bg-[rgb(252,252,252)] transition', { 'p-4 md:p-8': !disablePadding })}>
       {children}
     </div>
   );
