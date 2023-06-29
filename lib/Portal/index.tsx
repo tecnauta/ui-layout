@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { ReactNode, useState, useLayoutEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 export interface PortalProps {
-  children: React.ReactNode;
+  children: ReactNode;
   target: string | HTMLElement;
 }
 
@@ -15,11 +15,11 @@ function createWrapper(id: string) {
 }
 
 const Portal = ({ children, target }: PortalProps) => {
-  const [wrapperElement, setWrapperElement] = React.useState<HTMLElement | null>(() =>
+  const [wrapperElement, setWrapperElement] = useState<HTMLElement | null>(() =>
     typeof target !== 'string' ? target : null
   );
 
-  React.useLayoutEffect(() => {
+  useLayoutEffect(() => {
     if (typeof target !== 'string') {
       return;
     }

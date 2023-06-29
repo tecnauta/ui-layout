@@ -1,16 +1,26 @@
 {
   "name": "@eduzz/ui-layout",
-  "version": "1.0.0",
-  "main": "./index.js",
-  "types": "./index.d.ts",
+  "version": "0.0.3",
+  "private": false,
   "author": "Eduzz Team",
   "license": "MIT",
+  "scripts": {
+    "prepare": "yarn vite build"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/ui-layout.umd.js",
+  "module": "./dist/ui-layout.es.js",
+  "types": "./dist/index.d.ts",
   "dependencies": {
     "use-context-selector": "^1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.3.2",
+    "vite-plugin-css-injected-by-js": "^3.1.2",
+    "vite-plugin-dts": "^3.0.0-beta.3"
   }
 }

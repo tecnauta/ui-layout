@@ -3,7 +3,7 @@
     "strict": true,
     "outDir": ".",
     "declaration": true,
-    "declarationDir": ".",
+    "declarationDir": "./dist",
     "module": "es2020",
     "target": "ES6",
     "experimentalDecorators": true,

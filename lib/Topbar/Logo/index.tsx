@@ -1,5 +1,4 @@
-import * as React from 'react';
-
+import type { JSXElementConstructor, ReactNode } from 'react';
 import './style.css';
 
 export interface LogoProps {
@@ -7,10 +6,10 @@ export interface LogoProps {
   logoMobile?: string;
   logoDarkMode?: string;
   logoMobileDarkMode?: string;
-  wrapper?: React.JSXElementConstructor<{ children: React.ReactNode; className: string }>;
+  wrapper?: JSXElementConstructor<{ children: ReactNode; className: string }>;
 }
 
-const Logo = ({ logo, logoMobile, logoDarkMode, logoMobileDarkMode, wrapper: Wrapper }: LogoProps) => {
+const Logo = ({ logo, logoMobile, wrapper: Wrapper }: LogoProps) => {
   function getLogos() {
     // if (theme.mode === 'dark') {
     //   return {

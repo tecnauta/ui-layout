@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { SVGAttributes, forwardRef } from 'react';
 
 export type IconSizes = 'sm' | 'md' | 'lg';
 
-export type BaseIconProps = Omit<React.SVGAttributes<SVGElement>, 'width' | 'height'> & {
+export type BaseIconProps = Omit<SVGAttributes<SVGElement>, 'width' | 'height'> & {
   /**
    * Defaults to 'md' (24px or 1.5rem)
    */
   size?: IconSizes | number;
 };
 
-const BaseIcon = React.forwardRef<SVGSVGElement, BaseIconProps>(
+const BaseIcon = forwardRef<SVGSVGElement, BaseIconProps>(
   ({ focusable = false, children, size = 'md', ...rest }, ref) => {
     const sizesMap: Record<IconSizes, number> = {
       lg: 32,

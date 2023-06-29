@@ -1,14 +1,14 @@
-import * as React from 'react';
+import { DependencyList, useState, useEffect } from 'react';
 
 export default function usePromise<T>(
   promiseGenerator: (isSubscribed: () => boolean) => Promise<T>,
-  deps: React.DependencyList
+  deps: DependencyList
 ): [T | undefined, any, boolean] {
-  const [loading, setLoading] = React.useState<boolean>(true);
-  const [result, setResult] = React.useState<T | undefined>();
-  const [error, setError] = React.useState<any>();
+  const [loading, setLoading] = useState<boolean>(true);
+  const [result, setResult] = useState<T | undefined>();
+  const [error, setError] = useState<any>();
 
-  React.useEffect(() => {
+  useEffect(() => {
     let isSubscribed = true;
     setLoading(true);
     setError(undefined);

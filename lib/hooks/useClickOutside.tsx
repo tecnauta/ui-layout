@@ -1,16 +1,16 @@
-import * as React from 'react';
+import { RefObject, DependencyList, useCallback, useEffect } from 'react';
 
 type AnyEvent = MouseEvent | TouchEvent;
 
 function useClickOutside<T extends HTMLElement = HTMLElement>(
-  ref: React.RefObject<T> | T | undefined | null,
+  ref: RefObject<T> | T | undefined | null,
   handler: (event: AnyEvent) => void,
-  deps: React.DependencyList
+  deps: DependencyList
 ) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const callback = React.useCallback((event: AnyEvent) => handler(event), deps ?? []);
+  const callback = useCallback((event: AnyEvent) => handler(event), deps ?? []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const el = (ref as any)?.current ?? ref;
     if (!el) return undefined;
 

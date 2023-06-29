@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 
 import cx from '../utils/cx';
 
 export interface CollapseProps {
   id?: string;
   visibled: boolean;
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
 const CollapseEffect = ({ children, visibled, id }: CollapseProps) => {
