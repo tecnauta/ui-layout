@@ -1,6 +1,6 @@
 {
   "name": "@eduzz/ui-layout",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "private": false,
   "author": "Eduzz Team",
   "license": "MIT",
@@ -9,8 +9,7 @@
     "dev": "yarn vite",
     "clean": "git add . && git clean -fdx . -e node_modules",
     "prebuild": "yarn clean",
-    "build": "yarn vite build",
-    "prepare": "yarn build"
+    "build": "yarn vite build"
   },
   "main": "./index.js",
   "types": "./index.d.ts",

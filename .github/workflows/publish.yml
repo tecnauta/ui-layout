@@ -55,6 +55,8 @@ jobs:
         run: yarn install --immutable
       - name: Setup NPM Registry
         run: echo '//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}' > ~/.npmrc && npm config get registry && npm whoami
+      - name: Build
+        run: npm build
       - name: Publish
         run: npm publish
       - name: Check Skip Release
