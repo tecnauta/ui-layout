@@ -80,7 +80,7 @@ function App() {
         </Sidebar>
 
         <Content>
-          <img src='https://picsum.photos/800/300' className='max-w-full' />
+          <img src='https://picsum.photos/800/300' className='eduzz-ui-tw-w-full' />
           <p>Teste</p>
         </Content>
       </Layout>

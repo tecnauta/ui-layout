@@ -39,11 +39,13 @@ const UserMenuItem = forwardRef<HTMLButtonElement, UserMenuItemProps>(
         id={id}
         ref={ref}
         onClick={handleClick}
-        className='flex cursor-pointer items-center gap-2 rounded-md px-4 py-2 transition hover:bg-[rgba(0,0,0,0.03)] disabled:cursor-not-allowed disabled:opacity-25 [&>.anticon]:text-[20px] [&>svg]:mr-[5px] [&>svg]:w-6'
+        className='eduzz-ui-tw-flex eduzz-ui-tw-cursor-pointer eduzz-ui-tw-items-center eduzz-ui-tw-gap-2 eduzz-ui-tw-rounded-md eduzz-ui-tw-px-4 eduzz-ui-tw-py-2 eduzz-ui-tw-transition hover:eduzz-ui-tw-bg-[rgba(0,0,0,0.03)] disabled:eduzz-ui-tw-cursor-not-allowed disabled:eduzz-ui-tw-opacity-25 [&>.anticon]:eduzz-ui-tw-text-[20px] [&>svg]:eduzz-ui-tw-mr-[5px] [&>svg]:eduzz-ui-tw-w-6'
         disabled={disabled}
       >
         {icon}
-        <span className='max-w-[235px] overflow-hidden text-ellipsis whitespace-nowrap text-base'>{children}</span>
+        <span className='eduzz-ui-tw-max-w-[235px] eduzz-ui-tw-overflow-hidden eduzz-ui-tw-text-ellipsis eduzz-ui-tw-whitespace-nowrap eduzz-ui-tw-text-base'>
+          {children}
+        </span>
       </button>
     );
 

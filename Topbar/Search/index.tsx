@@ -85,16 +85,16 @@ const TopbarSearch = ({
 
   return (
     <Portal target={container}>
-      <div className='relative hidden h-10 flex-1 items-center justify-between gap-3 px-2 py-1 lg:flex'>
+      <div className='eduzz-ui-tw-relative eduzz-ui-tw-hidden eduzz-ui-tw-h-10 eduzz-ui-tw-flex-1 eduzz-ui-tw-items-center eduzz-ui-tw-justify-between eduzz-ui-tw-gap-3 eduzz-ui-tw-px-2 eduzz-ui-tw-py-1 lg:eduzz-ui-tw-flex'>
         <IconSearch size={20} />
         <input
           ref={inputRef}
           className={cx(
-            'h-10 flex-1 bg-transparent text-base focus-visible:outline-none [&:focus+div]:border-[var(--eduzz-theme-primary)] [&:focus+div]:outline-2 [&:hover+div]:border-[var(--eduzz-theme-primary)]',
+            'eduzz-ui-tw-h-10 eduzz-ui-tw-flex-1 eduzz-ui-tw-bg-transparent eduzz-ui-tw-text-base focus-visible:eduzz-ui-tw-outline-none [&:focus+div]:eduzz-ui-tw-border-[var(--eduzz-theme-primary)] [&:focus+div]:eduzz-ui-tw-outline-2 [&:hover+div]:eduzz-ui-tw-border-[var(--eduzz-theme-primary)]',
             {
-              '[&+div]:!border-red-500 [&:focus+div]:!outline-red-200 [&:hover+div]:!border-red-500':
+              '[&+div]:!eduzz-ui-tw-border-red-500 [&:focus+div]:!eduzz-ui-tw-outline-red-200 [&:hover+div]:!eduzz-ui-tw-border-red-500':
                 status === 'error',
-              '[&+div]:!border-yellow-500 [&:focus+div]:!outline-yellow-200 [&:hover+div]:!border-yellow-500':
+              '[&+div]:!eduzz-ui-tw-border-yellow-500 [&:focus+div]:!eduzz-ui-tw-outline-yellow-200 [&:hover+div]:!eduzz-ui-tw-border-yellow-500':
                 status === 'warning'
             }
           )}
@@ -103,9 +103,11 @@ const TopbarSearch = ({
           onChange={onChange}
           onKeyDown={disableShortcut ? undefined : onKeyDown}
         />
-        <div className='pointer-events-none absolute inset-0 rounded border outline outline-0 outline-offset-0 outline-[rgba(var(--eduzz-theme-primary-rgb),0.3)] transition' />
+        <div className='eduzz-ui-tw-pointer-events-none eduzz-ui-tw-absolute eduzz-ui-tw-inset-0 eduzz-ui-tw-rounded eduzz-ui-tw-border eduzz-ui-tw-outline eduzz-ui-tw-outline-0 eduzz-ui-tw-outline-offset-0 eduzz-ui-tw-outline-[rgba(var(--eduzz-theme-primary-rgb),0.3)] eduzz-ui-tw-transition' />
         {disableShortcut ? undefined : (
-          <div className='rounded border bg-gray-50 px-2 py-1 text-xs'>{`${isMacOS ? '⌘' : 'Ctrl'}+K`}</div>
+          <div className='eduzz-ui-tw-rounded eduzz-ui-tw-border eduzz-ui-tw-bg-gray-50 eduzz-ui-tw-px-2 eduzz-ui-tw-py-1 eduzz-ui-tw-text-xs'>{`${
+            isMacOS ? '⌘' : 'Ctrl'
+          }+K`}</div>
         )}
       </div>
     </Portal>

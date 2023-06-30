@@ -18,7 +18,7 @@ const AppsDropdown = memo<AppsDropdownProps>(({ currentApplication, applications
 
   useEffect(() => {
     const oldValue = document.body.style.overflow;
-    document.body.style.overflow = expanded ? 'hidden' : oldValue;
+    document.body.style.overflow = expanded ? 'eduzz-ui-tw-hidden' : oldValue;
 
     return () => {
       document.body.style.overflow = oldValue;
@@ -34,25 +34,27 @@ const AppsDropdown = memo<AppsDropdownProps>(({ currentApplication, applications
   return (
     <div
       className={cx(
-        'group/apps invisible fixed left-0 top-[var(--eduzz-ui-layout-topbar-height-rem)] z-[105] box-border max-h-[calc(100vh-var(--eduzz-ui-layout-topbar-height-rem))] w-full select-none overflow-y-auto rounded-[0_0_0.5rem_0.5rem] bg-white shadow-[0px_8px_24px_rgba(0,0,0,0.16)] sm:left-2 sm:w-[var(--eduzz-ui-layout-topbar-app-dropdown-width-rem)]',
+        'group/apps top-[var(--eduzz-ui-layout-topbar-height-rem)] z-[105] max-h-[calc(100vh-var(--eduzz-ui-layout-topbar-height-rem))] rounded-[0_0_0.5rem_0.5rem] shadow-[0px_8px_24px_rgba(0,0,0,0.16)] sm:w-[var(--eduzz-ui-layout-topbar-app-dropdown-width-rem)] eduzz-ui-tw-invisible eduzz-ui-tw-fixed eduzz-ui-tw-left-0 eduzz-ui-tw-box-border eduzz-ui-tw-w-full eduzz-ui-tw-select-none eduzz-ui-tw-overflow-y-auto eduzz-ui-tw-bg-white sm:eduzz-ui-tw-left-2',
         {
           '--opened !visible': opened,
-          '--expanded !left-0 h-[calc(100%-var(--eduzz-ui-layout-topbar-height-rem))] !w-full overflow-x-auto rounded-none shadow-none':
+          '--expanded !left-0 h-[calc(100%-var(--eduzz-ui-layout-topbar-height-rem))] !w-full eduzz-ui-tw-overflow-x-auto eduzz-ui-tw-rounded-none eduzz-ui-tw-shadow-none':
             expanded
         }
       )}
       {...rest}
     >
-      <div className='hidden h-14 w-full items-center justify-between border-b border-solid border-gray-200 px-4 py-2 group-[.--expanded]/apps:flex sm:px-7'>
-        <h5 className='text-base font-semibold'>Lista de Apps</h5>
+      <div className='eduzz-ui-tw-hidden eduzz-ui-tw-h-14 eduzz-ui-tw-w-full eduzz-ui-tw-items-center eduzz-ui-tw-justify-between eduzz-ui-tw-border-b eduzz-ui-tw-border-solid eduzz-ui-tw-border-gray-200 eduzz-ui-tw-px-4 eduzz-ui-tw-py-2 group-[.--expanded]/apps:eduzz-ui-tw-flex sm:eduzz-ui-tw-px-7'>
+        <h5 className='eduzz-ui-tw-text-base eduzz-ui-tw-font-semibold'>Lista de Apps</h5>
         <button onClick={toggleExpanded}>
           <IconClose size={18} />
         </button>
       </div>
 
-      <div className='box-border grid grid-cols-[repeat(2,1fr)] flex-wrap justify-items-center gap-[0.5rem_0.5rem] p-4 group-[.--expanded]/apps:grid-cols-[1fr] group-[.--expanded]/apps:gap-0 group-[.--expanded]/apps:p-0 sm:grid-cols-[repeat(3,1fr)] sm:group-[.--expanded]/apps:grid-cols-[repeat(2,1fr)] sm:group-[.--expanded]/apps:gap-6 sm:group-[.--expanded]/apps:p-6 lg:group-[.--expanded]/apps:grid-cols-[repeat(3,1fr)] xl:group-[.--expanded]/apps:grid-cols-[repeat(4,1fr)]'>
+      <div className='grid-cols-[repeat(2,1fr)] gap-[0.5rem_0.5rem] group-[.--expanded]/apps:grid-cols-[1fr] sm:grid-cols-[repeat(3,1fr)] sm:group-[.--expanded]/apps:grid-cols-[repeat(2,1fr)] lg:group-[.--expanded]/apps:grid-cols-[repeat(3,1fr)] xl:group-[.--expanded]/apps:grid-cols-[repeat(4,1fr)] eduzz-ui-tw-box-border eduzz-ui-tw-grid eduzz-ui-tw-flex-wrap eduzz-ui-tw-justify-items-center eduzz-ui-tw-p-4 group-[.--expanded]/apps:eduzz-ui-tw-gap-0 group-[.--expanded]/apps:eduzz-ui-tw-p-0 sm:group-[.--expanded]/apps:eduzz-ui-tw-gap-6 sm:group-[.--expanded]/apps:eduzz-ui-tw-p-6'>
         {!applications?.length && (
-          <div className='col-start-1 col-end-4 flex w-full items-center justify-center p-12'>Carregando...</div>
+          <div className='eduzz-ui-tw-col-start-1 eduzz-ui-tw-col-end-4 eduzz-ui-tw-flex eduzz-ui-tw-w-full eduzz-ui-tw-items-center eduzz-ui-tw-justify-center eduzz-ui-tw-p-12'>
+            Carregando...
+          </div>
         )}
 
         {applications?.map(app => {
@@ -61,7 +63,7 @@ const AppsDropdown = memo<AppsDropdownProps>(({ currentApplication, applications
           return (
             <a
               className={cx(
-                'box-border block w-full cursor-pointer grid-cols-[2rem_1fr] grid-rows-[1.5rem_auto] gap-1 rounded border-gray-200 px-2 py-4 no-underline hover:bg-[rgba(0,0,0,0.04)] group-[.--expanded]/apps:grid group-[.--expanded]/apps:border-b group-[.--expanded]/apps:p-4 sm:grid-cols-[4rem_1fr] sm:group-[.--expanded]/apps:border',
+                'grid-cols-[2rem_1fr] grid-rows-[1.5rem_auto] hover:bg-[rgba(0,0,0,0.04)] sm:grid-cols-[4rem_1fr] eduzz-ui-tw-box-border eduzz-ui-tw-block eduzz-ui-tw-w-full eduzz-ui-tw-cursor-pointer eduzz-ui-tw-gap-1 eduzz-ui-tw-rounded eduzz-ui-tw-border-gray-200 eduzz-ui-tw-px-2 eduzz-ui-tw-py-4 eduzz-ui-tw-no-underline group-[.--expanded]/apps:eduzz-ui-tw-grid group-[.--expanded]/apps:eduzz-ui-tw-border-b group-[.--expanded]/apps:eduzz-ui-tw-p-4 sm:group-[.--expanded]/apps:eduzz-ui-tw-border',
                 isCurrent && 'bg-[rgba(0,0,0,0.04)]'
               )}
               key={app.application}
@@ -72,13 +74,13 @@ const AppsDropdown = memo<AppsDropdownProps>(({ currentApplication, applications
             >
               <img
                 src={app.icon}
-                className='m-auto mb-2 max-h-10 max-w-[2.5rem] group-[.--expanded]/apps:max-h-[1.50rem] group-[.--expanded]/apps:max-w-[1.50rem] sm:group-[.--expanded]/apps:max-h-[3.1rem] sm:group-[.--expanded]/apps:max-w-[3.1rem]'
+                className='eduzz-ui-tw-group-[.--expanded]/apps:max-h-[1.50rem] group-[.--expanded]/apps:max-w-[1.50rem] sm:group-[.--expanded]/apps:max-h-[3.1rem] sm:group-[.--expanded]/apps:max-w-[3.1rem] eduzz-ui-tw-m-auto eduzz-ui-tw-mb-2 eduzz-ui-tw-max-h-10 eduzz-ui-tw-max-w-[2.5rem]'
               />
 
-              <p className='text-center text-sm group-[.--expanded]/apps:text-left group-[.--expanded]/apps:text-base'>
+              <p className='eduzz-ui-tw-text-center eduzz-ui-tw-text-sm group-[.--expanded]/apps:eduzz-ui-tw-text-left group-[.--expanded]/apps:eduzz-ui-tw-text-base'>
                 {app.label}
               </p>
-              <p className='col-span-2 mt-0.5 hidden overflow-hidden text-base leading-normal text-[rgba(0,0,0,0.45)] opacity-80 group-[.--expanded]/apps:block sm:col-span-1 sm:col-start-2'>
+              <p className='eduzz-ui-tw-col-span-2 eduzz-ui-tw-mt-0.5 eduzz-ui-tw-hidden eduzz-ui-tw-overflow-hidden eduzz-ui-tw-text-base eduzz-ui-tw-leading-normal eduzz-ui-tw-text-[rgba(0,0,0,0.45)] eduzz-ui-tw-opacity-80 group-[.--expanded]/apps:eduzz-ui-tw-block sm:eduzz-ui-tw-col-span-1 sm:eduzz-ui-tw-col-start-2'>
                 {app.description}
               </p>
             </a>
@@ -88,7 +90,7 @@ const AppsDropdown = memo<AppsDropdownProps>(({ currentApplication, applications
 
       {!!applications?.length && (
         <button
-          className='flex h-[50px] w-full flex-row items-center justify-center gap-2 hover:bg-[rgba(0,0,0,0.04)] group-[.--expanded]/apps:hidden'
+          className='eduzz-ui-tw-hover:bg-[rgba(0,0,0,0.04)] eduzz-ui-tw-flex eduzz-ui-tw-h-[50px] eduzz-ui-tw-w-full eduzz-ui-tw-flex-row eduzz-ui-tw-items-center eduzz-ui-tw-justify-center eduzz-ui-tw-gap-2 group-[.--expanded]/apps:eduzz-ui-tw-hidden'
           onClick={toggleExpanded}
         >
           <IconFullscreen />

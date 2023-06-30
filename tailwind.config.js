@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  prefix: 'eduzz-ui-tw-',
   content: ['./index.html', './**/*.{ts,tsx}'],
   theme: {
     extend: {

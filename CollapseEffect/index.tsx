@@ -10,7 +10,7 @@ export interface CollapseProps {
 
 const CollapseEffect = ({ children, visibled, id }: CollapseProps) => {
   return (
-    <div id={id} className={cx('h-0 overflow-hidden', { 'h-auto': visibled })}>
+    <div id={id} className={cx('eduzz-ui-tw-h-0 eduzz-ui-tw-overflow-hidden', { '!eduzz-ui-tw-h-auto': visibled })}>
       {children}
     </div>
   );

@@ -100,8 +100,8 @@ const Layout = ({ className, children, ...rest }: LayoutProps) => {
   return (
     <LayoutContext.Provider value={contextValue}>
       <div
-        className={cx('flex min-h-screen w-full', className, {
-          'pt-[var(--eduzz-ui-layout-topbar-height-rem)]': hasTopbar
+        className={cx('eduzz-ui-tw-flex eduzz-ui-tw-min-h-screen eduzz-ui-tw-w-full', className, {
+          'eduzz-ui-tw-pt-[var(--eduzz-ui-layout-topbar-height-rem)]': hasTopbar
         })}
         {...rest}
       >

@@ -26,6 +26,7 @@
     "./**/*.ts"
   ],
   "exclude": [
+    "*.d.ts",
     "./**/*.d.ts",
     "vite.config.ts",
     "dist",

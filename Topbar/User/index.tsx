@@ -31,16 +31,21 @@ const User = memo(() => {
   return (
     <div
       ref={wrapperMenuUser}
-      className={cx('pointer-events-none relative z-[1100] ml-2', {
-        '!pointer-events-auto': hasMenu
+      className={cx('eduzz-ui-tw-pointer-events-none eduzz-ui-tw-relative eduzz-ui-tw-z-[1100] eduzz-ui-tw-ml-2', {
+        '!eduzz-ui-tw-pointer-events-auto': hasMenu
       })}
     >
       <Action
         active={hasMenu && opened}
         icon={<Avatar src={user.avatar}>{user.name}</Avatar>}
-        className='[&_.eduzz-ui-layout-topbar-action-button-text]:font-bold'
+        className='[&_.eduzz-ui-layout-topbar-action-button-text]:eduzz-ui-tw-font-bold'
         right={
-          hasMenu && <IconCaretDown size={16} className={cx(' hidden  md:inline-block', { 'rotate-180': opened })} />
+          hasMenu && (
+            <IconCaretDown
+              size={16}
+              className={cx('eduzz-ui-tw-hidden  md:eduzz-ui-tw-inline-block', { 'rotate-180': opened })}
+            />
+          )
         }
         label={`${user.name} ${user.isSupport ? '(Suporte)' : ''}`.trim()}
         onClick={toogleOpened}

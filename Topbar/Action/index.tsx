@@ -32,18 +32,21 @@ const Action = forwardRef<HTMLDivElement, ActionProps>(
 
     return (
       <div
-        className={cx('group/action [&_.anticon]:align-text-bottom [&_.anticon]:text-[20px]', className, {
-          '--active': active
-        })}
+        className={cx('[&_.anticon]:eduzz-ui-tw-align-text-bottom [&_.anticon]:eduzz-ui-tw-text-[20px]', className)}
         onClick={onClick}
         {...rest}
         ref={ref}
       >
         <Tooltip title={tooltip}>
           <Badge count={badgeCount === 0 ? undefined : badgeCount} dot={badgeCount ? false : badgeDot}>
-            <div className='mt-0.5 box-border flex h-10 min-w-[40px] cursor-pointer select-none items-center justify-center gap-2 rounded-[20px] px-2 py-0 text-center transition hover:bg-[rgba(0,0,0,0.03)] group-[.--active]/action:bg-[rgba(0,0,0,0.03)]'>
+            <div
+              className={cx(
+                'eduzz-ui-tw-mt-0.5 eduzz-ui-tw-box-border eduzz-ui-tw-flex eduzz-ui-tw-h-10 eduzz-ui-tw-min-w-[40px] eduzz-ui-tw-cursor-pointer eduzz-ui-tw-select-none eduzz-ui-tw-items-center eduzz-ui-tw-justify-center eduzz-ui-tw-gap-2 eduzz-ui-tw-rounded-[20px] eduzz-ui-tw-px-2 eduzz-ui-tw-py-0 eduzz-ui-tw-text-center eduzz-ui-tw-transition hover:eduzz-ui-tw-bg-[rgba(0,0,0,0.03)]',
+                { 'eduzz-ui-tw-bg-[rgba(0,0,0,0.03)]': active }
+              )}
+            >
               {icon}
-              <span className='eduzz-ui-layout-topbar-action-button-text hidden max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap empty:hidden md:block'>
+              <span className='eduzz-ui-layout-topbar-action-button-text max-w-[100px] text-ellipsis eduzz-ui-tw-hidden eduzz-ui-tw-overflow-hidden eduzz-ui-tw-whitespace-nowrap empty:eduzz-ui-tw-hidden md:eduzz-ui-tw-block'>
                 {label}
               </span>
               {right}

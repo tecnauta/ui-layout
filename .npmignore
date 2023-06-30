@@ -13,3 +13,4 @@ tsconfig.json
 *.config.js
 *.html
 _dev
+!style.css

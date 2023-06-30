@@ -8,13 +8,13 @@ interface BadgeProps {
 
 const Badge = ({ children, count, dot }: BadgeProps) => {
   return (
-    <div className='relative'>
+    <div className='eduzz-ui-tw-relative'>
       {count ? (
-        <div className='absolute right-[-8px] top-[-4px] inline-block h-[16px] min-w-[16px] rounded-full bg-red-500 px-1 text-center text-[12px] leading-[17px]  text-white'>
+        <div className='eduzz-ui-tw-absolute eduzz-ui-tw-right-[-8px] eduzz-ui-tw-top-[-4px] eduzz-ui-tw-inline-block eduzz-ui-tw-h-[16px] eduzz-ui-tw-min-w-[16px] eduzz-ui-tw-rounded-full eduzz-ui-tw-bg-red-500 eduzz-ui-tw-px-1 eduzz-ui-tw-text-center eduzz-ui-tw-text-[12px] eduzz-ui-tw-leading-[17px]  eduzz-ui-tw-text-white'>
           {count > 99 ? '99+' : count}
         </div>
       ) : dot ? (
-        <div className='absolute right-[2px] top-[2px] inline-block h-[6px] min-w-[6px] rounded-full bg-red-500'>
+        <div className='eduzz-ui-tw-absolute eduzz-ui-tw-right-[2px] eduzz-ui-tw-top-[2px] eduzz-ui-tw-inline-block eduzz-ui-tw-h-[6px] eduzz-ui-tw-min-w-[6px] eduzz-ui-tw-rounded-full eduzz-ui-tw-bg-red-500'>
           {count}
         </div>
       ) : null}
