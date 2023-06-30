@@ -56,7 +56,7 @@ jobs:
       - name: Setup NPM Registry
         run: echo '//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}' > ~/.npmrc && npm config get registry && npm whoami
       - name: Publish
-        run: npm run publish -- --ci
+        run: npm publish
       - name: Check Skip Release
         id: skip-release
         run: echo 'SKIP='$(cat .skip-release) >> $GITHUB_OUTPUT
