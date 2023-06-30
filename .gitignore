@@ -7,3 +7,5 @@ dist
 !**/tailwind.config.js
 !**/postcss.config.js
 *.map
+!scripts/*js
+.skip-release
