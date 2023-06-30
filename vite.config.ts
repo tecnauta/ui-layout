@@ -15,18 +15,13 @@ export default defineConfig({
       fileName: format => `ui-layout.${format}.js`
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime', 'use-context-selector'],
+      external: [/node_modules/],
       output: {
         preserveModules: true,
         preserveModulesRoot: '.',
         inlineDynamicImports: false,
         entryFileNames: ({ name: fileName }) => `${fileName}.js`,
-        exports: 'named',
-        globals: {
-          'react': 'react',
-          'react-dom': 'react-dom',
-          'react/jsx-runtime': 'react/jsx-runtime'
-        }
+        exports: 'named'
       }
     }
   },

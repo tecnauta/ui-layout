@@ -64,12 +64,12 @@
   transform: scale(0);
   opacity: 0;
   transition: 0.15s ease-in;
-  color: rgb(255, 188, 0);
+  color: var(--eduzz-theme-secondary);
 }
 
 
 .eduzz-ui-layout-sidebar-item.eduzz-ui-layout-sidebar-item-active>li::before {
-  background: rgb(255, 188, 0);
+  background: var(--eduzz-theme-secondary);
 }
 
 .eduzz-ui-layout-sidebar-item.eduzz-ui-layout-sidebar-item-active>li .eduzz-ui-layout-sidebar-item-icon {

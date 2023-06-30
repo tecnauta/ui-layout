@@ -6,16 +6,18 @@ import useBoolean from '../hooks/useBoolean';
 import Sidebar from '../Sidebar';
 import Topbar from '../Topbar';
 import cx from '../utils/cx';
+import { hexToRgbVar } from '../utils/hextToRgb';
 import nestedComponent from '../utils/nestedComponent';
-
-import './index.css';
 
 export type LayoutProps = HTMLAttributes<HTMLDivElement> & {
   className?: string;
   children?: ReactNode;
+
+  primaryColor?: `#${string}`;
+  secondaryColor?: `#${string}`;
 };
 
-const Layout = ({ className, children, ...rest }: LayoutProps) => {
+const Layout = ({ className, children, primaryColor, secondaryColor, ...rest }: LayoutProps) => {
   const [hasTopbar, setHasTopbar] = useState(false);
   const [hasSidebar, setHasSidebar] = useState(false);
   const [hasUserMenu, setHasUserMenu] = useState(false);
@@ -97,8 +99,22 @@ const Layout = ({ className, children, ...rest }: LayoutProps) => {
     ]
   );
 
+  const cssVars = useMemo(
+    () => `
+      :root {
+        --eduzz-theme-primary: ${primaryColor ?? '#0d2772'};
+        --eduzz-theme-primary-rgb: ${hexToRgbVar(primaryColor) ?? '13, 38, 115'};
+        --eduzz-theme-secondary: ${secondaryColor ?? '#ffbc00'};
+        --eduzz-theme-secondary-rgb: ${hexToRgbVar(secondaryColor) ?? '255, 188, 0'};
+      }
+    `,
+    [primaryColor, secondaryColor]
+  );
+
   return (
     <LayoutContext.Provider value={contextValue}>
+      <style>{cssVars}</style>
+
       <div
         className={cx('eduzz-ui-tw-flex eduzz-ui-tw-min-h-screen eduzz-ui-tw-w-full', className, {
           'eduzz-ui-tw-pt-[var(--eduzz-ui-layout-topbar-height-rem)]': hasTopbar

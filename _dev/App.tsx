@@ -2,8 +2,8 @@ import { useCallback } from 'react';
 
 import { MessageOutlined, BellOutlined, BulbOutlined, NotificationOutlined } from '@ant-design/icons';
 
+import Layout from '..';
 import Avatar from '../Avatar';
-import Layout from '../Layout';
 
 const { Sidebar, Topbar, Content } = Layout;
 const { Item, Group } = Sidebar;
@@ -25,7 +25,7 @@ function App() {
             tag: 'unity'
           }}
         >
-          {/* <Topbar.UnitySupportChat /> */}
+          <Topbar.UnitySupportChat />
 
           <Topbar.Search onEnter={onSearchEnter} />
 

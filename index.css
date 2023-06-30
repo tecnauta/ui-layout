@@ -5,6 +5,8 @@
 :root {
   --eduzz-theme-primary: #0d2772;
   --eduzz-theme-primary-rgb: 13, 38, 115;
+  --eduzz-theme-secondary: #ffbc00;
+  --eduzz-theme-secondary-rgb: 255, 188, 0;
 
   --eduzz-ui-layout-topbar-height-rem: 4rem;
   --eduzz-ui-layout-topbar-menu-min-width-rem: 16.25rem;
