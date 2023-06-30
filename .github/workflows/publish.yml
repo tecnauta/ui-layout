@@ -56,16 +56,16 @@ jobs:
       - name: Check Skip Release
         id: skip-release
         run: echo 'SKIP='$(cat .skip-release) >> $GITHUB_OUTPUT
-      - name: Create tag
-        uses: actions/github-script@v3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            github.git.createRef({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              ref: "refs/tags/v${{ inputs.version }}",
-              sha: context.sha
-            })
+      # - name: Create tag
+      #   uses: actions/github-script@v3
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     script: |
+      #       github.git.createRef({
+      #         owner: context.repo.owner,
+      #         repo: context.repo.repo,
+      #         ref: "refs/tags/v${{ inputs.version }}",
+      #         sha: context.sha
+      #       })
     outputs:
       SKIP: ${{ steps.skip-release.outputs.SKIP }}
