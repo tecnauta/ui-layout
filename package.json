@@ -1,16 +1,15 @@
 {
   "name": "@eduzz/ui-layout",
-  "version": "0.0.4",
+  "version": "0.0.10",
   "private": false,
   "author": "Eduzz Team",
   "license": "MIT",
   "scripts": {
+    "dev": "yarn vite",
     "prepare": "yarn vite build"
   },
-  "files": ["dist"],
-  "main": "./dist/ui-layout.umd.js",
-  "module": "./dist/ui-layout.es.js",
-  "types": "./dist/index.d.ts",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "dependencies": {
     "use-context-selector": "^1"
   },

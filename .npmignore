@@ -1,0 +1,15 @@
+.vscode
+node_modules
+.eslintignore
+.eslintrc
+.prettierrc
+.prettierrc.js
+tsconfig.json
+/**/**/*.tsx
+/**/**/*.ts
+/**/**/*.css
+!/**/**/*.d.ts
+.git
+*.config.js
+*.html
+_dev

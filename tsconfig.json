@@ -3,7 +3,7 @@
     "strict": true,
     "outDir": ".",
     "declaration": true,
-    "declarationDir": "./dist",
+    "declarationDir": ".",
     "module": "es2020",
     "target": "ES6",
     "experimentalDecorators": true,
@@ -27,6 +27,7 @@
   ],
   "exclude": [
     "./**/*.d.ts",
+    "vite.config.ts",
     "dist",
     "node_modules"
   ]

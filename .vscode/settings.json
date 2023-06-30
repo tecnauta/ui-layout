@@ -31,7 +31,12 @@
   "files.exclude": {
     "**/*.lock.json": true,
     "**/*?.d.ts": true,
-    "lib/**/*?.js": true,
+    "**/*?.js": {
+      "when": "$(basename).ts"
+    },
+    "**/**?.js": {
+      "when": "$(basename).tsx"
+    },
     "**/.DS_Store": true,
     "**/.git": true,
     "**/.gradle/**": true,

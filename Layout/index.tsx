@@ -1,12 +1,14 @@
 import { HTMLAttributes, ReactNode, useState, useCallback, useMemo } from 'react';
 
-import Content from './Content';
-import LayoutContext, { LayoutContextType } from './context';
-import useBoolean from './hooks/useBoolean';
-import Sidebar from './Sidebar';
-import Topbar from './Topbar';
-import cx from './utils/cx';
-import nestedComponent from './utils/nestedComponent';
+import Content from '../Content';
+import LayoutContext, { LayoutContextType } from '../context';
+import useBoolean from '../hooks/useBoolean';
+import Sidebar from '../Sidebar';
+import Topbar from '../Topbar';
+import cx from '../utils/cx';
+import nestedComponent from '../utils/nestedComponent';
+
+import './index.css';
 
 export type LayoutProps = HTMLAttributes<HTMLDivElement> & {
   className?: string;
