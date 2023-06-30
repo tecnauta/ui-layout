@@ -22,11 +22,15 @@ jobs:
         run: npm i -g semver
       - name: Run should-release
         run: node ./scripts/should-release.js
+      - name: Current Version
+        id: current-version
+        run: echo 'CURRENT_VERSION='$(node -p -e "require('./package.json').version") >> $GITHUB_OUTPUT
       - name: Check Skip Release
         id: skip-release
         run: echo 'SKIP='$(cat .skip-release) >> $GITHUB_OUTPUT
     outputs:
       SKIP: ${{ steps.skip-release.outputs.SKIP }}
+      CURRENT_VERSION: ${{ steps.current-version.outputs.CURRENT_VERSION }}
   
   publish:
     needs: [should-release]
@@ -56,16 +60,16 @@ jobs:
       - name: Check Skip Release
         id: skip-release
         run: echo 'SKIP='$(cat .skip-release) >> $GITHUB_OUTPUT
-      # - name: Create tag
-      #   uses: actions/github-script@v3
-      #   with:
-      #     github-token: ${{ secrets.GITHUB_TOKEN }}
-      #     script: |
-      #       github.git.createRef({
-      #         owner: context.repo.owner,
-      #         repo: context.repo.repo,
-      #         ref: "refs/tags/v${{ inputs.version }}",
-      #         sha: context.sha
-      #       })
+      - name: Create tag
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: "refs/tags/v${{ needs.should-release.outputs.CURRENT_VERSION }}",
+              sha: context.sha
+            })
     outputs:
       SKIP: ${{ steps.skip-release.outputs.SKIP }}
