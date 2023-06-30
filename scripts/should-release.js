@@ -13,30 +13,20 @@ async function init() {
 
   console.log('NEW VERSION:' + package.version);
 
-  try {
-    const remoteVersion = await exec(`npm view ${package.name} version`);
-    package.remoteVersion = remoteVersion;
-  } catch (err) {
-    if (!err.message.includes('E404')) throw err;
-    package.remoteVersion = '0.0.0';
-  }
+  const remoteVersion = await exec(`npm view ${package.name} version`);
+  package.remoteVersion = remoteVersion;
 
   console.log(`REMOTE VERSIONS: ${package.remoteVersion}`);
 
-  await checkVersion(package);
-  await exec('echo false > .skip-release');
-
-  return true;
-}
-
-async function checkVersion(package) {
   const isGreater = semver.gt(package.version, package.remoteVersion);
 
-  if (isGreater) return;
-  console.log('Version already published, skipping...');
-  await exec('echo true > .skip-release');
+  if (!isGreater) {
+    console.log('Version already published, skipping...');
+    await exec('echo true > .skip-release');
+    return;
+  }
 
-  process.exit(0);
+  await exec('echo false > .skip-release');
 }
 
 function exec(command, live) {
@@ -52,8 +42,7 @@ function exec(command, live) {
 }
 
 init()
-  .then(success => {
-    if (!success) return;
+  .then(() => {
     console.log(`NEW VERSION CAN BE PUBLISHED: ${package.version}`);
     process.exit(0);
   })
