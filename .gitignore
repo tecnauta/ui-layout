@@ -6,3 +6,4 @@ dist
 .DS_Store
 !**/tailwind.config.js
 !**/postcss.config.js
+*.map
