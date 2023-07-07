@@ -18,7 +18,7 @@
   --eduzz-ui-layout-belt-color-orange: #FFA439;
   --eduzz-ui-layout-belt-color-green: #33DB7A;
   --eduzz-ui-layout-belt-color-black: #000000;
-  --eduzz-ui-layout-belt-color-golden: #FFCE0;
+  --eduzz-ui-layout-belt-color-golden: #FFCE00;
 
   --eduzz-ui-layout-belt-foreground-white: #4D4D4D;
   --eduzz-ui-layout-belt-foreground-red: #4D1414;
@@ -26,9 +26,4 @@
   --eduzz-ui-layout-belt-foreground-green: #124D2B;
   --eduzz-ui-layout-belt-foreground-black: #FFFFFF;
   --eduzz-ui-layout-belt-foreground-golden: #4D3E00;
-}
-
-html,
-body {
-  font-family: Roboto, Albert Sans, sans-serif;
 }

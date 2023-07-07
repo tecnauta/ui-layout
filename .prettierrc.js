@@ -1,4 +1,4 @@
 module.exports = {
-  ...require('@eduzz/eslint-config-houston/.prettierrc'),
+  ...require('@eduzz/eslint-config/.prettierrc'),
   plugins: [require('prettier-plugin-tailwindcss')]
 };

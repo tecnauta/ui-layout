@@ -52,10 +52,15 @@
   resolved "https://registry.yarnpkg.com/@ctrl/tinycolor/-/tinycolor-3.6.0.tgz#53fa5fe9c34faee89469e48f91d51a3766108bc8"
   integrity sha512-/Z3l6pXthq0JvMYdUFyX9j0MaCltlIn6mfh9jLyQwg5aPKxkyNa0PTHtU1AlFXLNk55ZuAeJRcpvq+tmLfKmaQ==
 
-"@eduzz/eslint-config-houston@^1.0.16":
-  version "1.9.8"
-  resolved "https://registry.yarnpkg.com/@eduzz/eslint-config-houston/-/eslint-config-houston-1.9.8.tgz#532b5b1ca7230e2d6996e4e0db6d7b2769d2c8df"
-  integrity sha512-LmOG87WsO65P2LYtsunW67YbhurTLZR555CJm0yBoKx1YNRfqBlt/hVs5PAhg+1TzejhEY/xnCZ3oyApROcyhg==
+"@eduzz/eslint-config@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@eduzz/eslint-config/-/eslint-config-0.0.3.tgz#5de434d3f25eaae64d20703a8fe2bbcaaaa21133"
+  integrity sha512-Se9tqREVhlVThtn+1Oh0npTnZDTEQZuS58LsPoIrDcltyH1uci6AKgpQNeDSsO4J0e6IRwReKNi8SJNYf4l8Jw==
+
+"@eduzz/ui-tokens@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@eduzz/ui-tokens/-/ui-tokens-0.0.3.tgz#1b646350efe9e570910b2921a09c7d5c5b6093a7"
+  integrity sha512-MUzzNyoMEMjfsctQmmg+gV27c3M/3uw/tlpZXJXzbcve4hIfR4zruI7MjsbHQPbTvwrJxwpo58uvaqA/p/MOuw==
 
 "@esbuild/android-arm64@0.17.19":
   version "0.17.19"
