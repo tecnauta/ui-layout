@@ -102,10 +102,24 @@ const Layout = ({ className, children, primaryColor, secondaryColor, ...rest }: 
   const cssVars = useMemo(
     () => `
       :root {
-        --eduzz-theme-primary: ${primaryColor ?? '#0d2772'};
-        --eduzz-theme-primary-rgb: ${hexToRgbVar(primaryColor) ?? '13, 38, 115'};
-        --eduzz-theme-secondary: ${secondaryColor ?? '#ffbc00'};
-        --eduzz-theme-secondary-rgb: ${hexToRgbVar(secondaryColor) ?? '255, 188, 0'};
+        ${
+          primaryColor
+            ? `
+            --eduzz-theme-primary: ${primaryColor ?? '#0d2772'};
+            --eduzz-theme-primary-rgb: ${hexToRgbVar(primaryColor) ?? '13, 38, 115'};
+            `
+            : null
+        }
+      
+        ${
+          secondaryColor
+            ? `
+            --eduzz-theme-secondary: ${secondaryColor ?? '#ffbc00'};
+            --eduzz-theme-secondary-rgb: ${hexToRgbVar(secondaryColor) ?? '255, 188, 0'};
+            `
+            : null
+        }
+        
       }
     `,
     [primaryColor, secondaryColor]
