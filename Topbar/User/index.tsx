@@ -31,19 +31,19 @@ const User = memo(() => {
   return (
     <div
       ref={wrapperMenuUser}
-      className={cx('eduzz-ui-tw-pointer-events-none eduzz-ui-tw-relative eduzz-ui-tw-z-[1100] eduzz-ui-tw-ml-2', {
-        '!eduzz-ui-tw-pointer-events-auto': hasMenu
+      className={cx('uizz-layout-pointer-events-none uizz-layout-relative uizz-layout-z-[1100] uizz-layout-ml-2', {
+        '!uizz-layout-pointer-events-auto': hasMenu
       })}
     >
       <Action
         active={hasMenu && opened}
         icon={<Avatar src={user.avatar}>{user.name}</Avatar>}
-        className='[&_.eduzz-ui-layout-topbar-action-button-text]:eduzz-ui-tw-font-bold'
+        className='[&_.eduzz-ui-layout-topbar-action-button-text]:uizz-layout-font-bold'
         right={
           hasMenu && (
             <IconCaretDown
               size={16}
-              className={cx('eduzz-ui-tw-hidden  md:eduzz-ui-tw-inline-block', { 'rotate-180': opened })}
+              className={cx('uizz-layout-hidden  md:uizz-layout-inline-block', { 'rotate-180': opened })}
             />
           )
         }

@@ -10,9 +10,12 @@ export interface LayoutContentProps {
 const LayoutContent = ({ children, disablePadding }: LayoutContentProps) => {
   return (
     <div
-      className={cx('eduzz-ui-tw-min-w-0 eduzz-ui-tw-flex-1 eduzz-ui-tw-bg-[rgb(252,252,252)] eduzz-ui-tw-transition', {
-        'eduzz-ui-tw-md:p-8 eduzz-ui-tw-p-4': !disablePadding
-      })}
+      className={cx(
+        'uizz-layout-box-border uizz-layout-min-w-0 uizz-layout-flex-1 uizz-layout-bg-[rgb(252,252,252)] uizz-layout-transition',
+        {
+          'uizz-layout-md:p-8 uizz-layout-p-4': !disablePadding
+        }
+      )}
     >
       {children}
     </div>

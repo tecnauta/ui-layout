@@ -32,10 +32,10 @@ const Overlay = ({ visible, children, underTopbar, className, ...rest }: Overlay
       tabIndex={-1}
       className={cx(
         className,
-        'eduzz-ui-tw-invisible eduzz-ui-tw-fixed eduzz-ui-tw-inset-0 eduzz-ui-tw-z-[106] eduzz-ui-tw-h-screen eduzz-ui-tw-w-screen eduzz-ui-tw-bg-[rgba(255,255,255,0.32)] eduzz-ui-tw-opacity-0 eduzz-ui-tw-backdrop-blur eduzz-ui-tw-transition',
+        'uizz-layout-invisible uizz-layout-fixed uizz-layout-inset-0 uizz-layout-z-[106] uizz-layout-h-screen uizz-layout-w-screen uizz-layout-bg-[rgba(255,255,255,0.32)] uizz-layout-opacity-0 uizz-layout-backdrop-blur uizz-layout-transition',
         {
-          '!eduzz-ui-tw-visible eduzz-ui-tw-opacity-100': visible,
-          '!eduzz-ui-tw-z-[104]': underTopbar
+          '!uizz-layout-visible uizz-layout-opacity-100': visible,
+          '!uizz-layout-z-[104]': underTopbar
         }
       )}
       {...rest}

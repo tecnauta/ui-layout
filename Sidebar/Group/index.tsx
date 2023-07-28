@@ -5,8 +5,6 @@ import CollapseEffect from '../../CollapseEffect';
 import useBoolean from '../../hooks/useBoolean';
 import cx from '../../utils/cx';
 
-import './styles.css';
-
 export interface SidebarGroupProps {
   label?: ReactNode;
   children: ReactNode;
@@ -23,27 +21,34 @@ const SidebarGroup = forwardRef<HTMLLIElement, SidebarGroupProps>(({ id, childre
 
   return (
     <SidebarGroupContext.Provider value={contextValue}>
-      <li id={id} className='eduzz-ui-layout-sidebar-group' ref={ref}>
+      <li id={id} className='uizz-layout-select-none' ref={ref}>
         {!!label && (
           <div
-            className={cx(
-              'eduzz-ui-layout-sidebar-group-item',
-              isExpanded && 'eduzz-ui-layout-sidebar-group-item-expanded'
-            )}
+            className='uizz-layout-relative uizz-layout-box-border uizz-layout-grid uizz-layout-min-h-[2.2rem] uizz-layout-cursor-pointer uizz-layout-grid-cols-[1.625rem_1fr] uizz-layout-items-center uizz-layout-gap-2 uizz-layout-rounded-br-[50px] uizz-layout-rounded-tr-[50px] uizz-layout-px-4 uizz-layout-py-2 uizz-layout-leading-[1.15] uizz-layout-outline-none uizz-layout-transition-all hover:uizz-layout-bg-[rgba(0,0,0,0.03)] active:uizz-layout-bg-[rgba(0,0,0,0.03)]'
             onClick={toogleExpanded}
             tabIndex={tabIndex ?? 1}
           >
-            <div className='eduzz-ui-layout-sidebar-group-indicator' />
+            <div
+              className={cx(
+                'uizz-layout-absolute uizz-layout-left-0 uizz-layout-top-2/4 uizz-layout--mt-0.5 uizz-layout-h-0.5 uizz-layout-w-[30px] uizz-layout-bg-[rgba(0,0,0,0.65)] uizz-layout-opacity-30 uizz-layout-transition-[0.3s]',
+                {
+                  '!uizz-layout-top-[calc(50%_-_1px)] !uizz-layout-mt-[-0.5px] !uizz-layout-h-px !uizz-layout-bg-[rgba(0,0,0,0.45)] !uizz-layout-opacity-30':
+                    isExpanded
+                }
+              )}
+            />
 
-            <div className='eduzz-ui-layout-sidebar-group-content'>
-              <span className='eduzz-ui-layout-sidebar-group-label'>{label}</span>
+            <div className='uizz-layout-col-[2] uizz-layout-min-w-0'>
+              <span className='uizz-layout-overflow-hidden uizz-layout-text-ellipsis uizz-layout-whitespace-nowrap uizz-layout-break-all uizz-layout-text-sm uizz-layout-uppercase uizz-layout-tracking-[0.03em] uizz-layout-text-[rgba(0,0,0,0.65)]'>
+                {label}
+              </span>
             </div>
           </div>
         )}
 
-        <ul className='eduzz-ui-layout-sidebar-group-items'>
+        <ul className='uizz-layout-m-0  uizz-layout-block uizz-layout-p-0'>
           <CollapseEffect visibled={isExpanded}>
-            <div className='eduzz-ui-layout-sidebar-group-items-content'>{children}</div>
+            <div className=' uizz-layout-pb-[0.7rem] [&_li]:uizz-layout-mb-0'>{children}</div>
           </CollapseEffect>
         </ul>
       </li>

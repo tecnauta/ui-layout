@@ -85,16 +85,16 @@ const TopbarSearch = ({
 
   return (
     <Portal target={container}>
-      <div className='eduzz-ui-tw-relative eduzz-ui-tw-hidden eduzz-ui-tw-h-10 eduzz-ui-tw-flex-1 eduzz-ui-tw-items-center eduzz-ui-tw-justify-between eduzz-ui-tw-gap-3 eduzz-ui-tw-px-2 eduzz-ui-tw-py-1 lg:eduzz-ui-tw-flex'>
+      <div className='uizz-layout-relative uizz-layout-box-border uizz-layout-hidden uizz-layout-h-10 uizz-layout-flex-1 uizz-layout-items-center uizz-layout-justify-between uizz-layout-gap-3 uizz-layout-px-2 uizz-layout-py-1 lg:uizz-layout-flex'>
         <IconSearch size={20} />
         <input
           ref={inputRef}
           className={cx(
-            'eduzz-ui-tw-h-10 eduzz-ui-tw-flex-1 eduzz-ui-tw-bg-transparent eduzz-ui-tw-text-base focus-visible:eduzz-ui-tw-outline-none [&:focus+div]:eduzz-ui-tw-border-[var(--eduzz-theme-primary)] [&:focus+div]:eduzz-ui-tw-outline-2 [&:hover+div]:eduzz-ui-tw-border-[var(--eduzz-theme-primary)]',
+            'uizz-layout-h-10 uizz-layout-flex-1 uizz-layout-border-none uizz-layout-bg-transparent uizz-layout-text-base focus-visible:uizz-layout-outline-none [&:focus+div]:uizz-layout-border-[var(--eduzz-theme-primary)] [&:focus+div]:uizz-layout-outline-2 [&:hover+div]:uizz-layout-border-[var(--eduzz-theme-primary)]',
             {
-              '[&+div]:!eduzz-ui-tw-border-red-500 [&:focus+div]:!eduzz-ui-tw-outline-red-200 [&:hover+div]:!eduzz-ui-tw-border-red-500':
+              '[&+div]:!uizz-layout-border-red-500 [&:focus+div]:!uizz-layout-outline-red-200 [&:hover+div]:!uizz-layout-border-red-500':
                 status === 'error',
-              '[&+div]:!eduzz-ui-tw-border-yellow-500 [&:focus+div]:!eduzz-ui-tw-outline-yellow-200 [&:hover+div]:!eduzz-ui-tw-border-yellow-500':
+              '[&+div]:!uizz-layout-border-yellow-500 [&:focus+div]:!uizz-layout-outline-yellow-200 [&:hover+div]:!uizz-layout-border-yellow-500':
                 status === 'warning'
             }
           )}
@@ -103,9 +103,9 @@ const TopbarSearch = ({
           onChange={onChange}
           onKeyDown={disableShortcut ? undefined : onKeyDown}
         />
-        <div className='eduzz-ui-tw-pointer-events-none eduzz-ui-tw-absolute eduzz-ui-tw-inset-0 eduzz-ui-tw-rounded eduzz-ui-tw-border eduzz-ui-tw-outline eduzz-ui-tw-outline-0 eduzz-ui-tw-outline-offset-0 eduzz-ui-tw-outline-[rgba(var(--eduzz-theme-primary-rgb),0.3)] eduzz-ui-tw-transition' />
+        <div className='uizz-layout-pointer-events-none uizz-layout-absolute uizz-layout-inset-0 uizz-layout-rounded uizz-layout-border uizz-layout-border-solid uizz-layout-border-neutral-300 uizz-layout-outline uizz-layout-outline-0 uizz-layout-outline-offset-0 uizz-layout-outline-[rgba(var(--eduzz-theme-primary-rgb),0.3)] uizz-layout-transition' />
         {disableShortcut ? undefined : (
-          <div className='eduzz-ui-tw-rounded eduzz-ui-tw-border eduzz-ui-tw-bg-gray-50 eduzz-ui-tw-px-2 eduzz-ui-tw-py-1 eduzz-ui-tw-text-xs'>{`${
+          <div className='uizz-layout-rounded uizz-layout-border uizz-layout-bg-gray-50 uizz-layout-px-2 uizz-layout-py-1 uizz-layout-text-xs'>{`${
             isMacOS ? '⌘' : 'Ctrl'
           }+K`}</div>
         )}

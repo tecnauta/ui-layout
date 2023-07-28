@@ -32,7 +32,7 @@ const Action = forwardRef<HTMLDivElement, ActionProps>(
 
     return (
       <div
-        className={cx('[&_.anticon]:eduzz-ui-tw-align-text-bottom [&_.anticon]:eduzz-ui-tw-text-[20px]', className)}
+        className={cx('[&_.anticon]:uizz-layout-align-text-bottom [&_.anticon]:uizz-layout-text-[20px]', className)}
         onClick={onClick}
         {...rest}
         ref={ref}
@@ -41,12 +41,12 @@ const Action = forwardRef<HTMLDivElement, ActionProps>(
           <Badge count={badgeCount === 0 ? undefined : badgeCount} dot={badgeCount ? false : badgeDot}>
             <div
               className={cx(
-                'eduzz-ui-tw-mt-0.5 eduzz-ui-tw-box-border eduzz-ui-tw-flex eduzz-ui-tw-h-10 eduzz-ui-tw-min-w-[40px] eduzz-ui-tw-cursor-pointer eduzz-ui-tw-select-none eduzz-ui-tw-items-center eduzz-ui-tw-justify-center eduzz-ui-tw-gap-2 eduzz-ui-tw-rounded-[20px] eduzz-ui-tw-px-2 eduzz-ui-tw-py-0 eduzz-ui-tw-text-center eduzz-ui-tw-transition hover:eduzz-ui-tw-bg-[rgba(0,0,0,0.03)]',
-                { 'eduzz-ui-tw-bg-[rgba(0,0,0,0.03)]': active }
+                'uizz-layout-mt-0.5 uizz-layout-box-border uizz-layout-flex uizz-layout-h-10 uizz-layout-min-w-[40px] uizz-layout-cursor-pointer uizz-layout-select-none uizz-layout-items-center uizz-layout-justify-center uizz-layout-gap-2 uizz-layout-rounded-[20px] uizz-layout-px-2 uizz-layout-py-0 uizz-layout-text-center uizz-layout-transition hover:uizz-layout-bg-[rgba(0,0,0,0.03)]',
+                { 'uizz-layout-bg-[rgba(0,0,0,0.03)]': active }
               )}
             >
               {icon}
-              <span className='eduzz-ui-layout-topbar-action-button-text max-w-[100px] text-ellipsis eduzz-ui-tw-hidden eduzz-ui-tw-overflow-hidden eduzz-ui-tw-whitespace-nowrap empty:eduzz-ui-tw-hidden md:eduzz-ui-tw-block'>
+              <span className='eduzz-ui-layout-topbar-action-button-text max-w-[100px] text-ellipsis uizz-layout-hidden uizz-layout-overflow-hidden uizz-layout-whitespace-nowrap empty:uizz-layout-hidden md:uizz-layout-block'>
                 {label}
               </span>
               {right}

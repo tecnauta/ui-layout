@@ -27,3 +27,7 @@
   --eduzz-ui-layout-belt-foreground-black: #FFFFFF;
   --eduzz-ui-layout-belt-foreground-golden: #4D3E00;
 }
+
+html, body {
+  @apply uizz-layout-font-sans uizz-layout-text-base uizz-layout-m-0
+}

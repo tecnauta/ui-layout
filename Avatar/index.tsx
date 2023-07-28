@@ -16,7 +16,7 @@ const Avatar = ({ src, children }: AvatarProps) => {
   }, [children]);
 
   return (
-    <div className='eduzz-ui-tw-flex eduzz-ui-tw-h-7 eduzz-ui-tw-w-7 eduzz-ui-tw-items-center eduzz-ui-tw-justify-center eduzz-ui-tw-rounded-[50%] eduzz-ui-tw-bg-[var(--eduzz-theme-primary)] eduzz-ui-tw-text-xs eduzz-ui-tw-text-white'>
+    <div className='uizz-layout-flex uizz-layout-h-7 uizz-layout-w-7 uizz-layout-items-center uizz-layout-justify-center uizz-layout-rounded-[50%] uizz-layout-bg-[var(--eduzz-theme-primary)] uizz-layout-text-xs uizz-layout-text-white'>
       {src ? <img src={src} /> : letters}
     </div>
   );

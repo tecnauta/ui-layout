@@ -39,11 +39,11 @@ const UserMenuItem = forwardRef<HTMLButtonElement, UserMenuItemProps>(
         id={id}
         ref={ref}
         onClick={handleClick}
-        className='eduzz-ui-tw-flex eduzz-ui-tw-cursor-pointer eduzz-ui-tw-items-center eduzz-ui-tw-gap-2 eduzz-ui-tw-rounded-md eduzz-ui-tw-px-4 eduzz-ui-tw-py-2 eduzz-ui-tw-transition hover:eduzz-ui-tw-bg-[rgba(0,0,0,0.03)] disabled:eduzz-ui-tw-cursor-not-allowed disabled:eduzz-ui-tw-opacity-25 [&>.anticon]:eduzz-ui-tw-text-[20px] [&>svg]:eduzz-ui-tw-mr-[5px] [&>svg]:eduzz-ui-tw-w-6'
+        className='uizz-layout-flex uizz-layout-cursor-pointer uizz-layout-items-center uizz-layout-gap-2 uizz-layout-rounded-md uizz-layout-border-none uizz-layout-bg-transparent uizz-layout-px-4 uizz-layout-py-2 uizz-layout-transition hover:uizz-layout-bg-[rgba(0,0,0,0.03)] disabled:uizz-layout-cursor-not-allowed disabled:uizz-layout-opacity-25 [&>.anticon]:uizz-layout-text-[20px] [&>svg]:uizz-layout-mr-[5px] [&>svg]:uizz-layout-w-6'
         disabled={disabled}
       >
         {icon}
-        <span className='eduzz-ui-tw-max-w-[235px] eduzz-ui-tw-overflow-hidden eduzz-ui-tw-text-ellipsis eduzz-ui-tw-whitespace-nowrap eduzz-ui-tw-text-base'>
+        <span className='uizz-layout-max-w-[235px] uizz-layout-overflow-hidden uizz-layout-text-ellipsis uizz-layout-whitespace-nowrap uizz-layout-text-base'>
           {children}
         </span>
       </button>

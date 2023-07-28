@@ -108,7 +108,7 @@ const Layout = ({ className, children, primaryColor, secondaryColor, ...rest }: 
             --eduzz-theme-primary: ${primaryColor ?? '#0d2772'};
             --eduzz-theme-primary-rgb: ${hexToRgbVar(primaryColor) ?? '13, 38, 115'};
             `
-            : null
+            : ''
         }
       
         ${
@@ -117,7 +117,7 @@ const Layout = ({ className, children, primaryColor, secondaryColor, ...rest }: 
             --eduzz-theme-secondary: ${secondaryColor ?? '#ffbc00'};
             --eduzz-theme-secondary-rgb: ${hexToRgbVar(secondaryColor) ?? '255, 188, 0'};
             `
-            : null
+            : ''
         }
         
       }
@@ -130,8 +130,8 @@ const Layout = ({ className, children, primaryColor, secondaryColor, ...rest }: 
       <style>{cssVars}</style>
 
       <div
-        className={cx('eduzz-ui-tw-flex eduzz-ui-tw-min-h-screen eduzz-ui-tw-w-full', className, {
-          'eduzz-ui-tw-pt-[var(--eduzz-ui-layout-topbar-height-rem)]': hasTopbar
+        className={cx('uizz-layout-flex uizz-layout-min-h-screen uizz-layout-w-full', className, {
+          'uizz-layout-pt-[var(--eduzz-ui-layout-topbar-height-rem)]': hasTopbar
         })}
         {...rest}
       >

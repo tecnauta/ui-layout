@@ -18,7 +18,7 @@ const AppsDropdown = memo<AppsDropdownProps>(({ currentApplication, applications
 
   useEffect(() => {
     const oldValue = document.body.style.overflow;
-    document.body.style.overflow = expanded ? 'eduzz-ui-tw-hidden' : oldValue;
+    document.body.style.overflow = expanded ? 'uizz-layout-hidden' : oldValue;
 
     return () => {
       document.body.style.overflow = oldValue;
@@ -34,25 +34,28 @@ const AppsDropdown = memo<AppsDropdownProps>(({ currentApplication, applications
   return (
     <div
       className={cx(
-        'eduzz-ui-tw-group/apps eduzz-ui-tw-invisible eduzz-ui-tw-fixed eduzz-ui-tw-left-0 eduzz-ui-tw-top-[var(--eduzz-ui-layout-topbar-height-rem)] eduzz-ui-tw-z-[105] eduzz-ui-tw-box-border eduzz-ui-tw-max-h-[calc(100vh-var(--eduzz-ui-layout-topbar-height-rem))] eduzz-ui-tw-w-full eduzz-ui-tw-select-none eduzz-ui-tw-overflow-y-auto eduzz-ui-tw-rounded-[0_0_0.5rem_0.5rem] eduzz-ui-tw-bg-white eduzz-ui-tw-shadow-[0px_8px_24px_rgba(0,0,0,0.16)] sm:eduzz-ui-tw-left-2 sm:eduzz-ui-tw-w-[var(--eduzz-ui-layout-topbar-app-dropdown-width-rem)]',
+        'uizz-layout-group/apps uizz-layout-invisible uizz-layout-fixed uizz-layout-left-0 uizz-layout-top-[var(--eduzz-ui-layout-topbar-height-rem)] uizz-layout-z-[105] uizz-layout-box-border uizz-layout-max-h-[calc(100vh-var(--eduzz-ui-layout-topbar-height-rem))] uizz-layout-w-full uizz-layout-select-none uizz-layout-overflow-y-auto uizz-layout-rounded-[0_0_0.5rem_0.5rem] uizz-layout-bg-white uizz-layout-shadow-[0px_8px_24px_rgba(0,0,0,0.16)] sm:uizz-layout-left-2 sm:uizz-layout-w-[var(--eduzz-ui-layout-topbar-app-dropdown-width-rem)]',
         {
-          '--opened !eduzz-ui-tw-visible': opened,
-          '--expanded !eduzz-ui-tw-left-0 eduzz-ui-tw-h-[calc(100%-var(--eduzz-ui-layout-topbar-height-rem))] !eduzz-ui-tw-w-full eduzz-ui-tw-overflow-x-auto eduzz-ui-tw-rounded-none eduzz-ui-tw-shadow-none':
+          '--opened !uizz-layout-visible': opened,
+          '--expanded !uizz-layout-left-0 uizz-layout-h-[calc(100%-var(--eduzz-ui-layout-topbar-height-rem))] !uizz-layout-w-full uizz-layout-overflow-x-auto uizz-layout-rounded-none uizz-layout-shadow-none':
             expanded
         }
       )}
       {...rest}
     >
-      <div className='eduzz-ui-tw-hidden eduzz-ui-tw-h-14 eduzz-ui-tw-w-full eduzz-ui-tw-items-center eduzz-ui-tw-justify-between eduzz-ui-tw-border-b eduzz-ui-tw-border-solid eduzz-ui-tw-border-gray-200 eduzz-ui-tw-px-4 eduzz-ui-tw-py-2 group-[.--expanded]/apps:eduzz-ui-tw-flex sm:eduzz-ui-tw-px-7'>
-        <h5 className='eduzz-ui-tw-text-base eduzz-ui-tw-font-semibold'>Lista de Apps</h5>
-        <button onClick={toggleExpanded}>
+      <div className='uizz-layout-box-border uizz-layout-hidden uizz-layout-h-14 uizz-layout-w-full uizz-layout-items-center uizz-layout-justify-between uizz-layout-border-0 uizz-layout-border-b uizz-layout-border-solid uizz-layout-border-gray-200 uizz-layout-px-4 uizz-layout-py-2 group-[.--expanded]/apps:uizz-layout-flex sm:uizz-layout-px-7'>
+        <h5 className='uizz-layout-text-base uizz-layout-font-semibold'>Lista de Apps</h5>
+        <button
+          onClick={toggleExpanded}
+          className='uizz-layout-flex uizz-layout-h-8 uizz-layout-w-8 uizz-layout-cursor-pointer uizz-layout-items-center uizz-layout-justify-center uizz-layout-rounded-full uizz-layout-border-none uizz-layout-bg-transparent uizz-layout-p-0 uizz-layout-transition-all hover:uizz-layout-bg-[rgba(0,0,0,0.04)]'
+        >
           <IconClose size={18} />
         </button>
       </div>
 
-      <div className='eduzz-ui-tw-box-border eduzz-ui-tw-grid eduzz-ui-tw-grid-cols-[repeat(2,1fr)] eduzz-ui-tw-flex-wrap eduzz-ui-tw-justify-items-center eduzz-ui-tw-gap-[0.5rem_0.5rem] eduzz-ui-tw-p-4 group-[.--expanded]/apps:eduzz-ui-tw-grid-cols-[1fr] group-[.--expanded]/apps:eduzz-ui-tw-gap-0 group-[.--expanded]/apps:eduzz-ui-tw-p-0 sm:eduzz-ui-tw-grid-cols-[repeat(3,1fr)] sm:group-[.--expanded]/apps:eduzz-ui-tw-grid-cols-[repeat(2,1fr)] sm:group-[.--expanded]/apps:eduzz-ui-tw-gap-6 sm:group-[.--expanded]/apps:eduzz-ui-tw-p-6 lg:group-[.--expanded]/apps:eduzz-ui-tw-grid-cols-[repeat(3,1fr)] xl:group-[.--expanded]/apps:eduzz-ui-tw-grid-cols-[repeat(4,1fr)]'>
+      <div className='uizz-layout-box-border uizz-layout-grid uizz-layout-grid-cols-[repeat(2,1fr)] uizz-layout-flex-wrap uizz-layout-justify-items-center uizz-layout-gap-[0.5rem_0.5rem] uizz-layout-p-4 group-[.--expanded]/apps:uizz-layout-grid-cols-[1fr] group-[.--expanded]/apps:uizz-layout-gap-0 group-[.--expanded]/apps:uizz-layout-p-0 sm:uizz-layout-grid-cols-[repeat(3,1fr)] sm:group-[.--expanded]/apps:uizz-layout-grid-cols-[repeat(2,1fr)] sm:group-[.--expanded]/apps:uizz-layout-gap-6 sm:group-[.--expanded]/apps:uizz-layout-p-6 lg:group-[.--expanded]/apps:uizz-layout-grid-cols-[repeat(3,1fr)] xl:group-[.--expanded]/apps:uizz-layout-grid-cols-[repeat(4,1fr)]'>
         {!applications?.length && (
-          <div className='eduzz-ui-tw-col-start-1 eduzz-ui-tw-col-end-4 eduzz-ui-tw-flex eduzz-ui-tw-w-full eduzz-ui-tw-items-center eduzz-ui-tw-justify-center eduzz-ui-tw-p-12'>
+          <div className='uizz-layout-col-start-1 uizz-layout-col-end-4 uizz-layout-flex uizz-layout-w-full uizz-layout-items-center uizz-layout-justify-center uizz-layout-p-12'>
             Carregando...
           </div>
         )}
@@ -63,7 +66,7 @@ const AppsDropdown = memo<AppsDropdownProps>(({ currentApplication, applications
           return (
             <a
               className={cx(
-                'eduzz-ui-tw-box-border eduzz-ui-tw-block eduzz-ui-tw-w-full eduzz-ui-tw-cursor-pointer eduzz-ui-tw-grid-cols-[2rem_1fr] eduzz-ui-tw-grid-rows-[1.5rem_auto] eduzz-ui-tw-gap-1 eduzz-ui-tw-rounded eduzz-ui-tw-border-gray-200 eduzz-ui-tw-px-2 eduzz-ui-tw-py-4 eduzz-ui-tw-no-underline hover:eduzz-ui-tw-bg-[rgba(0,0,0,0.04)] group-[.--expanded]/apps:eduzz-ui-tw-grid group-[.--expanded]/apps:eduzz-ui-tw-border-b group-[.--expanded]/apps:eduzz-ui-tw-p-4 sm:eduzz-ui-tw-grid-cols-[4rem_1fr] sm:group-[.--expanded]/apps:eduzz-ui-tw-border',
+                'uizz-layout-box-border uizz-layout-block uizz-layout-w-full uizz-layout-cursor-pointer uizz-layout-grid-cols-[2rem_1fr] uizz-layout-grid-rows-[1.5rem_auto] uizz-layout-gap-1 uizz-layout-rounded uizz-layout-border-gray-200 uizz-layout-px-2 uizz-layout-py-4 uizz-layout-text-inherit uizz-layout-no-underline visited:uizz-layout-text-inherit hover:uizz-layout-bg-[rgba(0,0,0,0.04)] group-[.--expanded]/apps:uizz-layout-grid group-[.--expanded]/apps:uizz-layout-border-b group-[.--expanded]/apps:uizz-layout-p-4 sm:uizz-layout-grid-cols-[4rem_1fr] sm:group-[.--expanded]/apps:uizz-layout-border',
                 isCurrent && 'bg-[rgba(0,0,0,0.04)]'
               )}
               key={app.application}
@@ -74,13 +77,13 @@ const AppsDropdown = memo<AppsDropdownProps>(({ currentApplication, applications
             >
               <img
                 src={app.icon}
-                className='eduzz-ui-tw-m-auto eduzz-ui-tw-mb-2 eduzz-ui-tw-max-h-10 eduzz-ui-tw-max-w-[2.5rem] group-[.--expanded]/apps:eduzz-ui-tw-max-h-[1.50rem] group-[.--expanded]/apps:eduzz-ui-tw-max-w-[1.50rem] sm:group-[.--expanded]/apps:eduzz-ui-tw-max-h-[3.1rem] sm:group-[.--expanded]/apps:eduzz-ui-tw-max-w-[3.1rem]'
+                className='uizz-layout-m-auto uizz-layout-mb-2 uizz-layout-block uizz-layout-max-h-10 uizz-layout-max-w-[2.5rem] group-[.--expanded]/apps:uizz-layout-max-h-[1.50rem] group-[.--expanded]/apps:uizz-layout-max-w-[1.50rem] sm:group-[.--expanded]/apps:uizz-layout-max-h-[3.1rem] sm:group-[.--expanded]/apps:uizz-layout-max-w-[3.1rem]'
               />
 
-              <p className='eduzz-ui-tw-text-center eduzz-ui-tw-text-sm group-[.--expanded]/apps:eduzz-ui-tw-text-left group-[.--expanded]/apps:eduzz-ui-tw-text-base'>
+              <p className='uizz-layout-m-0 uizz-layout-text-center uizz-layout-text-sm group-[.--expanded]/apps:uizz-layout-text-left group-[.--expanded]/apps:uizz-layout-text-base'>
                 {app.label}
               </p>
-              <p className='eduzz-ui-tw-col-span-2 eduzz-ui-tw-mt-0.5 eduzz-ui-tw-hidden eduzz-ui-tw-overflow-hidden eduzz-ui-tw-text-base eduzz-ui-tw-leading-normal eduzz-ui-tw-text-[rgba(0,0,0,0.45)] eduzz-ui-tw-opacity-80 group-[.--expanded]/apps:eduzz-ui-tw-block sm:eduzz-ui-tw-col-span-1 sm:eduzz-ui-tw-col-start-2'>
+              <p className='uizz-layout-col-span-2 uizz-layout-m-0 uizz-layout-mt-0.5 uizz-layout-hidden uizz-layout-overflow-hidden uizz-layout-text-base uizz-layout-leading-normal uizz-layout-text-[rgba(0,0,0,0.45)] uizz-layout-opacity-80 group-[.--expanded]/apps:uizz-layout-block sm:uizz-layout-col-span-1 sm:uizz-layout-col-start-2'>
                 {app.description}
               </p>
             </a>
@@ -90,7 +93,7 @@ const AppsDropdown = memo<AppsDropdownProps>(({ currentApplication, applications
 
       {!!applications?.length && (
         <button
-          className='eduzz-ui-tw-flex eduzz-ui-tw-h-[50px] eduzz-ui-tw-w-full eduzz-ui-tw-flex-row eduzz-ui-tw-items-center eduzz-ui-tw-justify-center eduzz-ui-tw-gap-2 hover:eduzz-ui-tw-bg-[rgba(0,0,0,0.04)] group-[.--expanded]/apps:eduzz-ui-tw-hidden'
+          className='uizz-layout-flex uizz-layout-h-[50px] uizz-layout-w-full uizz-layout-cursor-pointer uizz-layout-flex-row uizz-layout-items-center uizz-layout-justify-center uizz-layout-gap-2 uizz-layout-border-none uizz-layout-bg-transparent uizz-layout-transition-all hover:uizz-layout-bg-[rgba(0,0,0,0.04)] group-[.--expanded]/apps:uizz-layout-hidden'
           onClick={toggleExpanded}
         >
           <IconFullscreen />

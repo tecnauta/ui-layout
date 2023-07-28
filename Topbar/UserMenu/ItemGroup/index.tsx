@@ -5,8 +5,8 @@ export type UserMenuGroupProps = React.HTMLAttributes<HTMLDivElement> & {
 
 const UserMenuGroup = ({ label, children, ...rest }: UserMenuGroupProps) => {
   return (
-    <div className='eduzz-ui-tw-flex eduzz-ui-tw-flex-col' {...rest}>
-      <p className='eduzz-ui-tw-mt-2 eduzz-ui-tw-px-4 eduzz-ui-tw-py-2 eduzz-ui-tw-text-sm eduzz-ui-tw-font-bold eduzz-ui-tw-tracking-[0.3px]'>
+    <div className='uizz-layout-flex uizz-layout-flex-col' {...rest}>
+      <p className='uizz-layout-mt-2 uizz-layout-px-4 uizz-layout-py-2 uizz-layout-text-sm uizz-layout-font-bold uizz-layout-tracking-[0.3px]'>
         {label}
       </p>
       {children}
