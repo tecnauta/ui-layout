@@ -13,7 +13,7 @@ const LayoutContent = ({ children, disablePadding }: LayoutContentProps) => {
       className={cx(
         'uizz-layout-box-border uizz-layout-min-w-0 uizz-layout-flex-1 uizz-layout-bg-[rgb(252,252,252)] uizz-layout-transition',
         {
-          'uizz-layout-md:p-8 uizz-layout-p-4': !disablePadding
+          'uizz-layout-p-4 md:uizz-layout-p-8': !disablePadding
         }
       )}
     >
