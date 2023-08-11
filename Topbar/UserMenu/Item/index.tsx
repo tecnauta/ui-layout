@@ -3,6 +3,7 @@ import { ElementType, ReactNode, forwardRef, useCallback, MouseEvent } from 'rea
 import { useContextSelector } from 'use-context-selector';
 
 import LayoutContext from '../../../context';
+import cx from '../../../utils/cx';
 
 export interface UserMenuItemProps {
   /**
@@ -20,10 +21,11 @@ export interface UserMenuItemProps {
   preventClose?: boolean;
   id?: string;
   children: string;
+  className?: string;
 }
 
 const UserMenuItem = forwardRef<HTMLButtonElement, UserMenuItemProps>(
-  ({ id, icon, disabled, onClick, children, preventClose, as: Tag, ...rest }, ref) => {
+  ({ id, icon, disabled, onClick, children, preventClose, className, as: Tag, ...rest }, ref) => {
     const close = useContextSelector(LayoutContext, context => context.userMenu.falseOpened);
 
     const handleClick = useCallback(
@@ -39,7 +41,10 @@ const UserMenuItem = forwardRef<HTMLButtonElement, UserMenuItemProps>(
         id={id}
         ref={ref}
         onClick={handleClick}
-        className='uizz-layout-flex uizz-layout-cursor-pointer uizz-layout-items-center uizz-layout-gap-2 uizz-layout-rounded-md uizz-layout-border-none uizz-layout-bg-transparent uizz-layout-px-4 uizz-layout-py-2 uizz-layout-transition hover:uizz-layout-bg-[rgba(0,0,0,0.03)] disabled:uizz-layout-cursor-not-allowed disabled:uizz-layout-opacity-25 [&>.anticon]:uizz-layout-text-[20px] [&>svg]:uizz-layout-mr-[5px] [&>svg]:uizz-layout-w-6'
+        className={cx(
+          className,
+          'uizz-layout-flex uizz-layout-cursor-pointer uizz-layout-items-center uizz-layout-gap-2 uizz-layout-rounded-md uizz-layout-border-none uizz-layout-bg-transparent uizz-layout-px-4 uizz-layout-py-2 uizz-layout-transition hover:uizz-layout-bg-[rgba(0,0,0,0.03)] disabled:uizz-layout-cursor-not-allowed disabled:uizz-layout-opacity-25 [&>.anticon]:uizz-layout-text-[20px] [&>svg]:uizz-layout-mr-[5px] [&>svg]:uizz-layout-w-6'
+        )}
         disabled={disabled}
       >
         {icon}

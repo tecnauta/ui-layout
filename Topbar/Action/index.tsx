@@ -46,7 +46,7 @@ const Action = forwardRef<HTMLDivElement, ActionProps>(
               )}
             >
               {icon}
-              <span className='eduzz-ui-layout-topbar-action-button-text max-w-[100px] text-ellipsis uizz-layout-hidden uizz-layout-overflow-hidden uizz-layout-whitespace-nowrap empty:uizz-layout-hidden md:uizz-layout-block'>
+              <span className='eduzz-ui-layout-topbar-action-button-text uizz-layout-hidden uizz-layout-max-w-[100px] uizz-layout-overflow-hidden uizz-layout-text-ellipsis uizz-layout-whitespace-nowrap empty:uizz-layout-hidden md:uizz-layout-block'>
                 {label}
               </span>
               {right}

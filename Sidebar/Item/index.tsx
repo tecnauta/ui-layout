@@ -17,6 +17,7 @@ export interface SidebarItemProps {
   onClick?: () => void;
   disabled?: boolean;
   children: ReactNode;
+  className?: string;
   /**
    * Component that wraps the item.
    * @example NavLink, Link (react-router-dom)
@@ -25,7 +26,10 @@ export interface SidebarItemProps {
 }
 
 const SidebarItem = forwardRef<HTMLElement, SidebarItemProps>(
-  ({ children, isActive: isActiveProp, tabIndex, as: Component, disabled, to, isExternal, ...rest }, ref) => {
+  (
+    { children, isActive: isActiveProp, tabIndex, className, as: Component, disabled, to, isExternal, ...rest },
+    ref
+  ) => {
     isExternal = isExternal ?? rest?.target === '_blank';
     const isActiveItem = useContextSelector(SidebarContext, context => context.isActiveItem);
     const onItemActive = useContextSelector(SidebarGroupContext, context => context.onItemActive);
@@ -45,6 +49,7 @@ const SidebarItem = forwardRef<HTMLElement, SidebarItemProps>(
         to,
         tabIndex: tabIndex ?? 1,
         className: cx(
+          className,
           'uizz-layout-group/menu uizz-layout-transition-all uizz-layout-outline-none uizz-layout-block uizz-layout-select-none uizz-layout-text-inherit uizz-layout-mr-[5px] uizz-layout-rounded-tr-[50px] uizz-layout-rounded-br-[50px] focus-visible:uizz-layout-bg-[rgba(0,0,0,0.03)] focus-visible:uizz-layout-shadow-[0_0_0_2px_#039be5_inset] hover:uizz-layout-bg-[rgba(0,0,0,0.03)] hover:uizz-layout-text-inherit',
           {
             '--active': active,

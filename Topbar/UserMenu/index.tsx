@@ -12,7 +12,7 @@ export type UserMenuProps = React.HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode;
 };
 
-const UserMenu = ({ children, ...rest }: UserMenuProps) => {
+const UserMenu = ({ children, className, ...rest }: UserMenuProps) => {
   const opened = useContextSelector(LayoutContext, context => context.userMenu.opened);
   const register = useContextSelector(LayoutContext, context => context.userMenu.register);
   const container = useContextSelector(LayoutContext, context => context.userMenu.containerPortal);
@@ -26,7 +26,7 @@ const UserMenu = ({ children, ...rest }: UserMenuProps) => {
 
   return (
     <Portal target={container}>
-      <div className={cx('eduzz-ui-layout-topbar-user-menu', opened && '--opened')} {...rest}>
+      <div {...rest} className={cx(className, 'eduzz-ui-layout-topbar-user-menu', opened && '--opened')}>
         {children}
       </div>
     </Portal>

@@ -23,7 +23,7 @@ const SidebarGroup = forwardRef<HTMLLIElement, SidebarGroupProps>(
 
     return (
       <SidebarGroupContext.Provider value={contextValue}>
-        <li id={id} className={`${className ?? ''} uizz-layout-select-none`} ref={ref}>
+        <li id={id} className={cx(className, 'uizz-layout-select-none')} ref={ref}>
           {!!label && (
             <div
               className='uizz-layout-relative uizz-layout-box-border uizz-layout-grid uizz-layout-min-h-[2.2rem] uizz-layout-cursor-pointer uizz-layout-grid-cols-[1.625rem_1fr] uizz-layout-items-center uizz-layout-gap-2 uizz-layout-rounded-br-[50px] uizz-layout-rounded-tr-[50px] uizz-layout-px-4 uizz-layout-py-2 uizz-layout-leading-[1.15] uizz-layout-outline-none uizz-layout-transition-all hover:uizz-layout-bg-[rgba(0,0,0,0.03)] active:uizz-layout-bg-[rgba(0,0,0,0.03)]'
