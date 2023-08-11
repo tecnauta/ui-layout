@@ -21,7 +21,7 @@ const TopbarUnitySupportChat = ({ token }: TopbarUnitySupportChatProps) => {
     if (!user?.isClubeBlack) return;
     const destroy = chatInit(user, token);
     return () => destroy();
-  }, [user]);
+  }, [user, token]);
 
   return null;
 };
