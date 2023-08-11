@@ -35,7 +35,9 @@ function App() {
           <Topbar.Action badgeCount={999} icon={<MessageOutlined />} label='Chat' />
 
           <Topbar.UserMenu>
-            <Topbar.UserMenuItem icon={<BellOutlined />}>Meus Dados</Topbar.UserMenuItem>
+            <Topbar.UserMenuItem as='a' icon={<BellOutlined />}>
+              Meus Dados
+            </Topbar.UserMenuItem>
             <Topbar.UserMenuItem icon={<NotificationOutlined />}>Minhas Compras</Topbar.UserMenuItem>
 
             <Topbar.UserMenuDivider />
