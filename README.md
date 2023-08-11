@@ -77,7 +77,7 @@ function MyComponent() {
           tag: 'unity'
         }}
       >
-        <Topbar.UnitySupportChat />
+        <Topbar.UnitySupportChat token='...token gerado pelo servidor' />
 
         <Topbar.Action icon={<NotificationOutline size={25} />} label='Notificações' />
         <Topbar.Action icon={<InfoChatOutline size={25} />} />
@@ -128,7 +128,7 @@ function MyComponent() {
 ### Topbar props
 
 | prop               | tipo     | obrigatório | padrão | descrição                                                   |
-| ------------------ | -------- | ----------- | ------ | ----------------------------------------------------------- |
+|--------------------|----------|-------------|--------|-------------------------------------------------------------|
 | logo               | `url`    | `false`     | -      | Url para o logo padrao.                                     |
 | logoMobile         | `url`    | `false`     | -      | Url para o logo na versão mobile.                           |
 | currentApplication | `string` | `false`     | -      | Aplicação que está sendo usada, para marcar no menu de apps |
@@ -137,7 +137,7 @@ function MyComponent() {
 ### Topbar.Action props
 
 | prop     | tipo        | obrigatório | padrão  | descrição                                            |
-| -------- | ----------- | ----------- | ------- | ---------------------------------------------------- |
+|----------|-------------|-------------|---------|------------------------------------------------------|
 | icon     | `ReactNode` | `true`      | -       | Icone, tamanho ideal 25                              |
 | label    | `string`    | `false`     | -       |                                                      |
 | isActive | `boolean`   | `false`     | `false` | Se o icone deve manter o estado de pressionado/ativo |
@@ -146,7 +146,7 @@ function MyComponent() {
 ### Topbar.UserMenuItem props
 
 | prop     | tipo        | obrigatório | padrão | descrição               |
-| -------- | ----------- | ----------- | ------ | ----------------------- |
+|----------|-------------|-------------|--------|-------------------------|
 | icon     | `ReactNode` | `true`      | -      | Icone, tamanho ideal 25 |
 | children | `string`    | `false`     | -      | Deve ser uma string     |
 | disabled | `boolean`   | `false`     | -      |                         |
@@ -155,20 +155,26 @@ function MyComponent() {
 ### Topbar.UserMenuGroup props
 
 | prop     | tipo        | obrigatório | padrão | descrição |
-| -------- | ----------- | ----------- | ------ | --------- |
+|----------|-------------|-------------|--------|-----------|
 | label    | `string`    | `true`      | -      |           |
 | children | `ReactNode` | `true`      | -      |           |
+
+### Topbar.UnitySupportChat props
+
+| prop  | tipo     | obrigatório | padrão | descrição                                         |
+|-------|----------|-------------|--------|---------------------------------------------------|
+| token | `string` | `false`     | -      | Token gerado pelo servidor para uso do LiveHelper |
 
 ### Sidebar props
 
 | prop            | tipo     | obrigatório | padrão | descrição                                |
-| --------------- | -------- | ----------- | ------ | ---------------------------------------- |
+|-----------------|----------|-------------|--------|------------------------------------------|
 | currentLocation | `string` | `false`     | -      | Caminho de localização atual (pathname). |
 
 ### Sidebar.Item props
 
 | prop     | tipo                | obrigatório | padrão  | descrição                                                                   |
-| -------- | ------------------- | ----------- | ------- | --------------------------------------------------------------------------- |
+|----------|---------------------|-------------|---------|-----------------------------------------------------------------------------|
 | as       | `React.ElementType` | `false`     | -       | Componente que envolve o item.                                              |
 | `any`    | `any`               | `false`     | -       | Qualquer prop que o `as` receba                                             |
 | isActive | `boolean`           | `false`     | `false` | Irá usar o `currentLocation` fornecido para tentar ver se está ativo ou não |
@@ -179,12 +185,12 @@ function MyComponent() {
 ### Sidebar.Group props
 
 | prop     | tipo              | obrigatório | padrão | descrição |
-| -------- | ----------------- | ----------- | ------ | --------- |
+|----------|-------------------|-------------|--------|-----------|
 | label    | `React.ReactNode` | `false`     | -      | -         |
 | tabIndex | `number`          | `false`     | -      |           |
 
 ### Content props
 
 | prop           | tipo      | obrigatório | padrão | descrição        |
-| -------------- | --------- | ----------- | ------ | ---------------- |
+|----------------|-----------|-------------|--------|------------------|
 | disablePadding | `boolean` | `false`     | -      | Remove o padding |

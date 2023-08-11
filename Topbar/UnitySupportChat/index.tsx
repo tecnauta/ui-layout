@@ -7,15 +7,23 @@ import TopbarContext from '../context';
 
 import './style.css';
 
-const TopbarUnitySupportChat = () => {
+export interface TopbarUnitySupportChatProps {
+  /**
+   * Token gerado pelo servidor para acesso ao LiveHelper
+   */
+  token?: string;
+}
+
+const TopbarUnitySupportChat = ({ token }: TopbarUnitySupportChatProps) => {
   const user = useContextSelector(TopbarContext, context => context.user);
 
   useEffect(() => {
     if (!user?.isClubeBlack) return;
-    const destroy = chatInit(user);
+    const destroy = chatInit(user, token);
     return () => destroy();
   }, [user]);
 
   return null;
 };
+
 export default TopbarUnitySupportChat;
