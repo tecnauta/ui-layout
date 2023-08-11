@@ -56,7 +56,7 @@ const UserMenuItem = forwardRef<HTMLButtonElement, UserMenuItemProps>(
 
     if (Tag) {
       content = (
-        <Tag id={id} {...rest} className='uizz-layout-text-inherit'>
+        <Tag id={id} {...rest} className='uizz-layout-text-inherit hover:uizz-layout-text-inherit'>
           {content}
         </Tag>
       );

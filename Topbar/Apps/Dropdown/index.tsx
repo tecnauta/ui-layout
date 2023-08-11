@@ -66,7 +66,7 @@ const AppsDropdown = memo<AppsDropdownProps>(({ currentApplication, applications
           return (
             <a
               className={cx(
-                'uizz-layout-box-border uizz-layout-block uizz-layout-w-full uizz-layout-cursor-pointer uizz-layout-grid-cols-[2rem_1fr] uizz-layout-grid-rows-[1.5rem_auto] uizz-layout-gap-1 uizz-layout-rounded uizz-layout-border-gray-200 uizz-layout-px-2 uizz-layout-py-4 uizz-layout-text-inherit uizz-layout-no-underline visited:uizz-layout-text-inherit hover:uizz-layout-bg-[rgba(0,0,0,0.04)] group-[.--expanded]/apps:uizz-layout-grid group-[.--expanded]/apps:uizz-layout-border-b group-[.--expanded]/apps:uizz-layout-p-4 sm:uizz-layout-grid-cols-[4rem_1fr] sm:group-[.--expanded]/apps:uizz-layout-border',
+                'uizz-layout-box-border uizz-layout-block uizz-layout-w-full uizz-layout-cursor-pointer uizz-layout-grid-cols-[2rem_1fr] uizz-layout-grid-rows-[1.5rem_auto] uizz-layout-gap-1 uizz-layout-rounded uizz-layout-border-gray-200 uizz-layout-px-2 uizz-layout-py-4 uizz-layout-text-inherit uizz-layout-no-underline visited:uizz-layout-text-inherit hover:uizz-layout-bg-[rgba(0,0,0,0.04)] hover:uizz-layout-text-inherit group-[.--expanded]/apps:uizz-layout-grid group-[.--expanded]/apps:uizz-layout-border-b group-[.--expanded]/apps:uizz-layout-p-4 sm:uizz-layout-grid-cols-[4rem_1fr] sm:group-[.--expanded]/apps:uizz-layout-border',
                 isCurrent && 'bg-[rgba(0,0,0,0.04)]'
               )}
               key={app.application}
@@ -80,7 +80,7 @@ const AppsDropdown = memo<AppsDropdownProps>(({ currentApplication, applications
                 className='uizz-layout-m-auto uizz-layout-mb-2 uizz-layout-block uizz-layout-max-h-10 uizz-layout-max-w-[2.5rem] group-[.--expanded]/apps:uizz-layout-max-h-[1.50rem] group-[.--expanded]/apps:uizz-layout-max-w-[1.50rem] sm:group-[.--expanded]/apps:uizz-layout-max-h-[3.1rem] sm:group-[.--expanded]/apps:uizz-layout-max-w-[3.1rem]'
               />
 
-              <p className='uizz-layout-m-0 uizz-layout-text-center uizz-layout-text-sm group-[.--expanded]/apps:uizz-layout-text-left group-[.--expanded]/apps:uizz-layout-text-base'>
+              <p className='uizz-layout-m-0 uizz-layout-text-center uizz-layout-text-sm uizz-layout-leading-normal group-[.--expanded]/apps:uizz-layout-text-left group-[.--expanded]/apps:uizz-layout-text-base'>
                 {app.label}
               </p>
               <p className='uizz-layout-col-span-2 uizz-layout-m-0 uizz-layout-mt-0.5 uizz-layout-hidden uizz-layout-overflow-hidden uizz-layout-text-base uizz-layout-leading-normal uizz-layout-text-[rgba(0,0,0,0.45)] uizz-layout-opacity-80 group-[.--expanded]/apps:uizz-layout-block sm:uizz-layout-col-span-1 sm:uizz-layout-col-start-2'>
