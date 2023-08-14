@@ -47,7 +47,7 @@ const User = memo(() => {
             />
           )
         }
-        label={`${user.name} ${user.isSupport ? '(Suporte)' : ''}`.trim()}
+        label={user.name}
         onClick={toogleOpened}
       />
 

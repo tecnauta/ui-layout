@@ -23,6 +23,8 @@ function App() {
             name: 'QA-ORBITA-NAO-ALTERAR-NAO-ALTERAR',
             belt: 'Red Belt',
             tag: 'unity',
+            supportId: 1,
+            isSupport: true,
             avatar: 'https://cdn.eduzzcdn.com/myeduzz/upload/3c/8e/3c8e5fc487944315a4ccdc3d95e6bda7'
           }}
         >
