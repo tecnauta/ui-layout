@@ -50,7 +50,7 @@ const SidebarItem = forwardRef<HTMLElement, SidebarItemProps>(
         tabIndex: tabIndex ?? 1,
         className: cx(
           className,
-          'uizz-layout-group/menu uizz-layout-w-full uizz-layout-transition-all uizz-layout-outline-[0px] uizz-layout-block uizz-layout-select-none uizz-layout-text-inherit uizz-layout-mr-[5px] uizz-layout-rounded-tr-[50px] uizz-layout-rounded-br-[50px] focus-visible:uizz-layout-bg-[rgba(0,0,0,0.03)] hover:uizz-layout-outline-none focus-visible:uizz-layout-shadow-[0_0_0_2px_#039be5_inset] hover:uizz-layout-bg-[rgba(0,0,0,0.03)] hover:uizz-layout-text-inherit',
+          'uizz-layout-group/menu uizz-layout-mr-[5px] uizz-layout-block uizz-layout-w-full uizz-layout-select-none uizz-layout-rounded-br-[50px] uizz-layout-rounded-tr-[50px] uizz-layout-text-inherit uizz-layout-outline-none uizz-layout-outline-0 uizz-layout-transition-all hover:uizz-layout-bg-[rgba(0,0,0,0.03)] hover:uizz-layout-text-inherit hover:uizz-layout-outline-none focus-visible:uizz-layout-bg-[rgba(0,0,0,0.03)] focus-visible:uizz-layout-shadow-[0_0_0_2px_#039be5_inset]',
           {
             '--active': active,
             '--disabled': disabled
