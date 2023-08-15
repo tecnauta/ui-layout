@@ -17,16 +17,16 @@ export default function chatInit(user: TopbarProps['user'], token?: string) {
   window.LHCChatOptions.attr = [];
   window.LHCChatOptions.attr_prefill = [];
 
+  window.LHCChatOptions.attr.push({ name: 'ID', value: user.id, type: 'hidden' });
+  window.LHCChatOptions.attr.push({ name: 'Email', value: user.email, type: 'hidden' });
+  window.LHCChatOptions.attr.push({ name: 'Nome', value: user.name ?? user.email, type: 'hidden' });
+  window.LHCChatOptions.attr_prefill.push({ name: 'email', value: user.email });
+  window.LHCChatOptions.attr_prefill.push({ name: 'username', value: user.name ?? user.email });
+
   if (token) {
     window.LHCChatOptions.attr.push({ name: 'Token', value: token, type: 'hidden' });
     window.LHCChatOptions.attr_prefill.push({ name: 'id', value: user.id });
     window.LHCChatOptions.attr_prefill.push({ name: 'token', value: token });
-  } else {
-    window.LHCChatOptions.attr.push({ name: 'ID', value: user.id, type: 'hidden' });
-    window.LHCChatOptions.attr.push({ name: 'Email', value: user.email, type: 'hidden' });
-    window.LHCChatOptions.attr.push({ name: 'Nome', value: user.name ?? user.email, type: 'hidden' });
-    window.LHCChatOptions.attr_prefill.push({ name: 'email', value: user.email });
-    window.LHCChatOptions.attr_prefill.push({ name: 'username', value: user.name ?? user.email });
   }
 
   loadScript();
