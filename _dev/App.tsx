@@ -25,7 +25,7 @@ function App() {
             tag: 'unity',
             supportId: 1,
             isSupport: true,
-            avatar: 'https://cdn.eduzzcdn.com/myeduzz/upload/3c/8e/3c8e5fc487944315a4ccdc3d95e6bda7'
+            avatar: 'https://cdn.testzz.ninja/myeduzz/upload/3c/8e/3c8e5fc487944315a4ccdc3d95e6bda7'
           }}
         >
           <Topbar.UnitySupportChat />

@@ -20,8 +20,12 @@ const Avatar = ({ src, children }: AvatarProps) => {
   const onErrorLoadingImage = useCallback(() => setErrorLoading(true), []);
 
   return (
-    <div className='uizz-layout-flex uizz-layout-h-7 uizz-layout-w-7 uizz-layout-items-center uizz-layout-justify-center uizz-layout-rounded-[50%] uizz-layout-bg-[var(--eduzz-theme-primary)] uizz-layout-text-xs uizz-layout-text-white'>
-      {src && !errorLoading ? <img src={src} onError={onErrorLoadingImage} /> : letters}
+    <div className='uizz-layout-flex uizz-layout-h-7 uizz-layout-w-7 uizz-layout-items-center uizz-layout-justify-center uizz-layout-overflow-hidden uizz-layout-rounded-[50%] uizz-layout-bg-[var(--eduzz-theme-primary)] uizz-layout-text-xs uizz-layout-text-white'>
+      {src && !errorLoading ? (
+        <img src={src} onError={onErrorLoadingImage} className='uizz-layout-max-h-full uizz-layout-max-w-full' />
+      ) : (
+        letters
+      )}
     </div>
   );
 };
