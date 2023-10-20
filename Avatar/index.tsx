@@ -5,17 +5,23 @@ export interface AvatarProps {
   children?: string;
 }
 
+function getLetters(name: string): string {
+  let letters = '';
+
+  const words = name.split(' ');
+
+  for (const word of words) {
+    letters += word.charAt(0);
+    if (letters.length >= 2) break;
+  }
+
+  return letters;
+}
+
 const Avatar = ({ src, children }: AvatarProps) => {
   const [errorLoading, setErrorLoading] = useState(false);
 
-  const letters = useMemo(() => {
-    if (children && children.length <= 2) {
-      return children;
-    }
-
-    const parts = (children ?? 'u').split(' ');
-    return `${parts[0][0]}${parts.length > 1 ? parts[parts.length - 1]?.[0] ?? '' : ''}`.trim();
-  }, [children]);
+  const letters = useMemo(() => getLetters(children ?? ''), [children]);
 
   const onErrorLoadingImage = useCallback(() => setErrorLoading(true), []);
 
