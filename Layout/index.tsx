@@ -130,7 +130,7 @@ const Layout = ({ className, children, primaryColor, secondaryColor, ...rest }: 
       <style>{cssVars}</style>
 
       <div
-        className={cx('uizz-layout-flex uizz-layout-min-h-screen uizz-layout-w-full', className, {
+        className={cx('eduzz-ui-layout uizz-layout-flex uizz-layout-min-h-screen uizz-layout-w-full', className, {
           'uizz-layout-pt-[var(--eduzz-ui-layout-topbar-height-rem)]': hasTopbar
         })}
         {...rest}

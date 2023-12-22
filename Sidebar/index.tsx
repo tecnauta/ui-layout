@@ -44,7 +44,7 @@ const Sidebar = ({ currentLocation, children }: SidebarProps) => {
 
   return (
     <SidebarContext.Provider value={contextValue}>
-      <div className='uizz-layout-relative uizz-layout-box-border uizz-layout-h-auto xl:uizz-layout-w-[var(--eduzz-ui-layout-sidebar-width-rem)]'>
+      <div className='eduzz-ui-layout-sidebar uizz-layout-relative uizz-layout-box-border uizz-layout-h-auto xl:uizz-layout-w-[var(--eduzz-ui-layout-sidebar-width-rem)]'>
         <Overlay visible={opened} className='xl:uizz-layout-hidden' onClick={toggleMenu} underTopbar />
 
         <aside
