@@ -50,7 +50,7 @@ const SidebarItem = forwardRef<HTMLElement, SidebarItemProps>(
         tabIndex: tabIndex ?? 1,
         className: cx(
           className,
-          'uizz-layout-group/menu uizz-layout-mr-[5px] uizz-layout-block uizz-layout-w-full uizz-layout-select-none uizz-layout-rounded-br-[50px] uizz-layout-rounded-tr-[50px] uizz-layout-text-inherit uizz-layout-outline-none uizz-layout-outline-0 hover:uizz-layout-bg-[rgba(0,0,0,0.03)] hover:uizz-layout-text-inherit hover:uizz-layout-outline-none focus-visible:uizz-layout-bg-[rgba(0,0,0,0.03)] focus-visible:uizz-layout-shadow-[0_0_0_2px_#039be5_inset]',
+          'uizz-layout-group/menu uizz-layout-mr-[5px] uizz-layout-block uizz-layout-w-full uizz-layout-select-none uizz-layout-rounded-br-[50px] uizz-layout-rounded-tr-[50px] uizz-layout-text-inherit uizz-layout-outline-none uizz-layout-outline-0 hover:uizz-layout-bg-content-6/[0.03] dark:hover:uizz-layout-bg-content-6/[0.08] hover:uizz-layout-text-inherit hover:uizz-layout-outline-none focus-visible:uizz-layout-bg-content-6/[0.03] dark:focus-visible:uizz-layout-bg-content-6/[0.03] focus-visible:uizz-layout-shadow-[0_0_0_2px_#039be5_inset]',
           {
             '--active': active,
             '--disabled': disabled
@@ -68,7 +68,7 @@ const SidebarItem = forwardRef<HTMLElement, SidebarItemProps>(
             {children}
           </span>
           {isExternal && (
-            <IconExternalLink className='uizz-layout-fill-[rgba(0,0,0,0.88)] uizz-layout-opacity-50' size={20} />
+            <IconExternalLink className='uizz-layout-fill-content-6/[0.88] uizz-layout-opacity-50' size={20} />
           )}
         </div>
       </li>

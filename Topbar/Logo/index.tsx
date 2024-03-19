@@ -1,5 +1,9 @@
 import type { JSXElementConstructor, ReactNode } from 'react';
+
 import './style.css';
+import { useContextSelector } from 'use-context-selector';
+
+import LayoutContext from '../../context';
 
 export interface LogoProps {
   logo?: string;
@@ -9,14 +13,16 @@ export interface LogoProps {
   wrapper?: JSXElementConstructor<{ children: ReactNode; className: string }>;
 }
 
-const Logo = ({ logo, logoMobile, wrapper: Wrapper }: LogoProps) => {
+const Logo = ({ logo, logoMobile, logoDarkMode, logoMobileDarkMode, wrapper: Wrapper }: LogoProps) => {
+  const theme = useContextSelector(LayoutContext, context => context.layout.theme);
+
   function getLogos() {
-    // if (theme.mode === 'dark') {
-    //   return {
-    //     desktop: logoDarkMode ?? '//eduzz-houston.s3.amazonaws.com/topbar/logos/myeduzz-white.svg',
-    //     mobile: logoMobileDarkMode ?? '//eduzz-houston.s3.amazonaws.com/topbar/logos/myeduzz-mobile.svg'
-    //   };
-    // }
+    if (theme === 'dark') {
+      return {
+        desktop: logoDarkMode ?? '//eduzz-houston.s3.amazonaws.com/topbar/logos/myeduzz-white.svg',
+        mobile: logoMobileDarkMode ?? '//eduzz-houston.s3.amazonaws.com/topbar/logos/myeduzz-mobile.svg'
+      };
+    }
 
     return {
       desktop: logo ?? '//eduzz-houston.s3.amazonaws.com/topbar/logos/myeduzz.svg',

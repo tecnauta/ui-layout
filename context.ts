@@ -7,6 +7,11 @@ export const TOPBAR_MENU_MIN_WIDTH_IN_PX = 260;
 export const MENU_WIDTH = 248;
 
 export interface LayoutContextType {
+  layout: {
+    theme: 'light' | 'dark';
+    toggle(): void;
+  };
+
   topbar: {
     exists: boolean;
     centerPortal: HTMLDivElement | null;
@@ -36,6 +41,11 @@ export interface LayoutContextType {
 }
 
 const LayoutContext = createContext<LayoutContextType>({
+  layout: {
+    theme: 'light',
+    toggle: () => null
+  },
+
   topbar: {
     exists: false,
     centerPortal: null,

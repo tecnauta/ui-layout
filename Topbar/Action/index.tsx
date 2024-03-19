@@ -41,8 +41,8 @@ const Action = forwardRef<HTMLDivElement, ActionProps>(
           <Badge count={badgeCount === 0 ? undefined : badgeCount} dot={badgeCount ? false : badgeDot}>
             <div
               className={cx(
-                'uizz-layout-mt-0.5 uizz-layout-box-border uizz-layout-flex uizz-layout-h-10 uizz-layout-min-w-[40px] uizz-layout-cursor-pointer uizz-layout-select-none uizz-layout-items-center uizz-layout-justify-center uizz-layout-gap-2 uizz-layout-rounded-[20px] uizz-layout-px-2 uizz-layout-py-0 uizz-layout-text-center uizz-layout-transition hover:uizz-layout-bg-[rgba(0,0,0,0.03)]',
-                { 'uizz-layout-bg-[rgba(0,0,0,0.03)]': active }
+                'uizz-layout-mt-0.5 uizz-layout-box-border uizz-layout-flex uizz-layout-h-10 uizz-layout-min-w-[40px] uizz-layout-cursor-pointer uizz-layout-select-none uizz-layout-items-center uizz-layout-justify-center uizz-layout-gap-2 uizz-layout-rounded-[20px] uizz-layout-px-2 uizz-layout-py-0 uizz-layout-text-center uizz-layout-transition hover:uizz-layout-bg-content-6/[0.03] dark:hover:uizz-layout-bg-content-6/[0.08]',
+                { 'uizz-layout-bg-content-6/[0.03] dark:uizz-layout-bg-content-6/[0.08]': active }
               )}
             >
               {icon}

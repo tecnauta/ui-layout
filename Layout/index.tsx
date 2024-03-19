@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode, useState, useCallback, useMemo } from 'react';
+import { HTMLAttributes, useState, ReactNode, useCallback, useMemo, MemoExoticComponent } from 'react';
 
 import Content from '../Content';
 import LayoutContext, { LayoutContextType } from '../context';
@@ -9,15 +9,19 @@ import cx from '../utils/cx';
 import { hexToRgbVar } from '../utils/hextToRgb';
 import nestedComponent from '../utils/nestedComponent';
 
+import '@eduzz/ui-tailwind-theme/style.css';
+
 export type LayoutProps = HTMLAttributes<HTMLDivElement> & {
+  theme?: 'light' | 'dark';
   className?: string;
-  children?: ReactNode;
+  children?: ReactNode | MemoExoticComponent<any>;
 
   primaryColor?: `#${string}`;
   secondaryColor?: `#${string}`;
 };
 
-const Layout = ({ className, children, primaryColor, secondaryColor, ...rest }: LayoutProps) => {
+const Layout = ({ theme, className, children, primaryColor, secondaryColor, ...rest }: LayoutProps) => {
+  const [currentTheme, setCurrentTheme] = useState<'light' | 'dark'>(theme || 'light');
   const [hasTopbar, setHasTopbar] = useState(false);
   const [hasSidebar, setHasSidebar] = useState(false);
   const [hasUserMenu, setHasUserMenu] = useState(false);
@@ -26,6 +30,14 @@ const Layout = ({ className, children, primaryColor, secondaryColor, ...rest }: 
 
   const [userMenuOpened, toogleUserMenuOpened, trueUserMenuOpened, falseUserMenuOpened] = useBoolean(false);
   const [sidebarOpened, toogleSidebarOpened, trueSidebarOpened, falseSidebarOpened] = useBoolean(false);
+
+  const toggleTheme = useCallback(() => {
+    setCurrentTheme(current => {
+      return current === 'dark' ? 'light' : 'dark';
+    });
+
+    return () => setCurrentTheme(theme || 'light');
+  }, []);
 
   const registerTopbar = useCallback(() => {
     setHasTopbar(true);
@@ -52,6 +64,10 @@ const Layout = ({ className, children, primaryColor, secondaryColor, ...rest }: 
 
   const contextValue = useMemo<LayoutContextType>(
     () => ({
+      layout: {
+        theme: currentTheme,
+        toggle: toggleTheme
+      },
       topbar: {
         exists: hasTopbar,
         centerPortal: topbarCenterContainer,
@@ -95,7 +111,9 @@ const Layout = ({ className, children, primaryColor, secondaryColor, ...rest }: 
       trueSidebarOpened,
       trueUserMenuOpened,
       userMenuContainer,
-      userMenuOpened
+      userMenuOpened,
+      currentTheme,
+      toggleTheme
     ]
   );
 

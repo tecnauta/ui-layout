@@ -11,6 +11,9 @@ overrides:
   react: ^18
 
 dependencies:
+  '@eduzz/ui-tailwind-theme':
+    specifier: file:/Users/arraza/Desktop/eduzz/ui-tailwind-theme/eduzz-ui-tailwind-theme-1.0.0.tgz
+    version: file:../ui-tailwind-theme/eduzz-ui-tailwind-theme-1.0.0.tgz
   use-context-selector:
     specifier: ^1
     version: 1.0.0(react@18.0.0)
@@ -20,12 +23,6 @@ devDependencies:
     specifier: ^5.2.5
     version: 5.2.5(react-dom@18.0.0)(react@18.0.0)
   '@eduzz/eslint-config':
-    specifier: ^1.0.0
-    version: 1.0.0
-  '@eduzz/ui-tailwind-theme':
-    specifier: ^1.0.0
-    version: 1.0.0
-  '@eduzz/ui-tokens':
     specifier: ^1.0.0
     version: 1.0.0
   '@types/react':
@@ -133,8 +130,8 @@ packages:
     resolution: {integrity: sha512-9Jc59v5fl5dzmxqLWtRev3dJwU7Ya9ZheoI6XmZjZiQ7PRtk77rC+Rbt7GJzAPPg43RQ4YO53RE1u8n+Et97vQ==}
     engines: {node: '>=8'}
     peerDependencies:
-      react: '>=16.0.0'
-      react-dom: '>=16.0.0'
+      react: ^18
+      react-dom: ^18
     dependencies:
       '@ant-design/colors': 7.0.0
       '@ant-design/icons-svg': 4.3.1
@@ -194,17 +191,6 @@ packages:
 
   /@eduzz/eslint-config@1.0.0:
     resolution: {integrity: sha512-Q2PMV1ddPI6ECdOpCiaAf4UxVo4Sf4usImvGRfQybDKzMDxUPHEocIMRjUe8ULPNfAnaV9Zgw20oGtUEUhkACg==}
-    dev: true
-
-  /@eduzz/ui-tailwind-theme@1.0.0:
-    resolution: {integrity: sha512-vhq/c0ASOgJfGOZCo4FcvwrHgQ1ha2FZ2OsHNDozn0lj9CVRLE7RKF6ydFc0qsaceMIy5+Vb2T4IBw2ZC9LiCw==}
-    dependencies:
-      '@eduzz/ui-tokens': 1.0.0
-      lodash-es: 4.17.21
-    dev: true
-
-  /@eduzz/ui-tokens@1.0.0:
-    resolution: {integrity: sha512-ID+t8nb2+ahQRO8IbuwcIhr9rWNKTKTj95zzaW9D6YKrP2J8GHdawlwaccDnPjhd2zP89GU7lgoB31uyZ/kgkQ==}
     dev: true
 
   /@esbuild/android-arm64@0.18.20:
@@ -2684,6 +2670,7 @@ packages:
   /iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
     dependencies:
       safer-buffer: 2.1.2
     dev: true
@@ -3109,7 +3096,7 @@ packages:
 
   /lodash-es@4.17.21:
     resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
-    dev: true
+    dev: false
 
   /lodash.camelcase@4.3.0:
     resolution: {integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==}
@@ -4006,8 +3993,8 @@ packages:
   /rc-util@5.37.0(react-dom@18.0.0)(react@18.0.0):
     resolution: {integrity: sha512-cPMV8DzaHI1KDaS7XPRXAf4J7mtBqjvjikLpQieaeOO7+cEbqY2j7Kso/T0R0OiEZTNcLS/8Zl9YrlXiO9UbjQ==}
     peerDependencies:
-      react: '>=16.9.0'
-      react-dom: '>=16.9.0'
+      react: ^18
+      react-dom: ^18
     dependencies:
       '@babel/runtime': 7.22.15
       react: 18.0.0
@@ -4028,7 +4015,7 @@ packages:
   /react-dom@18.0.0(react@18.0.0):
     resolution: {integrity: sha512-XqX7uzmFo0pUceWFCt7Gff6IyIMzFUn7QMZrbrQfGxtaxXZIcGQzoNpRLE3fQLnS4XzLLPMZX2T9TRcSrasicw==}
     peerDependencies:
-      react: ^18.0.0
+      react: ^18
     dependencies:
       loose-envify: 1.4.0
       react: 18.0.0
@@ -4233,6 +4220,7 @@ packages:
 
   /safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -4830,7 +4818,7 @@ packages:
   /use-context-selector@1.0.0(react@18.0.0):
     resolution: {integrity: sha512-NG1rpUkSnw03Hj8wp1AunxNmWbzvvFbZG/Xzus4lSIRF2cDO3NJL3AA2esAOSnpPL0+aeYCBOhqLDxJhAudCWQ==}
     peerDependencies:
-      react: '>=16.8.0'
+      react: ^18
     dependencies:
       react: 18.0.0
     dev: false
@@ -5055,3 +5043,18 @@ packages:
     optionalDependencies:
       commander: 9.5.0
     dev: true
+
+  file:../ui-tailwind-theme/eduzz-ui-tailwind-theme-1.0.0.tgz:
+    resolution: {integrity: sha512-4HlIdyPE4whKfwEoAPD2H5T3U88uyr2cuTENmxvgGR3M9B1sWs7vW1lpd3SxubcVy8QvxIN8QuMaxgLT0EZNbQ==, tarball: file:../ui-tailwind-theme/eduzz-ui-tailwind-theme-1.0.0.tgz}
+    name: '@eduzz/ui-tailwind-theme'
+    version: 1.0.0
+    dependencies:
+      '@eduzz/ui-tokens': file:../ui-tokens/eduzz-ui-tokens-1.0.0.tgz
+      lodash-es: 4.17.21
+    dev: false
+
+  file:../ui-tokens/eduzz-ui-tokens-1.0.0.tgz:
+    resolution: {integrity: sha512-eq18F1knYfIZMgmPyJPIuRQzH8PAw6JbDQbzpBYGPYyMo+JF6FtKSGrNTO87orgxhhwopfZ1van32rUOIvT7aA==, tarball: file:../ui-tokens/eduzz-ui-tokens-1.0.0.tgz}
+    name: '@eduzz/ui-tokens'
+    version: 1.0.0
+    dev: false
