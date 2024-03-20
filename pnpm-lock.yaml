@@ -12,10 +12,10 @@ overrides:
 
 dependencies:
   '@eduzz/ui-tailwind-theme':
-    specifier: file:/Users/arraza/Desktop/eduzz/ui-tailwind-theme/eduzz-ui-tailwind-theme-1.0.0.tgz
-    version: file:../ui-tailwind-theme/eduzz-ui-tailwind-theme-1.0.0.tgz
+    specifier: 1.1.0-beta.5
+    version: 1.1.0-beta.5(autoprefixer@10.4.14)(postcss@8.4.27)
   use-context-selector:
-    specifier: ^1
+    specifier: ^1.0.0
     version: 1.0.0(react@18.0.0)
 
 devDependencies:
@@ -26,10 +26,10 @@ devDependencies:
     specifier: ^1.0.0
     version: 1.0.0
   '@types/react':
-    specifier: ^18
+    specifier: ^18.0.0
     version: 18.0.0
   '@types/react-dom':
-    specifier: ^18
+    specifier: ^18.0.0
     version: 18.0.0
   '@typescript-eslint/eslint-plugin':
     specifier: ^6.3.0
@@ -56,7 +56,7 @@ devDependencies:
     specifier: ^2.28.0
     version: 2.28.0(@typescript-eslint/parser@6.3.0)(eslint@8.47.0)
   eslint-plugin-prettier:
-    specifier: ^5
+    specifier: ^5.0.0
     version: 5.0.0(eslint-config-prettier@9.0.0)(eslint@8.47.0)(prettier@3.0.0)
   eslint-plugin-react:
     specifier: ^7.33.1
@@ -74,16 +74,16 @@ devDependencies:
     specifier: ^8.4.27
     version: 8.4.27
   prettier:
-    specifier: ^3
+    specifier: ^3.0.0
     version: 3.0.0
   prettier-plugin-tailwindcss:
     specifier: ^0.5.2
     version: 0.5.2(prettier@3.0.0)
   react:
-    specifier: ^18
+    specifier: ^18.0.0
     version: 18.0.0
   react-dom:
-    specifier: ^18
+    specifier: ^18.0.0
     version: 18.0.0(react@18.0.0)
   tailwindcss:
     specifier: ^3.3.3
@@ -192,6 +192,21 @@ packages:
   /@eduzz/eslint-config@1.0.0:
     resolution: {integrity: sha512-Q2PMV1ddPI6ECdOpCiaAf4UxVo4Sf4usImvGRfQybDKzMDxUPHEocIMRjUe8ULPNfAnaV9Zgw20oGtUEUhkACg==}
     dev: true
+
+  /@eduzz/ui-tailwind-theme@1.1.0-beta.5(autoprefixer@10.4.14)(postcss@8.4.27):
+    resolution: {integrity: sha512-toHq73uFIi71ilS6AiatmnpWRgPbuylesAtm4kWquoZO/HsXST5Muspc8HdCx4IIg1bQn0OIbhHMr2LgPMYSYw==}
+    dependencies:
+      '@eduzz/ui-tokens': 1.1.0
+      '@mertasan/tailwindcss-variables': 2.7.0(autoprefixer@10.4.14)(postcss@8.4.27)
+      lodash-es: 4.17.21
+    transitivePeerDependencies:
+      - autoprefixer
+      - postcss
+    dev: false
+
+  /@eduzz/ui-tokens@1.1.0:
+    resolution: {integrity: sha512-PsCBQwLuSUKVX0MMb8zMD7iYwAegpc9FUxO19KaRW6gNx9X3VHSAsgsD7Akhd3Mvu3nWKDvNWHs8Ujky0jekvA==}
+    dev: false
 
   /@esbuild/android-arm64@0.18.20:
     resolution: {integrity: sha512-Nz4rJcchGDtENV0eMKUNa6L12zz2zBDXuhj/Vjh18zGqB44Bi7MBMSXjgunJgjRhCmKOjnPuZp4Mb6OKqtMHLQ==}
@@ -489,6 +504,18 @@ packages:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
+
+  /@mertasan/tailwindcss-variables@2.7.0(autoprefixer@10.4.14)(postcss@8.4.27):
+    resolution: {integrity: sha512-rKPhxi/0r6XWP0+OjPmsfrloX/TtQmvONj2Pr3Nl8BNBznQVP3M9sphguDBUDC0AiKYx2xgup3XzAhlIDLPLIA==}
+    engines: {node: '>=12.13.0'}
+    peerDependencies:
+      autoprefixer: ^10.0.2
+      postcss: ^8.0.9
+    dependencies:
+      autoprefixer: 10.4.14(postcss@8.4.27)
+      lodash: 4.17.21
+      postcss: 8.4.27
+    dev: false
 
   /@microsoft/api-extractor-model@7.28.0:
     resolution: {integrity: sha512-QIMtUVm1tqiKG+M6ciFgRShcDoovyltaeg+CbyOnyr7SMrp6gg0ojK5/nToMqR9kAvsTS4QVgW4Twl50EoAjcw==}
@@ -1342,13 +1369,12 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.11
-      caniuse-lite: 1.0.30001538
+      caniuse-lite: 1.0.30001599
       fraction.js: 4.3.6
       normalize-range: 0.1.2
       picocolors: 1.0.0
       postcss: 8.4.27
       postcss-value-parser: 4.2.0
-    dev: true
 
   /available-typed-arrays@1.0.5:
     resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
@@ -1415,11 +1441,10 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001538
+      caniuse-lite: 1.0.30001599
       electron-to-chromium: 1.4.527
       node-releases: 2.0.13
       update-browserslist-db: 1.0.13(browserslist@4.21.11)
-    dev: true
 
   /buffer-from@1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
@@ -1496,9 +1521,8 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
-  /caniuse-lite@1.0.30001538:
-    resolution: {integrity: sha512-HWJnhnID+0YMtGlzcp3T9drmBJUVDchPJ08tpUGFLs9CYlwWPH2uLgpHn8fND5pCgXVtnGS3H4QR9XLMHVNkHw==}
-    dev: true
+  /caniuse-lite@1.0.30001599:
+    resolution: {integrity: sha512-LRAQHZ4yT1+f9LemSMeqdMpMxZcc4RMWdj4tiFe3G8tNkWK+E58g+/tzotb5cU6TbcVJLr4fySiAW7XmxQvZQA==}
 
   /chalk@4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
@@ -1786,7 +1810,6 @@ packages:
 
   /electron-to-chromium@1.4.527:
     resolution: {integrity: sha512-EafxEiEDzk2aLrdbtVczylHflHdHkNrpGNHIgDyA63sUQLQVS2ayj2hPw3RsVB42qkwURH+T2OxV7kGPUuYszA==}
-    dev: true
 
   /emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -1915,7 +1938,6 @@ packages:
   /escalade@3.1.1:
     resolution: {integrity: sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==}
     engines: {node: '>=6'}
-    dev: true
 
   /escape-goat@4.0.0:
     resolution: {integrity: sha512-2Sd4ShcWxbx6OY1IHyla/CVNwvg7XwZVoXZHcSu9w9SReNP1EzzD5T8NWKIR38fIqEns9kDWKUQTXXAmlDrdPg==}
@@ -2339,7 +2361,6 @@ packages:
 
   /fraction.js@4.3.6:
     resolution: {integrity: sha512-n2aZ9tNfYDwaHhvFTkhFErqOMIb8uyzSQ+vGJBjZyanAKZVbGUQ1sngfk9FdkBw7G26O7AgNjLcecLffD1c7eg==}
-    dev: true
 
   /fs-extra@7.0.1:
     resolution: {integrity: sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==}
@@ -3116,7 +3137,6 @@ packages:
 
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
@@ -3324,7 +3344,6 @@ packages:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
-    dev: true
 
   /natural-compare-lite@1.4.0:
     resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
@@ -3361,7 +3380,6 @@ packages:
 
   /node-releases@2.0.13:
     resolution: {integrity: sha512-uYr7J37ae/ORWdZeQ1xxMJe3NtdmqMC/JZK+geofDrkLUApKRHPd18/TxtBOJ4A0/+uUIliorNrfYV6s1b02eQ==}
-    dev: true
 
   /nopt@6.0.0:
     resolution: {integrity: sha512-ZwLpbTgdhuZUnZzjd7nb1ZV+4DoiC6/sfiVKok72ym/4Tlf+DFdlHYmT2JPmcNNWV6Pi3SDf1kT+A4r9RTuT9g==}
@@ -3389,7 +3407,6 @@ packages:
   /normalize-range@0.1.2:
     resolution: {integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==}
     engines: {node: '>=0.10.0'}
-    dev: true
 
   /normalize-url@8.0.0:
     resolution: {integrity: sha512-uVFpKhj5MheNBJRTiMZ9pE/7hD1QTeEvugSJW/OmLzAp78PB5O6adfMNTvmfKhXBkvCzC+rqifWcVYpGFwTjnw==}
@@ -3751,7 +3768,6 @@ packages:
 
   /picocolors@1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
-    dev: true
 
   /picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
@@ -3827,7 +3843,6 @@ packages:
 
   /postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
-    dev: true
 
   /postcss@8.4.27:
     resolution: {integrity: sha512-gY/ACJtJPSmUFPDCHtX78+01fHa64FaU4zaaWfuh1MhGJISufJAH4cun6k/8fwsHYeK4UQmENQK+tRLCFJE8JQ==}
@@ -3836,7 +3851,6 @@ packages:
       nanoid: 3.3.6
       picocolors: 1.0.0
       source-map-js: 1.0.2
-    dev: true
 
   /prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
@@ -4346,7 +4360,6 @@ packages:
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
-    dev: true
 
   /source-map-support@0.5.21:
     resolution: {integrity: sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==}
@@ -4787,7 +4800,6 @@ packages:
       browserslist: 4.21.11
       escalade: 3.1.1
       picocolors: 1.0.0
-    dev: true
 
   /update-notifier@6.0.2:
     resolution: {integrity: sha512-EDxhTEVPZZRLWYcJ4ZXjGFN0oP7qYvbXWzEgRm/Yql4dHX5wDbvh89YHP6PK1lzZJYrMtXUuZZz8XGK+U6U1og==}
@@ -5043,18 +5055,3 @@ packages:
     optionalDependencies:
       commander: 9.5.0
     dev: true
-
-  file:../ui-tailwind-theme/eduzz-ui-tailwind-theme-1.0.0.tgz:
-    resolution: {integrity: sha512-4HlIdyPE4whKfwEoAPD2H5T3U88uyr2cuTENmxvgGR3M9B1sWs7vW1lpd3SxubcVy8QvxIN8QuMaxgLT0EZNbQ==, tarball: file:../ui-tailwind-theme/eduzz-ui-tailwind-theme-1.0.0.tgz}
-    name: '@eduzz/ui-tailwind-theme'
-    version: 1.0.0
-    dependencies:
-      '@eduzz/ui-tokens': file:../ui-tokens/eduzz-ui-tokens-1.0.0.tgz
-      lodash-es: 4.17.21
-    dev: false
-
-  file:../ui-tokens/eduzz-ui-tokens-1.0.0.tgz:
-    resolution: {integrity: sha512-eq18F1knYfIZMgmPyJPIuRQzH8PAw6JbDQbzpBYGPYyMo+JF6FtKSGrNTO87orgxhhwopfZ1van32rUOIvT7aA==, tarball: file:../ui-tokens/eduzz-ui-tokens-1.0.0.tgz}
-    name: '@eduzz/ui-tokens'
-    version: 1.0.0
-    dev: false

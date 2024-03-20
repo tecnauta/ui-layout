@@ -63,12 +63,13 @@
   resolved "https://registry.yarnpkg.com/@eduzz/eslint-config/-/eslint-config-1.0.0.tgz#97180c2b37e1be93977f91725e4e9759cd3422b3"
   integrity sha512-Q2PMV1ddPI6ECdOpCiaAf4UxVo4Sf4usImvGRfQybDKzMDxUPHEocIMRjUe8ULPNfAnaV9Zgw20oGtUEUhkACg==
 
-"@eduzz/ui-tailwind-theme@^1.1.0-beta.4":
-  version "1.1.0-beta.4"
-  resolved "https://registry.yarnpkg.com/@eduzz/ui-tailwind-theme/-/ui-tailwind-theme-1.1.0-beta.4.tgz#2c93e5cf793eff9ebbd9db78ba001814f6301e02"
-  integrity sha512-TmLqnLSq0lg/danLIvOYiUcGk/wqUoSbKdrZ2UeBQP9HN6/da2+SbqIuboObnbWHHYK/A0/f8bhMuBnUF9UDXA==
+"@eduzz/ui-tailwind-theme@^1.1.0-beta.5":
+  version "1.1.0-beta.5"
+  resolved "https://registry.yarnpkg.com/@eduzz/ui-tailwind-theme/-/ui-tailwind-theme-1.1.0-beta.5.tgz#83b446075df042db71473bbc308a0fc35d2ab045"
+  integrity sha512-toHq73uFIi71ilS6AiatmnpWRgPbuylesAtm4kWquoZO/HsXST5Muspc8HdCx4IIg1bQn0OIbhHMr2LgPMYSYw==
   dependencies:
     "@eduzz/ui-tokens" "^1.1.0"
+    "@mertasan/tailwindcss-variables" "^2.7.0"
     lodash-es "^4"
 
 "@eduzz/ui-tokens@^1.1.0":
@@ -285,6 +286,13 @@
   dependencies:
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
+
+"@mertasan/tailwindcss-variables@^2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@mertasan/tailwindcss-variables/-/tailwindcss-variables-2.7.0.tgz#9a0ca5ffad9e6f904f8701796681cd951351f004"
+  integrity sha512-rKPhxi/0r6XWP0+OjPmsfrloX/TtQmvONj2Pr3Nl8BNBznQVP3M9sphguDBUDC0AiKYx2xgup3XzAhlIDLPLIA==
+  dependencies:
+    lodash "^4.17.21"
 
 "@microsoft/api-extractor-model@7.27.6":
   version "7.27.6"

@@ -9,8 +9,6 @@ import cx from '../utils/cx';
 import { hexToRgbVar } from '../utils/hextToRgb';
 import nestedComponent from '../utils/nestedComponent';
 
-import '@eduzz/ui-tailwind-theme/style.css';
-
 export type LayoutProps = HTMLAttributes<HTMLDivElement> & {
   theme?: 'light' | 'dark';
   className?: string;
