@@ -14,7 +14,7 @@ export interface LogoProps {
 }
 
 const Logo = ({ logo, logoMobile, logoDarkMode, logoMobileDarkMode, wrapper: Wrapper }: LogoProps) => {
-  const theme = useContextSelector(LayoutContext, context => context.layout.theme);
+  const theme = useContextSelector(LayoutContext, context => context.layout.mode);
 
   function getLogos() {
     if (theme === 'dark') {
