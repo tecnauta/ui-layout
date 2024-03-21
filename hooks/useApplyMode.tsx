@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from 'react';
 
-export default function useApplyMode(mode: 'dark' | 'light', onModeChange?: (newTheme: 'light' | 'dark') => void) {
+export default function useApplyMode(mode: 'dark' | 'light', onModeChange?: (newMode: 'light' | 'dark') => void) {
   const applyModeChange = useCallback((desiredTheme: 'light' | 'dark') => {
     if (!document?.body) {
       return;

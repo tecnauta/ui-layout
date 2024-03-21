@@ -125,6 +125,12 @@ function MyComponent() {
 
 ## Props
 
+### Layout props
+| prop               | tipo     | obrigatório | padrão | descrição                                                   |
+|--------------------|----------|-------------|--------|-------------------------------------------------------------|
+| mode               | `'light' \| 'dark'`    | `false`     | `'light'`      |  Modo (Dark ou Light mode)                                     |
+| onModeChange         | `(newMode: 'light' \| 'dark') => void`    | `false`     | -      | Função a ser executada toda vez que houver uma mudança de modo.                           |
+
 ### Topbar props
 
 | prop               | tipo     | obrigatório | padrão | descrição                                                   |
@@ -164,6 +170,12 @@ function MyComponent() {
 | prop  | tipo     | obrigatório | padrão | descrição                                         |
 |-------|----------|-------------|--------|---------------------------------------------------|
 | token | `string` | `false`     | -      | Token gerado pelo servidor para uso do LiveHelper |
+
+### Topbar.ModeSwitcher props
+| prop               | tipo     | obrigatório | padrão | descrição                                                   |
+|--------------------|----------|-------------|--------|-------------------------------------------------------------|
+| tooltip               | `string`    | `false`     | `'Tema'`      |  Texto para o tooltip do botão. mode)                                     |
+| badgeDot         | `boolean`    | `false`     | `false`      | Se um badgeDot deve ser adicionado ao botão .                           |
 
 ### Sidebar props
 

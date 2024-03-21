@@ -17,7 +17,7 @@ export type LayoutProps = HTMLAttributes<HTMLDivElement> & {
   primaryColor?: `#${string}`;
   secondaryColor?: `#${string}`;
   mode?: 'light' | 'dark';
-  onModeChange?: (newTheme: 'light' | 'dark') => void;
+  onModeChange?: (newMode: 'light' | 'dark') => void;
 };
 
 const Layout = ({ className, children, primaryColor, secondaryColor, mode, onModeChange, ...rest }: LayoutProps) => {
