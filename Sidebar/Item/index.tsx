@@ -64,7 +64,7 @@ const SidebarItem = forwardRef<HTMLElement, SidebarItemProps>(
         />
 
         <div className='uizz-layout-flex uizz-layout-items-center uizz-layout-justify-between'>
-          <span className='uizz-layout-col-[2] uizz-layout-min-w-0 uizz-layout-overflow-hidden uizz-layout-text-ellipsis uizz-layout-text-base  uizz-layout-transition-all group-[.--active]/menu:uizz-layout-font-bold'>
+          <span className='uizz-layout-col-[2] uizz-layout-min-w-0 uizz-layout-overflow-hidden uizz-layout-text-ellipsis uizz-layout-text-base uizz-layout-transition-[font-weight] group-[.--active]/menu:uizz-layout-font-bold'>
             {children}
           </span>
           {isExternal && (
