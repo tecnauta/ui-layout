@@ -10,7 +10,6 @@ export default function useApplyMode(mode: 'dark' | 'light', onModeChange?: (new
   }, []);
 
   useEffect(() => {
-    console.log('mode ->', mode);
     applyModeChange(mode);
 
     if (onModeChange) {
