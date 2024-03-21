@@ -32,7 +32,7 @@ const SidebarGroup = forwardRef<HTMLLIElement, SidebarGroupProps>(
             >
               <div
                 className={cx(
-                  'uizz-layout-absolute uizz-layout-left-0 uizz-layout-top-2/4 uizz-layout--mt-0.5 uizz-layout-h-0.5 uizz-layout-w-[30px] uizz-layout-bg-content-6/[0.65] uizz-layout-opacity-30 uizz-layout-transition-[0.3s]',
+                  'uizz-layout-absolute uizz-layout-left-0 uizz-layout-top-2/4 uizz-layout--mt-0.5 uizz-layout-h-0.5 uizz-layout-w-[30px] uizz-layout-bg-content-6/[0.65] uizz-layout-opacity-30 uizz-layout-transition-[left,_background-color]',
                   {
                     '!uizz-layout-top-[calc(50%_-_1px)] !uizz-layout-mt-[-0.5px] !uizz-layout-h-px !uizz-layout-bg-content-6/[0.45] !uizz-layout-opacity-30':
                       isExpanded

@@ -10,7 +10,7 @@ import { hexToRgbVar } from '../utils/hextToRgb';
 import nestedComponent from '../utils/nestedComponent';
 
 export type LayoutProps = HTMLAttributes<HTMLDivElement> & {
-  theme?: 'light' | 'dark';
+  mode?: 'light' | 'dark';
   className?: string;
   children?: ReactNode | MemoExoticComponent<any>;
 
@@ -18,8 +18,8 @@ export type LayoutProps = HTMLAttributes<HTMLDivElement> & {
   secondaryColor?: `#${string}`;
 };
 
-const Layout = ({ theme, className, children, primaryColor, secondaryColor, ...rest }: LayoutProps) => {
-  const [currentTheme, setCurrentTheme] = useState<'light' | 'dark'>(theme || 'light');
+const Layout = ({ mode, className, children, primaryColor, secondaryColor, ...rest }: LayoutProps) => {
+  const [currentMode, setCurrentMode] = useState<'light' | 'dark'>(() => mode || 'light');
   const [hasTopbar, setHasTopbar] = useState(false);
   const [hasSidebar, setHasSidebar] = useState(false);
   const [hasUserMenu, setHasUserMenu] = useState(false);
@@ -30,11 +30,11 @@ const Layout = ({ theme, className, children, primaryColor, secondaryColor, ...r
   const [sidebarOpened, toogleSidebarOpened, trueSidebarOpened, falseSidebarOpened] = useBoolean(false);
 
   const toggleTheme = useCallback(() => {
-    setCurrentTheme(current => {
+    setCurrentMode(current => {
       return current === 'dark' ? 'light' : 'dark';
     });
 
-    return () => setCurrentTheme(theme || 'light');
+    return () => setCurrentMode(mode || 'light');
   }, []);
 
   const registerTopbar = useCallback(() => {
@@ -63,7 +63,7 @@ const Layout = ({ theme, className, children, primaryColor, secondaryColor, ...r
   const contextValue = useMemo<LayoutContextType>(
     () => ({
       layout: {
-        theme: currentTheme,
+        theme: currentMode,
         toggle: toggleTheme
       },
       topbar: {
@@ -110,7 +110,7 @@ const Layout = ({ theme, className, children, primaryColor, secondaryColor, ...r
       trueUserMenuOpened,
       userMenuContainer,
       userMenuOpened,
-      currentTheme,
+      currentMode,
       toggleTheme
     ]
   );

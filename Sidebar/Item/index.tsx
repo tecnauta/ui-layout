@@ -57,7 +57,7 @@ const SidebarItem = forwardRef<HTMLElement, SidebarItemProps>(
           }
         )
       },
-      <li className='uizz-layout-box-border uizz-layout-grid uizz-layout-cursor-pointer uizz-layout-grid-cols-[1.625rem_1fr] uizz-layout-items-center uizz-layout-gap-2 uizz-layout-whitespace-nowrap uizz-layout-px-4 uizz-layout-py-1 uizz-layout-leading-[1.2] uizz-layout-no-underline uizz-layout-transition-[0.3s] xl:uizz-layout-py-[0.07rem]'>
+      <li className='uizz-layout-box-border uizz-layout-grid uizz-layout-cursor-pointer uizz-layout-grid-cols-[1.625rem_1fr] uizz-layout-items-center uizz-layout-gap-2 uizz-layout-whitespace-nowrap uizz-layout-px-4 uizz-layout-py-1 uizz-layout-leading-[1.2] uizz-layout-no-underline uizz-layout-transition-[left,_background-color] xl:uizz-layout-py-[0.07rem]'>
         <IconBullet
           className='uizz-layout-text-[color:var(--eduzz-theme-secondary)] uizz-layout-opacity-0 group-[.--active]/uizz-layout-menu:uizz-layout-bg-secondary group-[.--active]/menu:uizz-layout-opacity-100'
           size='md'

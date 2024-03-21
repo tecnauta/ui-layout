@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-      <Layout theme='light'>
+      <Layout mode='light'>
         <Topbar
           currentApplication='orbita'
           user={{
