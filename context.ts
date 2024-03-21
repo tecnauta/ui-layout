@@ -8,7 +8,7 @@ export const MENU_WIDTH = 248;
 
 export interface LayoutContextType {
   layout: {
-    theme: 'light' | 'dark';
+    mode: 'light' | 'dark';
     toggle(): void;
   };
 
@@ -42,7 +42,7 @@ export interface LayoutContextType {
 
 const LayoutContext = createContext<LayoutContextType>({
   layout: {
-    theme: 'light',
+    mode: 'light',
     toggle: () => null
   },
 

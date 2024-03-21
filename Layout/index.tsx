@@ -2,6 +2,7 @@ import { HTMLAttributes, useState, ReactNode, useCallback, useMemo, MemoExoticCo
 
 import Content from '../Content';
 import LayoutContext, { LayoutContextType } from '../context';
+import useApplyMode from '../hooks/useApplyMode';
 import useBoolean from '../hooks/useBoolean';
 import Sidebar from '../Sidebar';
 import Topbar from '../Topbar';
@@ -10,15 +11,16 @@ import { hexToRgbVar } from '../utils/hextToRgb';
 import nestedComponent from '../utils/nestedComponent';
 
 export type LayoutProps = HTMLAttributes<HTMLDivElement> & {
-  mode?: 'light' | 'dark';
   className?: string;
   children?: ReactNode | MemoExoticComponent<any>;
 
   primaryColor?: `#${string}`;
   secondaryColor?: `#${string}`;
+  mode?: 'light' | 'dark';
+  onModeChange?: (newTheme: 'light' | 'dark') => void;
 };
 
-const Layout = ({ mode, className, children, primaryColor, secondaryColor, ...rest }: LayoutProps) => {
+const Layout = ({ className, children, primaryColor, secondaryColor, mode, onModeChange, ...rest }: LayoutProps) => {
   const [currentMode, setCurrentMode] = useState<'light' | 'dark'>(() => mode || 'light');
   const [hasTopbar, setHasTopbar] = useState(false);
   const [hasSidebar, setHasSidebar] = useState(false);
@@ -28,6 +30,7 @@ const Layout = ({ mode, className, children, primaryColor, secondaryColor, ...re
 
   const [userMenuOpened, toogleUserMenuOpened, trueUserMenuOpened, falseUserMenuOpened] = useBoolean(false);
   const [sidebarOpened, toogleSidebarOpened, trueSidebarOpened, falseSidebarOpened] = useBoolean(false);
+  useApplyMode(currentMode, onModeChange);
 
   const toggleTheme = useCallback(() => {
     setCurrentMode(current => {
@@ -63,7 +66,7 @@ const Layout = ({ mode, className, children, primaryColor, secondaryColor, ...re
   const contextValue = useMemo<LayoutContextType>(
     () => ({
       layout: {
-        theme: currentMode,
+        mode: currentMode,
         toggle: toggleTheme
       },
       topbar: {

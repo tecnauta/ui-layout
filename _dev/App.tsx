@@ -31,7 +31,7 @@ function App() {
           <Topbar.UnitySupportChat />
 
           <Topbar.Search onEnter={onSearchEnter} />
-          <Topbar.ThemeSwitcher />
+          <Topbar.ModeSwitcher />
           <Topbar.Action badgeDot icon={<ExperimentOutlined />} tooltip='Experiment' />
           <Topbar.Action badgeCount={1} active icon={<NotificationOutlined size={25} />} />
           <Topbar.Action badgeCount={999} icon={<MessageOutlined />} label='Chat' />
