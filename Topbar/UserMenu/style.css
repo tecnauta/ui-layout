@@ -9,13 +9,13 @@
   position: fixed;
   top: var(--eduzz-ui-layout-topbar-height-rem);
   right: 0.5rem;
-  box-shadow: 0px 8px 24px rgb(var(--eduzz-ui-layout-content-color-6) / 0.16);
+  box-shadow: 0px 8px 24px rgb(var(--eduzz-ui-layout-content-title) / 0.16);
   padding: 0.5rem;
   box-sizing: border-box;
   visibility: hidden;
   opacity: 0;
   user-select: none;
-  background: rgb(var(--eduzz-ui-layout-background-color-4));
+  background: rgb(var(--eduzz-ui-layout-surface-default));
   border-radius: 0 0 0.5rem 0.5rem;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .eduzz-ui-layout-topbar-user-menu:hover::-webkit-scrollbar-thumb {
-  background: rgb(var(--eduzz-ui-layout-outline-color-1));
+  background: rgb(var(--eduzz-ui-layout-outline-default));
 }
 
 .eduzz-ui-layout-topbar-user-menu.--opened {

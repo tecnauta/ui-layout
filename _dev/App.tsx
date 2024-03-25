@@ -86,7 +86,7 @@ function App() {
 
         <Content>
           <img src='https://picsum.photos/800/300' className='uizz-layout-w-full' />
-          <p className='uizz-layout-text-content-6'>Teste</p>
+          <p className='uizz-layout-text-content-title'>Teste</p>
         </Content>
       </Layout>
     </>
