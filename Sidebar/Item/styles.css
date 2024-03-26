@@ -10,13 +10,13 @@
 }
 
 .eduzz-ui-layout-sidebar-item:focus-visible {
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: rgb(var(--eduzz-ui-layout-content-title) / 0.03);
   box-shadow: 0 0 0 2px #039be5 inset;
 }
 
 .eduzz-ui-layout-sidebar-item:hover,
 .eduzz-ui-layout-sidebar-item:active {
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: rgb(var(--eduzz-ui-layout-content-title) / 0.03);
   color: inherit;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .eduzz-ui-layout-sidebar-item>li .eduzz-ui-layout-sidebar-item-label-wrapper .eduzz-ui-layout-sidebar-item-label-external {
-  fill: rgba(0, 0, 0, 0.88);
+  fill: rgb(var(--eduzz-ui-layout-content-title) / 0.88);
   opacity: 0.5;
 }
 

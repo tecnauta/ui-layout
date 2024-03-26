@@ -15,7 +15,7 @@
   visibility: hidden;
   opacity: 0;
   user-select: none;
-  background: rgb(255, 255, 255);
+  background: rgb(var(--eduzz-ui-layout-surface-default));
   border-radius: 0 0 0.5rem 0.5rem;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .eduzz-ui-layout-topbar-user-menu:hover::-webkit-scrollbar-thumb {
-  background: #e0e0e0;
+  background: rgb(var(--eduzz-ui-layout-outline-default));
 }
 
 .eduzz-ui-layout-topbar-user-menu.--opened {

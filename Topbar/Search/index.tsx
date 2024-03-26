@@ -90,7 +90,7 @@ const TopbarSearch = ({
         <input
           ref={inputRef}
           className={cx(
-            'uizz-layout-h-10 uizz-layout-flex-1 uizz-layout-border-none uizz-layout-bg-transparent uizz-layout-text-base focus-visible:uizz-layout-outline-none [&:focus+div]:uizz-layout-border-[var(--eduzz-theme-primary)] [&:focus+div]:uizz-layout-outline-2 [&:hover+div]:uizz-layout-border-[var(--eduzz-theme-primary)]',
+            'uizz-layout-h-10 uizz-layout-flex-1 uizz-layout-border-none uizz-layout-bg-transparent uizz-layout-text-base uizz-layout-text-content-title focus-visible:uizz-layout-outline-none [&:focus+div]:uizz-layout-border-[var(--eduzz-theme-primary)] [&:focus+div]:uizz-layout-outline-disabled [&:hover+div]:uizz-layout-border-[var(--eduzz-theme-primary)]',
             {
               '[&+div]:!uizz-layout-border-red-500 [&:focus+div]:!uizz-layout-outline-red-200 [&:hover+div]:!uizz-layout-border-red-500':
                 status === 'error',
@@ -103,9 +103,9 @@ const TopbarSearch = ({
           onChange={onChange}
           onKeyDown={disableShortcut ? undefined : onKeyDown}
         />
-        <div className='uizz-layout-pointer-events-none uizz-layout-absolute uizz-layout-inset-0 uizz-layout-rounded uizz-layout-border uizz-layout-border-solid uizz-layout-border-neutral-300 uizz-layout-outline uizz-layout-outline-0 uizz-layout-outline-offset-0 uizz-layout-outline-[rgba(var(--eduzz-theme-primary-rgb),0.3)] uizz-layout-transition' />
+        <div className='uizz-layout-pointer-events-none uizz-layout-absolute uizz-layout-inset-0 uizz-layout-rounded uizz-layout-border uizz-layout-border-solid uizz-layout-border-neutral-300 uizz-layout-outline uizz-layout-outline-0 uizz-layout-outline-offset-0 uizz-layout-outline-[rgba(var(--eduzz-theme-primary-rgb),0.3)] uizz-layout-transition dark:uizz-layout-border-neutral-700' />
         {disableShortcut ? undefined : (
-          <div className='uizz-layout-rounded uizz-layout-border uizz-layout-bg-gray-50 uizz-layout-px-2 uizz-layout-py-1 uizz-layout-text-xs'>{`${
+          <div className='uizz-layout-rounded uizz-layout-border uizz-layout-bg-gray-50 uizz-layout-px-2 uizz-layout-py-1 uizz-layout-text-xs dark:uizz-layout-bg-gray-950'>{`${
             isMacOS ? '⌘' : 'Ctrl'
           }+K`}</div>
         )}

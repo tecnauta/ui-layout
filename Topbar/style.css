@@ -15,9 +15,9 @@
 }
 
 .eduzz-ui-layout-topbar>.eduzz-ui-layout-topbar-header {
-  background-color: rgb(255, 255, 255);
-  color: rgba(0, 0, 0, 0.88);
-  border-bottom: 3px solid rgba(217, 217, 217, 0.3);
+  background-color: rgb(var(--eduzz-ui-layout-surface-default));
+  color: rgb(var(--eduzz-ui-layout-content-caption));
+  border-bottom: 3px solid rgb(var(--eduzz-ui-layout-outline-disabled) / 0.3);
   box-sizing: border-box;
   position: fixed;
   padding: 0.5rem 1rem 0.5rem 1rem;
@@ -70,17 +70,17 @@
 }
 
 .eduzz-ui-layout-topbar>.eduzz-ui-layout-topbar-header>.eduzz-ui-layout-topbar-start .eduzz-ui-layout-topbar-tag.eduzz-ui-layout-topbar-tag-pro {
-  border: 1px solid #bababa;
+  border: 1px solid rgb(var(--eduzz-ui-layout-content-disabled));
 }
 
 .eduzz-ui-layout-topbar>.eduzz-ui-layout-topbar-header>.eduzz-ui-layout-topbar-start .eduzz-ui-layout-topbar-tag.eduzz-ui-layout-topbar-tag-unity {
-  border: 1px solid #000;
-  background: #000;
-  color: white;
+  border: 1px solid rgb(var(--eduzz-ui-layout-content-title));
+  background: rgb(var(--eduzz-ui-layout-content-title));
+  color: rgb(var(--eduzz-ui-layout-surface-default));
 }
 
 .eduzz-ui-layout-topbar>.eduzz-ui-layout-topbar-header>.eduzz-ui-layout-topbar-start .eduzz-ui-layout-topbar-tag.eduzz-ui-layout-topbar-tag-partner {
-  background: #ededed;
+  background: rgb(var(--eduzz-ui-layout-outline-default));
 }
 
 @media (max-width:575px) {

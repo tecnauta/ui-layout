@@ -43,7 +43,7 @@ const UserMenuItem = forwardRef<HTMLButtonElement, UserMenuItemProps>(
         onClick={handleClick}
         className={cx(
           className,
-          'uizz-layout-flex uizz-layout-w-full uizz-layout-cursor-pointer uizz-layout-items-center uizz-layout-gap-2 uizz-layout-rounded-md uizz-layout-border-none uizz-layout-bg-transparent uizz-layout-px-4 uizz-layout-py-2 uizz-layout-text-inherit uizz-layout-transition hover:uizz-layout-bg-[rgba(0,0,0,0.03)] disabled:uizz-layout-cursor-not-allowed disabled:uizz-layout-opacity-25 [&>.anticon]:uizz-layout-text-[20px] [&>svg]:uizz-layout-mr-[5px] [&>svg]:uizz-layout-w-6'
+          'uizz-layout-flex uizz-layout-w-full uizz-layout-cursor-pointer uizz-layout-items-center uizz-layout-gap-2 uizz-layout-rounded-md uizz-layout-border-none uizz-layout-bg-transparent uizz-layout-px-4 uizz-layout-py-2 uizz-layout-text-inherit uizz-layout-transition hover:uizz-layout-bg-content-title/[0.03] disabled:uizz-layout-cursor-not-allowed disabled:uizz-layout-opacity-25 dark:hover:uizz-layout-bg-content-title/[0.08] [&>.anticon]:uizz-layout-text-[20px] [&>svg]:uizz-layout-mr-[5px] [&>svg]:uizz-layout-w-6'
         )}
         disabled={disabled}
       >

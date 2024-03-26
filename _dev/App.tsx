@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { MessageOutlined, BellOutlined, BulbOutlined, NotificationOutlined } from '@ant-design/icons';
+import { MessageOutlined, BellOutlined, NotificationOutlined, ExperimentOutlined } from '@ant-design/icons';
 
 import Layout from '..';
 import Avatar from '../Avatar';
@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-      <Layout>
+      <Layout mode='light'>
         <Topbar
           currentApplication='orbita'
           user={{
@@ -31,8 +31,8 @@ function App() {
           <Topbar.UnitySupportChat />
 
           <Topbar.Search onEnter={onSearchEnter} />
-
-          <Topbar.Action badgeDot icon={<BulbOutlined />} tooltip='Theme' />
+          <Topbar.ModeSwitcher />
+          <Topbar.Action badgeDot icon={<ExperimentOutlined />} tooltip='Experiment' />
           <Topbar.Action badgeCount={1} active icon={<NotificationOutlined size={25} />} />
           <Topbar.Action badgeCount={999} icon={<MessageOutlined />} label='Chat' />
 
@@ -86,7 +86,7 @@ function App() {
 
         <Content>
           <img src='https://picsum.photos/800/300' className='uizz-layout-w-full' />
-          <p>Teste</p>
+          <p className='uizz-layout-text-content-title'>Teste</p>
         </Content>
       </Layout>
     </>

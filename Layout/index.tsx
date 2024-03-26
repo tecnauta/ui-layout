@@ -1,7 +1,8 @@
-import { HTMLAttributes, ReactNode, useState, useCallback, useMemo } from 'react';
+import { HTMLAttributes, useState, ReactNode, useCallback, useMemo, MemoExoticComponent } from 'react';
 
 import Content from '../Content';
 import LayoutContext, { LayoutContextType } from '../context';
+import useApplyMode from '../hooks/useApplyMode';
 import useBoolean from '../hooks/useBoolean';
 import Sidebar from '../Sidebar';
 import Topbar from '../Topbar';
@@ -11,13 +12,16 @@ import nestedComponent from '../utils/nestedComponent';
 
 export type LayoutProps = HTMLAttributes<HTMLDivElement> & {
   className?: string;
-  children?: ReactNode;
+  children?: ReactNode | MemoExoticComponent<any>;
 
   primaryColor?: `#${string}`;
   secondaryColor?: `#${string}`;
+  mode?: 'light' | 'dark';
+  onModeChange?: (newMode: 'light' | 'dark') => void;
 };
 
-const Layout = ({ className, children, primaryColor, secondaryColor, ...rest }: LayoutProps) => {
+const Layout = ({ className, children, primaryColor, secondaryColor, mode, onModeChange, ...rest }: LayoutProps) => {
+  const [currentMode, setCurrentMode] = useState<'light' | 'dark'>(() => mode || 'light');
   const [hasTopbar, setHasTopbar] = useState(false);
   const [hasSidebar, setHasSidebar] = useState(false);
   const [hasUserMenu, setHasUserMenu] = useState(false);
@@ -26,6 +30,15 @@ const Layout = ({ className, children, primaryColor, secondaryColor, ...rest }: 
 
   const [userMenuOpened, toogleUserMenuOpened, trueUserMenuOpened, falseUserMenuOpened] = useBoolean(false);
   const [sidebarOpened, toogleSidebarOpened, trueSidebarOpened, falseSidebarOpened] = useBoolean(false);
+  useApplyMode(currentMode, onModeChange);
+
+  const toggleTheme = useCallback(() => {
+    setCurrentMode(current => {
+      return current === 'dark' ? 'light' : 'dark';
+    });
+
+    return () => setCurrentMode(mode || 'light');
+  }, []);
 
   const registerTopbar = useCallback(() => {
     setHasTopbar(true);
@@ -52,6 +65,10 @@ const Layout = ({ className, children, primaryColor, secondaryColor, ...rest }: 
 
   const contextValue = useMemo<LayoutContextType>(
     () => ({
+      layout: {
+        mode: currentMode,
+        toggle: toggleTheme
+      },
       topbar: {
         exists: hasTopbar,
         centerPortal: topbarCenterContainer,
@@ -95,7 +112,9 @@ const Layout = ({ className, children, primaryColor, secondaryColor, ...rest }: 
       trueSidebarOpened,
       trueUserMenuOpened,
       userMenuContainer,
-      userMenuOpened
+      userMenuOpened,
+      currentMode,
+      toggleTheme
     ]
   );
 

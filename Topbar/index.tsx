@@ -8,6 +8,7 @@ import Apps from './Apps';
 import Belt from './Belt';
 import TopbarContext, { TopbarContextType } from './context';
 import Logo from './Logo';
+import ModeSwitcher from './ModeSwitcher';
 import Search from './Search';
 import UnitySupportChat from './UnitySupportChat';
 import User from './User';
@@ -132,5 +133,6 @@ export default nestedComponent(Topbar, {
   UserMenuItem,
   UserMenuDivider,
   UserMenuGroup,
-  Search
+  Search,
+  ModeSwitcher
 });
