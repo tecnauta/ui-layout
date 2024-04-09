@@ -28,8 +28,8 @@ const Belt = memo(() => {
     const classBelt = supportedBelts.includes(nameBeltClass)
       ? nameBeltClass
       : nameBeltClass === 'sensei'
-      ? 'black'
-      : 'white';
+        ? 'black'
+        : 'white';
 
     setBeltColor(belt);
     setBeltClass(classBelt);
