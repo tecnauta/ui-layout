@@ -6,7 +6,7 @@ import useBoolean from '../hooks/useBoolean';
 import useMode from '../hooks/useMode';
 import Sidebar from '../Sidebar';
 import Topbar from '../Topbar';
-import cx from '../utils/cx';
+import { cn } from '../utils/cn';
 import { hexToRgbVar } from '../utils/hextToRgb';
 import nestedComponent from '../utils/nestedComponent';
 
@@ -17,6 +17,7 @@ export type LayoutProps = HTMLAttributes<HTMLDivElement> & {
   primaryColor?: `#${string}`;
   secondaryColor?: `#${string}`;
   mode?: 'light' | 'dark';
+  persistMode?: boolean;
   acceptModeBySearchParam?: boolean;
   onModeChange?: (newMode: 'light' | 'dark') => void;
 };
@@ -27,6 +28,7 @@ const Layout = ({
   primaryColor,
   secondaryColor,
   mode,
+  persistMode,
   acceptModeBySearchParam,
   onModeChange,
   ...rest
@@ -39,7 +41,7 @@ const Layout = ({
 
   const [userMenuOpened, toogleUserMenuOpened, trueUserMenuOpened, falseUserMenuOpened] = useBoolean(false);
   const [sidebarOpened, toogleSidebarOpened, trueSidebarOpened, falseSidebarOpened] = useBoolean(false);
-  const [currentMode, toggleMode] = useMode(mode, acceptModeBySearchParam, onModeChange);
+  const [currentMode, toggleMode] = useMode({ mode, acceptModeBySearchParam, onModeChange, persistMode });
 
   const registerTopbar = useCallback(() => {
     setHasTopbar(true);
@@ -150,7 +152,7 @@ const Layout = ({
       <style>{cssVars}</style>
 
       <div
-        className={cx('eduzz-ui-layout uizz-layout-flex uizz-layout-min-h-screen uizz-layout-w-full', className, {
+        className={cn('eduzz-ui-layout uizz-layout-flex uizz-layout-min-h-screen uizz-layout-w-full', className, {
           'uizz-layout-pt-[var(--eduzz-ui-layout-topbar-height-rem)]': hasTopbar
         })}
         {...rest}

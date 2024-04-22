@@ -4,11 +4,14 @@ import { getLocalStorageInstance } from '../utils/localStorage';
 
 export type PossibleModes = 'dark' | 'light';
 
-export default function useMode(
-  mode?: PossibleModes,
-  acceptModeBySearchParam?: boolean,
-  onModeChange?: (newMode: PossibleModes) => void
-) {
+type UseModeOptions = {
+  mode?: PossibleModes;
+  acceptModeBySearchParam?: boolean;
+  persistMode?: boolean;
+  onModeChange?: (newMode: PossibleModes) => void;
+};
+
+export default function useMode({ mode, acceptModeBySearchParam, persistMode, onModeChange }: UseModeOptions) {
   const localStorageInstance = getLocalStorageInstance();
 
   const [currentMode, setCurrentMode] = useState<'light' | 'dark'>(() => {
@@ -28,13 +31,13 @@ export default function useMode(
       return searchParamsMode;
     }
 
-    const storagedMode = localStorageInstance?.getItem('eduzz-ui-mode') as PossibleModes | undefined;
+    const storageMode = localStorageInstance?.getItem('eduzz-ui-mode') as PossibleModes | undefined;
 
-    if (!storagedMode) {
+    if (!storageMode) {
       return mode || 'light';
     }
 
-    return storagedMode;
+    return storageMode;
   });
 
   const toggleMode = useCallback(() => {
@@ -43,16 +46,22 @@ export default function useMode(
     });
 
     return () => setCurrentMode(mode || 'light');
-  }, []);
+  }, [mode]);
 
-  const applyModeChange = useCallback((desiredTheme: PossibleModes) => {
-    if (!document?.body) {
-      return;
-    }
+  const applyModeChange = useCallback(
+    (desiredTheme: PossibleModes) => {
+      if (!document?.body) {
+        return;
+      }
 
-    document.body.setAttribute('data-eduzz-theme', desiredTheme);
-    localStorageInstance?.setItem('eduzz-ui-mode', desiredTheme);
-  }, []);
+      document.body.setAttribute('data-eduzz-theme', desiredTheme);
+
+      if (persistMode) {
+        localStorageInstance?.setItem('eduzz-ui-mode', desiredTheme);
+      }
+    },
+    [localStorageInstance, persistMode]
+  );
 
   useEffect(() => {
     applyModeChange(currentMode);
@@ -60,7 +69,7 @@ export default function useMode(
     if (onModeChange) {
       onModeChange(currentMode);
     }
-  }, [currentMode]);
+  }, [applyModeChange, currentMode, onModeChange]);
 
   return [currentMode, toggleMode] as const;
 }
