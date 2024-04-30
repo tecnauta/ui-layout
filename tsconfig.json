@@ -23,12 +23,13 @@
   },
   "include": [
     "./**/*.tsx",
-    "./**/*.ts"
+    "./**/*.ts", 
+    "vite.config.mts"
   ],
   "exclude": [
     "*.d.ts",
     "./**/*.d.ts",
-    "vite.config.ts",
+    "vite.config.mts",
     "dist",
     "node_modules"
   ]

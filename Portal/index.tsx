@@ -1,4 +1,4 @@
-import { ReactNode, useState, useLayoutEffect } from 'react';
+import { ReactNode, useState, useLayoutEffect, ReactPortal } from 'react';
 import { createPortal } from 'react-dom';
 
 export interface PortalProps {
@@ -42,7 +42,7 @@ const Portal = ({ children, target }: PortalProps) => {
   }, [target]);
 
   if (!wrapperElement) return null;
-  return createPortal(children, wrapperElement);
+  return createPortal(children, wrapperElement) as ReactPortal;
 };
 
 export default Portal;
