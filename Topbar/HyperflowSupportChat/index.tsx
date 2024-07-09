@@ -1,9 +1,6 @@
 import SupportChat from './chat';
 
 export interface TopbarHyperflowSupportChatProps {
-  /**
-   * Token gerado pelo servidor para acesso ao Hyperflow
-   */
   jwtToHyperflow?: string;
 }
 
