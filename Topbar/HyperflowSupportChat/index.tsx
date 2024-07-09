@@ -1,23 +1,16 @@
-import { useContextSelector } from 'use-context-selector';
-
 import SupportChat from './chat';
-import TopbarContext from '../context';
 
 export interface TopbarHyperflowSupportChatProps {
   /**
-   * Token gerado pelo servidor para acesso ao LiveHelper
+   * Token gerado pelo servidor para acesso ao Hyperflow
    */
-  token?: string;
+  jwtToHyperflow?: string;
 }
 
-const TopbarHyperflowSupportChat = ({ token }: TopbarHyperflowSupportChatProps) => {
-  const user = useContextSelector(TopbarContext, context => context.user);
+const TopbarHyperflowSupportChat = ({ jwtToHyperflow }: TopbarHyperflowSupportChatProps) => {
+  if (!jwtToHyperflow) return null;
 
-  console.log(user);
-
-  if (!token) return null;
-
-  return <SupportChat />;
+  return <SupportChat jwtToHyperflow={jwtToHyperflow} />;
 };
 
 export default TopbarHyperflowSupportChat;
