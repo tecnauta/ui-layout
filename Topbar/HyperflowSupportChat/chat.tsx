@@ -18,7 +18,7 @@ interface SupportChatProps {
   jwtToHyperflow: string;
 }
 
-const SupportChat: React.FC<SupportChatProps> = ({ jwtToHyperflow }) => {
+const HyperflowSupportChat: React.FC<SupportChatProps> = ({ jwtToHyperflow }) => {
   const currentUser = useContextSelector(TopbarContext, context => context.user);
   const hyperflow = useExternalScript('https://webchat.hyperflow.global/sdk.js');
 
@@ -59,4 +59,4 @@ const SupportChat: React.FC<SupportChatProps> = ({ jwtToHyperflow }) => {
   return null;
 };
 
-export default SupportChat;
+export default HyperflowSupportChat;

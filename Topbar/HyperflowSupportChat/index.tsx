@@ -1,4 +1,4 @@
-import SupportChat from './chat';
+import HyperflowSupportChat from './chat';
 
 export interface TopbarHyperflowSupportChatProps {
   jwtToHyperflow?: string;
@@ -7,7 +7,7 @@ export interface TopbarHyperflowSupportChatProps {
 const TopbarHyperflowSupportChat = ({ jwtToHyperflow }: TopbarHyperflowSupportChatProps) => {
   if (!jwtToHyperflow) return null;
 
-  return <SupportChat jwtToHyperflow={jwtToHyperflow} />;
+  return <HyperflowSupportChat jwtToHyperflow={jwtToHyperflow} />;
 };
 
 export default TopbarHyperflowSupportChat;
