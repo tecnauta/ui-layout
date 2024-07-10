@@ -1,7 +1,4 @@
-import { useContextSelector } from 'use-context-selector';
-
 import useExternalScript from './import';
-import TopbarContext from '../context';
 
 type HyperflowParams = {
   id?: number;
@@ -16,33 +13,33 @@ type HyperflowParams = {
 
 interface SupportChatProps {
   jwtToHyperflow: string;
+  helpUser: any;
 }
 
-const HyperflowSupportChat: React.FC<SupportChatProps> = ({ jwtToHyperflow }) => {
-  const currentUser = useContextSelector(TopbarContext, context => context.user);
+function getChatTokenID(currentUser: any) {
+  const chatUnityID = process.env.HYPERFLOW_CHAT_UNITY_ID ?? '';
+  const chatBlackID = process.env.HYPERFLOW_CHAT_BLACK_ID ?? '';
+  const chatEliteID = process.env.HYPERFLOW_CHAT_ELITE_ID ?? '';
+  const beltsCanViewChatBlack = ['Black', 'Golden', 'Sensei'];
+  const beltUserCanViewChatBlack = beltsCanViewChatBlack.includes((currentUser?.belt || '').split(' ')[0]);
+
+  if (currentUser?.tag === 'unity') return chatUnityID;
+  if (beltUserCanViewChatBlack || currentUser?.isClubeBlack) return chatBlackID;
+  return chatEliteID;
+}
+
+const HyperflowSupportChat: React.FC<SupportChatProps> = ({ jwtToHyperflow, helpUser }) => {
+  const currentUser = helpUser;
   const hyperflow = useExternalScript('https://webchat.hyperflow.global/sdk.js');
-
-  if (!currentUser) return null;
-
-  function getChatTokenID() {
-    const chatUnityID = process.env.HYPERFLOW_CHAT_UNITY_ID ?? '';
-    const chatBlackID = process.env.HYPERFLOW_CHAT_BLACK_ID ?? '';
-    const chatEliteID = process.env.HYPERFLOW_CHAT_ELITE_ID ?? '';
-    const beltsCanViewChatBlack = ['Black', 'Golden', 'Sensei'];
-    const beltUserCanViewChatBlack = beltsCanViewChatBlack.includes((currentUser?.belt || '').split(' ')[0]);
-
-    if (currentUser?.tag === 'unity') return chatUnityID;
-    if (beltUserCanViewChatBlack || currentUser?.isChatBlack) return chatBlackID;
-    return chatEliteID;
-  }
+  const chatToken = getChatTokenID(currentUser);
 
   if (hyperflow === 'ready') {
-    Hyperflow.init(getChatTokenID()).on('getStarted', () => {
+    Hyperflow.init(chatToken).on('getStarted', () => {
       const params: HyperflowParams = {
         id: currentUser?.id,
         name: currentUser?.name.split(' ')[0],
         email: currentUser?.email,
-        eliteChatToken: getChatTokenID(),
+        eliteChatToken: chatToken,
         sender: jwtToHyperflow
       };
 
