@@ -29,23 +29,5 @@
     "*.css": "tailwindcss"
   },
   "files.exclude": {
-    "**/*.lock.json": true,
-    "**/*?.d.ts": true,
-    "**/.DS_Store": true,
-    "**/*.map": true,
-    "**/.git": true,
-    "**/.gradle/**": true,
-    "**/.idea/**": true,
-    "**/.svn": true,
-    "**/.tmp": true,
-    "**/Pods/**": true,
-    "**/bin/**": true,
-    "**/build/**": true,
-    "**/dist/**": true,
-    "**/node_modules": true,
-    "**/obj/**": true,
-    "**/vendor/**": true,
-    ".docker-data": true,
-    "tsconfig.tsbuildinfo": true
   }
 }
