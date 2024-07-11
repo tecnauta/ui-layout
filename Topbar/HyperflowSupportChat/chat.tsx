@@ -17,9 +17,9 @@ interface SupportChatProps {
 }
 
 function getChatTokenID(currentUser: any) {
-  const chatUnityID = process.env.HYPERFLOW_CHAT_UNITY_ID ?? '';
-  const chatBlackID = process.env.HYPERFLOW_CHAT_BLACK_ID ?? '';
-  const chatEliteID = process.env.HYPERFLOW_CHAT_ELITE_ID ?? '';
+  const chatUnityID = '3880e664e69b156d6041b75c2e0abb1b';
+  const chatBlackID = '133078e7bc2207b2cc245aa7cbaed56d';
+  const chatEliteID = '95abf83ad8a1ba348a65eba0f9ee4d97';
   const beltsCanViewChatBlack = ['Black', 'Golden', 'Sensei'];
   const beltUserCanViewChatBlack = beltsCanViewChatBlack.includes((currentUser?.belt || '').split(' ')[0]);
 
