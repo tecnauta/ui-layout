@@ -1,6 +1,4 @@
 node_modules
-*.js
-*.d.ts
 dist
 !.prettierrc.js
 .DS_Store

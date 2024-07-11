@@ -31,13 +31,6 @@
   "files.exclude": {
     "**/*.lock.json": true,
     "**/*?.d.ts": true,
-    "**/*?.js": {
-      "when": "$(basename).ts"
-    },
-    "**/**?.js": {
-      "when": "$(basename).tsx"
-    },
-    "**/*?.css.js": true,
     "**/.DS_Store": true,
     "**/*.map": true,
     "**/.git": true,
