@@ -17,15 +17,16 @@ interface SupportChatProps {
 }
 
 function getChatTokenID(currentUser: any) {
-  const chatUnityID = '3880e664e69b156d6041b75c2e0abb1b';
-  const chatBlackID = '133078e7bc2207b2cc245aa7cbaed56d';
-  const chatEliteID = '95abf83ad8a1ba348a65eba0f9ee4d97';
-  const beltsCanViewChatBlack = ['Black', 'Golden', 'Sensei'];
-  const beltUserCanViewChatBlack = beltsCanViewChatBlack.includes((currentUser?.belt || '').split(' ')[0]);
+  // const chatUnityID = '3880e664e69b156d6041b75c2e0abb1b';
+  // const chatBlackID = '133078e7bc2207b2cc245aa7cbaed56d';
+  // const chatEliteID = '95abf83ad8a1ba348a65eba0f9ee4d97';
+  // const beltsCanViewChatBlack = ['Black', 'Golden', 'Sensei'];
+  // const beltUserCanViewChatBlack = beltsCanViewChatBlack.includes((currentUser?.belt || '').split(' ')[0]);
 
-  if (currentUser?.tag === 'unity') return chatUnityID;
-  if (beltUserCanViewChatBlack || currentUser?.isClubeBlack) return chatBlackID;
-  return chatEliteID;
+  // if (currentUser?.tag === 'unity') return chatUnityID;
+  // if (beltUserCanViewChatBlack || currentUser?.isClubeBlack) return chatBlackID;
+  // return chatEliteID;
+  return 'f33975c80d2402c6858d1a9db0f60a94';
 }
 
 const HyperflowSupportChat: React.FC<SupportChatProps> = ({ jwtToHyperflow, helpUser }) => {
