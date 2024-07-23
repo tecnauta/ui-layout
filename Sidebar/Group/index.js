@@ -5,9 +5,9 @@ import h from "../../CollapseEffect/index.js";
 import x from "../../hooks/useBoolean.js";
 import { cn as z } from "../../utils/cn.js";
 const f = m(
-  ({ id: a, children: e, label: u, tabIndex: r, className: n }, y) => {
+  ({ id: a, children: e, label: u, tabIndex: r, className: y }, n) => {
     const [i, c, o] = x(!0), s = d(() => ({ onItemActive: o }), [o]);
-    return /* @__PURE__ */ t(b.Provider, { value: s, children: /* @__PURE__ */ l("li", { id: a, className: z(n, "uizz-layout-block uizz-layout-select-none"), ref: y, children: [
+    return /* @__PURE__ */ t(b.Provider, { value: s, children: /* @__PURE__ */ l("li", { id: a, className: z(y, "uizz-layout-block uizz-layout-select-none"), ref: n, children: [
       !!u && /* @__PURE__ */ l(
         "div",
         {

@@ -1,18 +1,18 @@
-import { useState as f, useEffect as s } from "react";
-function d(u, a) {
-  const [o, n] = f(!0), [c, i] = f(), [l, r] = f();
+import { useState as n, useEffect as s } from "react";
+function h(c, f) {
+  const [u, r] = n(!0), [a, i] = n(), [l, o] = n();
   return s(() => {
     let t = !0;
-    return n(!0), r(void 0), u(() => t).then((e) => {
+    return r(!0), o(void 0), c(() => t).then((e) => {
       t && i(() => e);
     }).catch((e) => {
-      t && r(e);
-    }).finally(() => n(!1)), () => {
+      t && o(e);
+    }).finally(() => r(!1)), () => {
       t = !1;
     };
-  }, a), [c, l, o];
+  }, f), [a, l, u];
 }
 export {
-  d as default
+  h as default
 };
 //# sourceMappingURL=usePromise.js.map

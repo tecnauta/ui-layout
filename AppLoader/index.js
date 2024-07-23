@@ -1,11 +1,11 @@
-import { jsxs as o, Fragment as a, jsx as t } from "react/jsx-runtime";
+import { jsxs as i, Fragment as o, jsx as t } from "react/jsx-runtime";
 import { useState as e, useMemo as h, Suspense as p } from "react";
 import { AppLoaderContext as f } from "./context.js";
 import g from "./Logo/index.js";
 import { cn as r } from "../utils/cn.js";
 import b from "../utils/errorFormatter.js";
-const A = ({ children: y, logo: n, logoDarkMode: s }) => {
-  const [i, z] = e(!0), [u, l] = e(null), c = h(
+const j = ({ children: y, logo: n, logoDarkMode: s }) => {
+  const [a, z] = e(!0), [u, l] = e(null), c = h(
     () => ({
       show: () => z(!0),
       error: (d, m) => l({
@@ -18,14 +18,14 @@ const A = ({ children: y, logo: n, logoDarkMode: s }) => {
     }),
     []
   );
-  return /* @__PURE__ */ o(a, { children: [
+  return /* @__PURE__ */ i(o, { children: [
     /* @__PURE__ */ t(f.Provider, { value: c, children: /* @__PURE__ */ t(p, { children: y }) }),
     /* @__PURE__ */ t(
       "section",
       {
         className: r(
           "uizz-layout-pointer-events-none uizz-layout-fixed uizz-layout-inset-0 uizz-layout-z-[2147483002] uizz-layout-flex uizz-layout-animate-fadeOut uizz-layout-items-center uizz-layout-justify-center uizz-layout-bg-surface-default/[0.32] uizz-layout-backdrop-blur",
-          { "!uizz-layout-pointer-events-auto !uizz-layout-animate-fadeIn": i }
+          { "!uizz-layout-pointer-events-auto !uizz-layout-animate-fadeIn": a }
         ),
         children: /* @__PURE__ */ t(
           "div",
@@ -33,12 +33,12 @@ const A = ({ children: y, logo: n, logoDarkMode: s }) => {
             className: r(
               "uizz-layout-mt-[-150vh] uizz-layout-flex uizz-layout-w-[200px] uizz-layout-flex-col uizz-layout-items-center uizz-layout-justify-center uizz-layout-transition-[0s,width] uizz-layout-duration-[0.5s]",
               {
-                "!uizz-layout-mt-0": i,
+                "!uizz-layout-mt-0": a,
                 "!uizz-layout-w-[95vw]": u
               }
             ),
-            children: u ? /* @__PURE__ */ o(a, { children: [
-              /* @__PURE__ */ o("p", { className: "uizz-layout-text-center uizz-layout-text-lg uizz-layout-text-content-title", children: [
+            children: u ? /* @__PURE__ */ i(o, { children: [
+              /* @__PURE__ */ i("p", { className: "uizz-layout-text-center uizz-layout-text-lg uizz-layout-text-content-title", children: [
                 "Não conseguimos carregar a aplicação",
                 /* @__PURE__ */ t("small", { className: "uizz-layout-mt-1 uizz-layout-block uizz-layout-opacity-70", children: u.message })
               ] }),
@@ -50,9 +50,9 @@ const A = ({ children: y, logo: n, logoDarkMode: s }) => {
                   children: "Tentar Novamente"
                 }
               )
-            ] }) : /* @__PURE__ */ o(a, { children: [
+            ] }) : /* @__PURE__ */ i(o, { children: [
               /* @__PURE__ */ t(g, { logo: n, logoDarkMode: s }),
-              /* @__PURE__ */ t("div", { className: "uizz-layout-relative uizz-layout-block uizz-layout-h-1 uizz-layout-w-full uizz-layout-overflow-hidden uizz-layout-bg-[#0d2871]/25", children: /* @__PURE__ */ o("div", { className: "uizz-layout-bg-primary", children: [
+              /* @__PURE__ */ t("div", { className: "uizz-layout-relative uizz-layout-block uizz-layout-h-1 uizz-layout-w-full uizz-layout-overflow-hidden uizz-layout-bg-[#0d2871]/25", children: /* @__PURE__ */ i("div", { className: "uizz-layout-bg-primary", children: [
                 /* @__PURE__ */ t("div", { className: "uizz-layout-absolute uizz-layout-inset-y-0 uizz-layout-left-0 uizz-layout-animate-loader uizz-layout-bg-inherit" }),
                 /* @__PURE__ */ t("div", { className: "l uizz-layout-absolute uizz-layout-inset-y-0 uizz-layout-left-0 uizz-layout-animate-loaderShort uizz-layout-bg-inherit" })
               ] }) })
@@ -64,6 +64,6 @@ const A = ({ children: y, logo: n, logoDarkMode: s }) => {
   ] });
 };
 export {
-  A as default
+  j as default
 };
 //# sourceMappingURL=index.js.map

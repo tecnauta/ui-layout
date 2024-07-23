@@ -1,5 +1,5 @@
 import { jsx as e } from "react/jsx-runtime";
-const o = ({ image: s, className: a }) => typeof s == "string" ? /* @__PURE__ */ e("img", { className: a, src: s }) : s;
+const o = ({ image: a, className: s }) => typeof a == "string" ? /* @__PURE__ */ e("img", { className: s, src: a }) : a;
 export {
   o as default
 };

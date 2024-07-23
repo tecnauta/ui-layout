@@ -1,6 +1,6 @@
 import { jsx as c } from "react/jsx-runtime";
 import m from "./Base.js";
-const o = ({ ...l }) => /* @__PURE__ */ c(m, { ...l, children: /* @__PURE__ */ c(
+const t = ({ ...l }) => /* @__PURE__ */ c(m, { ...l, children: /* @__PURE__ */ c(
   "path",
   {
     fillRule: "evenodd",
@@ -8,6 +8,6 @@ const o = ({ ...l }) => /* @__PURE__ */ c(m, { ...l, children: /* @__PURE__ */ c
   }
 ) });
 export {
-  o as default
+  t as default
 };
 //# sourceMappingURL=Belt.js.map

@@ -14,7 +14,7 @@ import g from "../context.js";
     console.error("vite-plugin-css-injected-by-js", t);
   }
 })();
-const s = ["white", "red", "orange", "green", "black", "golden"], k = z(() => {
+const s = ["white", "red", "orange", "green", "black", "golden"], w = z(() => {
   const o = n(g, (e) => {
     var u;
     return (u = e.user) == null ? void 0 : u.belt;
@@ -32,6 +32,6 @@ const s = ["white", "red", "orange", "green", "black", "golden"], k = z(() => {
   ] }) }) : null;
 });
 export {
-  k as default
+  w as default
 };
 //# sourceMappingURL=index.js.map

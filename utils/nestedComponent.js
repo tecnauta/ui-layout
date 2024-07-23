@@ -1,9 +1,9 @@
-function c(a, e) {
-  return Object.keys(e).forEach((t) => {
-    a[t] = e[t];
-  }), a;
+function t(c, e) {
+  return Object.keys(e).forEach((r) => {
+    c[r] = e[r];
+  }), c;
 }
 export {
-  c as default
+  t as default
 };
 //# sourceMappingURL=nestedComponent.js.map

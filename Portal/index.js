@@ -1,21 +1,21 @@
 import { useState as d, useLayoutEffect as l } from "react";
 import { createPortal as a } from "react-dom";
 function i(r) {
-  const t = document.createElement("div");
-  return t.setAttribute("id", r), t.classList.add("eduzz-ui-layout-portal"), document.body.appendChild(t), t;
+  const e = document.createElement("div");
+  return e.setAttribute("id", r), e.classList.add("eduzz-ui-layout-portal"), document.body.appendChild(e), e;
 }
-const m = ({ children: r, target: t }) => {
+const m = ({ children: r, target: e }) => {
   const [n, u] = d(
-    () => typeof t != "string" ? t : null
+    () => typeof e != "string" ? e : null
   );
   return l(() => {
-    if (typeof t != "string")
+    if (typeof e != "string")
       return;
-    let e = document.getElementById(t), o = !1;
-    return e || (o = !0, e = i(t)), u(e), () => {
-      o && e != null && e.parentNode && e.parentNode.removeChild(e);
+    let t = document.getElementById(e), o = !1;
+    return t || (o = !0, t = i(e)), u(t), () => {
+      o && t != null && t.parentNode && t.parentNode.removeChild(t);
     };
-  }, [t]), n ? a(r, n) : null;
+  }, [e]), n ? a(r, n) : null;
 };
 export {
   m as default

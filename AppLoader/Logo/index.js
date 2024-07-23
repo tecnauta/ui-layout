@@ -8,8 +8,8 @@ const m = () => (
         display: none;
       }
     ` })
-), c = ({ logo: o, logoDarkMode: l }) => {
-  const u = t(() => ({ light: o ?? "https://cdn.eduzzcdn.com/topbar/myeduzz.svg", dark: l ?? "https://cdn.eduzzcdn.com/topbar/myeduzz-white.svg" }), [o, l]);
+), c = ({ logo: l, logoDarkMode: o }) => {
+  const u = t(() => ({ light: l ?? "https://cdn.eduzzcdn.com/topbar/myeduzz.svg", dark: o ?? "https://cdn.eduzzcdn.com/topbar/myeduzz-white.svg" }), [l, o]);
   return /* @__PURE__ */ e(z, { children: [
     /* @__PURE__ */ a(m, {}),
     /* @__PURE__ */ e(
