@@ -1,27 +1,18 @@
-import { useEffect as r } from "react";
+(function(){"use strict";try{if(typeof document<"u"){var t=document.createElement("style");t.appendChild(document.createTextNode("#lhc_status_widget_v2{left:auto!important;bottom:0!important;z-index:102!important}")),document.head.appendChild(t)}}catch(e){console.error("vite-plugin-css-injected-by-js",e)}})();
+import { useEffect as e } from "react";
 import { useContextSelector as n } from "use-context-selector";
-import c from "./chat.js";
-import u from "../context.js";
-(function() {
-  try {
-    if (typeof document < "u") {
-      var e = document.createElement("style");
-      e.appendChild(document.createTextNode("#lhc_status_widget_v2{left:auto!important;bottom:0!important;z-index:102!important}")), document.head.appendChild(e);
-    }
-  } catch (t) {
-    console.error("vite-plugin-css-injected-by-js", t);
-  }
-})();
-const a = ({ token: e }) => {
-  const t = n(u, (o) => o.user);
-  return r(() => {
-    if (!(t != null && t.isClubeBlack))
-      return;
-    const o = c(t, e);
-    return () => o();
-  }, [t, e]), null;
+import p from "./chat.js";
+import i from "../context.js";
+
+const c = ({ token: o }) => {
+  const t = n(i, (r) => r.user);
+  return e(() => {
+    if (!(t != null && t.isClubeBlack)) return;
+    const r = p(t, o);
+    return () => r();
+  }, [t, o]), null;
 };
 export {
-  a as default
+  c as default
 };
 //# sourceMappingURL=index.js.map

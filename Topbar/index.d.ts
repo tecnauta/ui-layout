@@ -27,14 +27,14 @@ export interface TopbarProps extends HTMLAttributes<HTMLDivElement> {
 }
 declare const _default: import('react').ComponentType<TopbarProps> & {
     Action: import('react').MemoExoticComponent<import('react').ForwardRefExoticComponent<HTMLAttributes<HTMLDivElement> & {
-        active?: boolean | undefined;
-        tooltip?: string | undefined;
-        icon: ReactNode;
-        right?: ReactNode;
-        label?: ReactNode;
-        badgeCount?: number | undefined;
-        badgeDot?: boolean | undefined;
-        onClick?: ((event: import('react').MouseEvent<HTMLDivElement, MouseEvent>) => void) | undefined;
+        active?: boolean;
+        tooltip?: string;
+        icon: React.ReactNode;
+        right?: React.ReactNode;
+        label?: React.ReactNode;
+        badgeCount?: number;
+        badgeDot?: boolean;
+        onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
     } & import('react').RefAttributes<HTMLDivElement>>>;
     UnitySupportChat: ({ token }: import('./UnitySupportChat').TopbarUnitySupportChatProps) => null;
     HyperflowSupportChat: ({ jwtToHyperflow, helpUser }: import('./HyperflowSupportChat').TopbarHyperflowSupportChatProps) => import("react/jsx-runtime").JSX.Element | null;

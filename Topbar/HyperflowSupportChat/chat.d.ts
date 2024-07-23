@@ -1,4 +1,3 @@
-/// <reference types="react" />
 interface SupportChatProps {
     jwtToHyperflow: string;
     helpUser: any;

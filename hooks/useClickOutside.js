@@ -1,26 +1,25 @@
-import { useCallback as i, useEffect as m } from "react";
-function v(n, s, d) {
-  const r = i((e) => s(e), d ?? []);
-  m(() => {
-    const e = (n == null ? void 0 : n.current) ?? n;
-    if (!e)
-      return;
+import { useCallback as d, useEffect as a } from "react";
+function m(n, r, i) {
+  const s = d((t) => r(t), i ?? []);
+  a(() => {
+    const t = (n == null ? void 0 : n.current) ?? n;
+    if (!t) return;
     let o = !1;
     const c = () => {
       o = !0, setTimeout(() => o = !1, 500);
-    }, t = (u) => {
-      if (!e || !e.contains || e.contains(u.target) || o) {
+    }, e = (u) => {
+      if (!t || !t.contains || t.contains(u.target) || o) {
         c();
         return;
       }
-      c(), r(u);
+      c(), s(u);
     };
-    return document.addEventListener("mousedown", t), document.addEventListener("touchstart", t), document.addEventListener("click", t), () => {
-      document.removeEventListener("mousedown", t), document.removeEventListener("touchstart", t), document.removeEventListener("click", t);
+    return document.addEventListener("mousedown", e), document.addEventListener("touchstart", e), document.addEventListener("click", e), () => {
+      document.removeEventListener("mousedown", e), document.removeEventListener("touchstart", e), document.removeEventListener("click", e);
     };
-  }, [n, r]);
+  }, [n, s]);
 }
 export {
-  v as default
+  m as default
 };
 //# sourceMappingURL=useClickOutside.js.map

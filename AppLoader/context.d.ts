@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export type AppLoaderContextValue = {
     show(): void;
     error(error: any, tryAgain: () => void): void;

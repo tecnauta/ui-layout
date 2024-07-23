@@ -1,19 +1,15 @@
-import { useState as a, useEffect as s } from "react";
-const i = (t) => {
-  const [o, n] = a(t ? "loading" : "idle");
-  return s(() => {
-    if (!t) {
-      n("idle");
-      return;
-    }
-    let e = document.querySelector(`script[src="${t}"]`);
-    const r = (d) => {
-      n(d.type === "load" ? "ready" : "error");
+import { useState as s, useEffect as c } from "react";
+const i = (r) => {
+  const [n, a] = s("loading");
+  return c(() => {
+    let e = document.querySelector(`script[src="${r}"]`);
+    const t = (o) => {
+      a(o.type === "load" ? "ready" : "error");
     };
-    return e || (e = document.createElement("script"), e.type = "application/javascript", e.src = t, e.async = !0, document.body.appendChild(e)), e.addEventListener("load", r), e.addEventListener("error", r), () => {
-      e.removeEventListener("load", r), e.removeEventListener("error", r);
+    return e || (e = document.createElement("script"), e.type = "application/javascript", e.src = r, e.async = !0, document.body.appendChild(e)), e.addEventListener("load", t), e.addEventListener("error", t), () => {
+      e.removeEventListener("load", t), e.removeEventListener("error", t);
     };
-  }, [t]), o;
+  }, [r]), n;
 };
 export {
   i as default

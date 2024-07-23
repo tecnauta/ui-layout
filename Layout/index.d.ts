@@ -18,14 +18,14 @@ declare const _default: import('react').ComponentType<LayoutProps> & {
     Content: ({ children, disablePadding }: import('../Content').LayoutContentProps) => import("react/jsx-runtime").JSX.Element;
     Topbar: import('react').ComponentType<import('../Topbar').TopbarProps> & {
         Action: MemoExoticComponent<import('react').ForwardRefExoticComponent<HTMLAttributes<HTMLDivElement> & {
-            active?: boolean | undefined;
-            tooltip?: string | undefined;
-            icon: ReactNode;
-            right?: ReactNode;
-            label?: ReactNode;
-            badgeCount?: number | undefined;
-            badgeDot?: boolean | undefined;
-            onClick?: ((event: import('react').MouseEvent<HTMLDivElement, MouseEvent>) => void) | undefined;
+            active?: boolean;
+            tooltip?: string;
+            icon: React.ReactNode;
+            right?: React.ReactNode;
+            label?: React.ReactNode;
+            badgeCount?: number;
+            badgeDot?: boolean;
+            onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
         } & import('react').RefAttributes<HTMLDivElement>>>;
         UnitySupportChat: ({ token }: import('../Topbar/UnitySupportChat').TopbarUnitySupportChatProps) => null;
         HyperflowSupportChat: ({ jwtToHyperflow, helpUser }: import('../Topbar/HyperflowSupportChat').TopbarHyperflowSupportChatProps) => import("react/jsx-runtime").JSX.Element | null;

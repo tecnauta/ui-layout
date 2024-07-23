@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export type UserMenuGroupProps = React.HTMLAttributes<HTMLDivElement> & {
     label: string;
     children: React.ReactNode;

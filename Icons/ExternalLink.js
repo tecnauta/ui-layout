@@ -1,6 +1,6 @@
 import { jsx as C } from "react/jsx-runtime";
 import o from "./Base.js";
-const r = ({ ...e }) => /* @__PURE__ */ C(o, { ...e, children: /* @__PURE__ */ C(
+const d = ({ ...e }) => /* @__PURE__ */ C(o, { ...e, children: /* @__PURE__ */ C(
   "path",
   {
     fillRule: "evenodd",
@@ -9,6 +9,6 @@ const r = ({ ...e }) => /* @__PURE__ */ C(o, { ...e, children: /* @__PURE__ */ C
   }
 ) });
 export {
-  r as default
+  d as default
 };
 //# sourceMappingURL=ExternalLink.js.map
