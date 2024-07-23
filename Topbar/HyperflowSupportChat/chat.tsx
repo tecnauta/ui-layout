@@ -26,7 +26,7 @@ function getChatTokenID(currentUser: any) {
   // if (currentUser?.tag === 'unity') return chatUnityID;
   // if (beltUserCanViewChatBlack || currentUser?.isClubeBlack) return chatBlackID;
   // return chatEliteID;
-  return 'f33975c80d2402c6858d1a9db0f60a94';
+  return '865b006f4733ca82bc33b5a7a976040e';
 }
 
 const HyperflowSupportChat: React.FC<SupportChatProps> = ({ jwtToHyperflow, helpUser }) => {
@@ -40,7 +40,6 @@ const HyperflowSupportChat: React.FC<SupportChatProps> = ({ jwtToHyperflow, help
         id: currentUser?.id,
         name: currentUser?.name.split(' ')[0],
         email: currentUser?.email,
-        eliteChatToken: chatToken,
         sender: jwtToHyperflow
       };
 
