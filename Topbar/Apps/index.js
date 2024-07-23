@@ -1,35 +1,35 @@
-import { jsxs as d, jsx as p } from "react/jsx-runtime";
-import { memo as v, useRef as z } from "react";
+import { jsxs as w, jsx as i } from "react/jsx-runtime";
+import { memo as A, useRef as b } from "react";
 import { useContextSelector as a } from "use-context-selector";
-import j from "./Dropdown/index.js";
-import x from "../../hooks/useBoolean.js";
-import b from "../../hooks/useClickOutside.js";
-import h from "../../hooks/useEscapeKey.js";
-import C from "../../hooks/usePromise.js";
-import $ from "../../Icons/Apps.js";
-import w from "../Action/index.js";
-import c from "../context.js";
-const F = v(({ id: s, ...f }) => {
-  const e = a(c, (o) => {
-    var n;
-    return ((n = o.user) == null ? void 0 : n.isSupport) ?? !1;
-  }), t = a(c, (o) => o.currentApplication), [r, l, , i] = x(), m = z(null), [u] = C(async () => (await (await fetch("https://cdn.eduzzcdn.com/topbar/applications.json")).json()).filter((o) => !o.beta || e ? !0 : o.application === t), [t, e]);
-  return b(m, i, []), h(() => {
-    r && i();
-  }, [r]), /* @__PURE__ */ d("div", { id: `eduzz-ui-layout-topbar-apps${s ?? ""}`, ref: m, ...f, children: [
-    /* @__PURE__ */ p(w, { icon: /* @__PURE__ */ p($, { size: 19 }), active: r, onClick: l }),
-    /* @__PURE__ */ p(
-      j,
+import x from "./Dropdown/index.js";
+import z from "../../hooks/useBoolean.js";
+import C from "../../hooks/useClickOutside.js";
+import D from "../../hooks/useEscapeKey.js";
+import j from "../../hooks/usePromise.js";
+import h from "../../Icons/Apps.js";
+import y from "../Action/index.js";
+import u from "../context.js";
+const O = A(({ id: m, ...f }) => {
+  const n = a(u, (r) => {
+    var p;
+    return ((p = r.user) == null ? void 0 : p.isSupport) ?? !1;
+  }), t = a(u, (r) => r.currentApplication), [o, l, , e] = z(), s = b(null), [d] = j(async () => (await (await fetch("https://cdn.eduzzcdn.com/topbar/applications.json")).json()).filter((c) => !c.beta || n ? !0 : c.application === t), [t, n]);
+  return C(s, e, []), D(() => {
+    o && e();
+  }, [o]), /* @__PURE__ */ w("div", { id: `eduzz-ui-layout-topbar-apps${m ?? ""}`, ref: s, ...f, children: [
+    /* @__PURE__ */ i(y, { icon: /* @__PURE__ */ i(h, { size: 19 }), active: o, onClick: l }),
+    /* @__PURE__ */ i(
+      x,
       {
-        applications: u,
+        applications: d,
         currentApplication: t,
-        opened: r,
-        onClose: i
+        opened: o,
+        onClose: e
       }
     )
   ] });
 });
 export {
-  F as default
+  O as default
 };
 //# sourceMappingURL=index.js.map

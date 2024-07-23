@@ -1,9 +1,9 @@
-import { useEffect as d } from "react";
+import { useEffect as r } from "react";
 function i(n, t) {
   const o = "Escape";
-  d(() => {
-    function e(r) {
-      r.key === o && n();
+  r(() => {
+    function e(s) {
+      s.key === o && n();
     }
     return window.addEventListener("keydown", e), () => {
       window.removeEventListener("keydown", e);

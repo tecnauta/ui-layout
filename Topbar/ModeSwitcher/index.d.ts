@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export type ThemeSwitcherProps = {
     tooltip?: string;
     badgeDot?: boolean;

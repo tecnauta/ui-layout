@@ -1,5 +1,5 @@
-import { TopbarApplication } from '..';
 import { HTMLAttributes } from 'react';
+import { TopbarApplication } from '..';
 
 export type AppsDropdownProps = HTMLAttributes<HTMLDivElement> & {
     currentApplication: string | undefined;

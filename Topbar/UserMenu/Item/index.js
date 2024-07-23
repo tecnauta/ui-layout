@@ -1,21 +1,21 @@
-import { jsxs as m, jsx as i, Fragment as x } from "react/jsx-runtime";
+import { jsxs as d, jsx as e, Fragment as x } from "react/jsx-runtime";
 import { forwardRef as f, useCallback as h } from "react";
 import { useContextSelector as b } from "use-context-selector";
 import w from "../../../context.js";
 import { cn as g } from "../../../utils/cn.js";
 const M = f(
-  ({ id: u, icon: r, disabled: n, onClick: t, children: s, preventClose: a, className: y, as: l, ...d }, c) => {
-    const z = b(w, (e) => e.userMenu.falseOpened), p = h(
-      (e) => {
-        t && t(e), !a && z();
+  ({ id: a, icon: r, disabled: n, onClick: t, children: s, preventClose: i, className: y, as: z, ...c }, m) => {
+    const l = b(w, (u) => u.userMenu.falseOpened), p = h(
+      (u) => {
+        t && t(u), !i && l();
       },
-      [z, t, a]
+      [l, t, i]
     );
-    let o = /* @__PURE__ */ m(
+    let o = /* @__PURE__ */ d(
       "button",
       {
-        id: u,
-        ref: c,
+        id: a,
+        ref: m,
         onClick: p,
         className: g(
           y,
@@ -24,11 +24,11 @@ const M = f(
         disabled: n,
         children: [
           r,
-          /* @__PURE__ */ i("span", { className: "uizz-layout-max-w-[235px] uizz-layout-overflow-hidden uizz-layout-text-ellipsis uizz-layout-whitespace-nowrap uizz-layout-text-base", children: s })
+          /* @__PURE__ */ e("span", { className: "uizz-layout-max-w-[235px] uizz-layout-overflow-hidden uizz-layout-text-ellipsis uizz-layout-whitespace-nowrap uizz-layout-text-base", children: s })
         ]
       }
     );
-    return l && (o = /* @__PURE__ */ i(l, { id: u, ...d, className: "uizz-layout-text-inherit hover:uizz-layout-text-inherit", children: o })), /* @__PURE__ */ i(x, { children: o });
+    return z && (o = /* @__PURE__ */ e(z, { id: a, ...c, className: "uizz-layout-text-inherit hover:uizz-layout-text-inherit", children: o })), /* @__PURE__ */ e(x, { children: o });
   }
 );
 export {

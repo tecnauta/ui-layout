@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export interface TopbarSearchProps {
     status?: '' | 'warning' | 'error';
     placeholder?: string;

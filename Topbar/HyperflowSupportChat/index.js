@@ -1,7 +1,7 @@
-import { jsx as e } from "react/jsx-runtime";
-import l from "./chat.js";
-const f = ({ jwtToHyperflow: o, helpUser: r }) => o ? /* @__PURE__ */ e(l, { jwtToHyperflow: o, helpUser: r }) : null;
+import { jsx as o } from "react/jsx-runtime";
+import p from "./chat.js";
+const e = ({ jwtToHyperflow: r, helpUser: t }) => r ? /* @__PURE__ */ o(p, { jwtToHyperflow: r, helpUser: t }) : null;
 export {
-  f as default
+  e as default
 };
 //# sourceMappingURL=index.js.map

@@ -11,6 +11,6 @@ declare const BaseIcon: import('react').ForwardRefExoticComponent<Omit<SVGAttrib
     /**
      * Defaults to 'md' (24px or 1.5rem)
      */
-    size?: number | IconSizes | undefined;
+    size?: IconSizes | number;
 } & import('react').RefAttributes<SVGSVGElement>>;
 export default BaseIcon;

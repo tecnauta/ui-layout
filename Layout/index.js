@@ -1,116 +1,116 @@
-import { jsxs as E, jsx as j } from "react/jsx-runtime";
-import { useState as e, useCallback as r, useMemo as B } from "react";
+import { jsxs as F, jsx as P } from "react/jsx-runtime";
+import { useState as e, useCallback as t, useMemo as v } from "react";
 import G from "../Content/index.js";
-import H from "../context.js";
-import N from "../hooks/useBoolean.js";
-import I from "../hooks/useMode.js";
-import J from "../Sidebar/index.js";
-import K from "../Topbar/index.js";
-import { cn as L } from "../utils/cn.js";
-import { hexToRgbVar as T } from "../utils/hextToRgb.js";
-import Q from "../utils/nestedComponent.js";
-const W = ({
+import I from "../context.js";
+import L from "../hooks/useBoolean.js";
+import J from "../hooks/useMode.js";
+import K from "../Sidebar/index.js";
+import Q from "../Topbar/index.js";
+import { cn as W } from "../utils/cn.js";
+import { hexToRgbVar as H } from "../utils/hextToRgb.js";
+import X from "../utils/nestedComponent.js";
+const Y = ({
   className: V,
-  children: k,
-  primaryColor: o,
-  secondaryColor: t,
-  mode: w,
-  persistMode: F,
-  acceptModeBySearchParam: R,
-  onModeChange: U,
-  ...X
+  children: j,
+  primaryColor: r,
+  secondaryColor: o,
+  mode: k,
+  persistMode: w,
+  acceptModeBySearchParam: B,
+  onModeChange: N,
+  ...R
 }) => {
-  const [a, m] = e(!1), [s, l] = e(!1), [d, n] = e(!1), [u, Y] = e(null), [p, q] = e(null), [c, z, f, h] = N(!1), [y, g, b, x] = N(!1), [C, M] = I({ mode: w, acceptModeBySearchParam: R, onModeChange: U, persistMode: F }), P = r(() => (m(!0), () => m(!1)), []), O = r(() => (l(!0), () => l(!1)), []), v = r((i) => {
-    Y(i);
-  }, []), S = r(() => (n(!0), () => n(!1)), []), $ = r((i) => {
-    q(i);
-  }, []), A = B(
+  const [n, a] = e(!1), [u, i] = e(!1), [d, l] = e(!1), [p, q] = e(null), [m, A] = e(null), [c, f, b, g] = L(!1), [z, M, O, h] = L(!1), [x, y] = J({ mode: k, acceptModeBySearchParam: B, onModeChange: N, persistMode: w }), C = t(() => (a(!0), () => a(!1)), []), S = t(() => (i(!0), () => i(!1)), []), U = t((s) => {
+    q(s);
+  }, []), T = t(() => (l(!0), () => l(!1)), []), $ = t((s) => {
+    A(s);
+  }, []), D = v(
     () => ({
       layout: {
-        mode: C,
-        toggle: M
+        mode: x,
+        toggle: y
       },
       topbar: {
-        exists: a,
-        centerPortal: u,
-        register: P,
-        registerCenterPortal: v
+        exists: n,
+        centerPortal: p,
+        register: C,
+        registerCenterPortal: U
       },
       sidebar: {
-        exists: s,
-        opened: y,
-        register: O,
-        toogleOpened: g,
-        trueOpened: b,
-        falseOpened: x
+        exists: u,
+        opened: z,
+        register: S,
+        toogleOpened: M,
+        trueOpened: O,
+        falseOpened: h
       },
       userMenu: {
         opened: c,
-        containerPortal: p,
+        containerPortal: m,
         exists: d,
-        register: S,
+        register: T,
         registerContainerPortal: $,
-        toogleOpened: z,
-        trueOpened: f,
-        falseOpened: h
+        toogleOpened: f,
+        trueOpened: b,
+        falseOpened: g
       }
     }),
     [
-      x,
       h,
-      s,
-      a,
-      d,
-      O,
-      P,
-      v,
-      S,
-      $,
-      y,
       g,
-      z,
       u,
-      b,
+      n,
+      d,
+      S,
+      C,
+      U,
+      T,
+      $,
+      z,
+      M,
       f,
       p,
+      O,
+      b,
+      m,
       c,
-      C,
-      M
+      x,
+      y
     ]
-  ), D = B(
+  ), E = v(
     () => `
       :root {
-        ${o ? `
-            --eduzz-theme-primary: ${o ?? "#0d2772"};
-            --eduzz-theme-primary-rgb: ${T(o) ?? "13, 38, 115"};
+        ${r ? `
+            --eduzz-theme-primary: ${r ?? "#0d2772"};
+            --eduzz-theme-primary-rgb: ${H(r) ?? "13, 38, 115"};
             ` : ""}
       
-        ${t ? `
-            --eduzz-theme-secondary: ${t ?? "#ffbc00"};
-            --eduzz-theme-secondary-rgb: ${T(t) ?? "255, 188, 0"};
+        ${o ? `
+            --eduzz-theme-secondary: ${o ?? "#ffbc00"};
+            --eduzz-theme-secondary-rgb: ${H(o) ?? "255, 188, 0"};
             ` : ""}
         
       }
     `,
-    [o, t]
+    [r, o]
   );
-  return /* @__PURE__ */ E(H.Provider, { value: A, children: [
-    /* @__PURE__ */ j("style", { children: D }),
-    /* @__PURE__ */ j(
+  return /* @__PURE__ */ F(I.Provider, { value: D, children: [
+    /* @__PURE__ */ P("style", { children: E }),
+    /* @__PURE__ */ P(
       "div",
       {
-        className: L("eduzz-ui-layout uizz-layout-flex uizz-layout-min-h-screen uizz-layout-w-full", V, {
-          "uizz-layout-pt-[var(--eduzz-ui-layout-topbar-height-rem)]": a
+        className: W("eduzz-ui-layout uizz-layout-flex uizz-layout-min-h-screen uizz-layout-w-full", V, {
+          "uizz-layout-pt-[var(--eduzz-ui-layout-topbar-height-rem)]": n
         }),
-        ...X,
-        children: k
+        ...R,
+        children: j
       }
     )
   ] });
-}, de = Q(W, {
-  Sidebar: J,
+}, de = X(Y, {
+  Sidebar: K,
   Content: G,
-  Topbar: K
+  Topbar: Q
 });
 export {
   de as default
