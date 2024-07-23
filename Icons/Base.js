@@ -1,24 +1,24 @@
-import { jsx as a } from "react/jsx-runtime";
-import { forwardRef as f } from "react";
-const d = f(
-  ({ focusable: r = !1, children: s, size: o = "md", ...e }, t) => /* @__PURE__ */ a(
+import { jsx as d } from "react/jsx-runtime";
+import { forwardRef as i } from "react";
+const t = i(
+  ({ focusable: e = !1, children: o, size: r = "md", ...f }, l) => /* @__PURE__ */ d(
     "svg",
     {
-      ref: t,
+      ref: l,
       width: {
         lg: 32,
         md: 24,
         sm: 16
-      }[o] ?? o,
+      }[r] ?? r,
       viewBox: "0 0 192 192",
-      focusable: r,
+      focusable: e,
       fill: "currentColor",
-      ...e,
-      children: s
+      ...f,
+      children: o
     }
   )
 );
 export {
-  d as default
+  t as default
 };
 //# sourceMappingURL=Base.js.map

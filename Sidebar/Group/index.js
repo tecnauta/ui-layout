@@ -1,13 +1,13 @@
 import { jsx as t, jsxs as l } from "react/jsx-runtime";
-import { forwardRef as d, useMemo as p, memo as m } from "react";
-import x from "./context.js";
-import b from "../../CollapseEffect/index.js";
-import f from "../../hooks/useBoolean.js";
+import { forwardRef as m, useMemo as d, memo as p } from "react";
+import b from "./context.js";
+import h from "../../CollapseEffect/index.js";
+import x from "../../hooks/useBoolean.js";
 import { cn as z } from "../../utils/cn.js";
-const h = d(
+const f = m(
   ({ id: a, children: e, label: u, tabIndex: r, className: n }, y) => {
-    const [o, c, i] = f(!0), s = p(() => ({ onItemActive: i }), [i]);
-    return /* @__PURE__ */ t(x.Provider, { value: s, children: /* @__PURE__ */ l("li", { id: a, className: z(n, "uizz-layout-block uizz-layout-select-none"), ref: y, children: [
+    const [i, c, o] = x(!0), s = d(() => ({ onItemActive: o }), [o]);
+    return /* @__PURE__ */ t(b.Provider, { value: s, children: /* @__PURE__ */ l("li", { id: a, className: z(n, "uizz-layout-block uizz-layout-select-none"), ref: y, children: [
       !!u && /* @__PURE__ */ l(
         "div",
         {
@@ -21,7 +21,7 @@ const h = d(
                 className: z(
                   "uizz-layout-absolute uizz-layout-left-0 uizz-layout-top-2/4 uizz-layout--mt-0.5 uizz-layout-h-0.5 uizz-layout-w-[30px] uizz-layout-bg-content-title/[0.65] uizz-layout-opacity-30 uizz-layout-transition-[left,_background-color]",
                   {
-                    "!uizz-layout-top-[calc(50%_-_1px)] !uizz-layout-mt-[-0.5px] !uizz-layout-h-px !uizz-layout-bg-content-title/[0.45] !uizz-layout-opacity-30": o
+                    "!uizz-layout-top-[calc(50%_-_1px)] !uizz-layout-mt-[-0.5px] !uizz-layout-h-px !uizz-layout-bg-content-title/[0.45] !uizz-layout-opacity-30": i
                   }
                 )
               }
@@ -30,11 +30,11 @@ const h = d(
           ]
         }
       ),
-      /* @__PURE__ */ t("ul", { className: "uizz-layout-m-0  uizz-layout-block uizz-layout-p-0", children: /* @__PURE__ */ t(b, { visibled: o, children: /* @__PURE__ */ t("div", { className: " uizz-layout-pb-[0.7rem] [&_li]:uizz-layout-mb-0", children: e }) }) })
+      /* @__PURE__ */ t("ul", { className: "uizz-layout-m-0  uizz-layout-block uizz-layout-p-0", children: /* @__PURE__ */ t(h, { visibled: i, children: /* @__PURE__ */ t("div", { className: " uizz-layout-pb-[0.7rem] [&_li]:uizz-layout-mb-0", children: e }) }) })
     ] }) });
   }
-), E = m(h);
+), I = p(f);
 export {
-  E as default
+  I as default
 };
 //# sourceMappingURL=index.js.map

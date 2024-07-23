@@ -1,16 +1,16 @@
 import { useEffect as r } from "react";
-function i(n, t) {
-  const o = "Escape";
+function f(n, o) {
+  const t = "Escape";
   r(() => {
-    function e(s) {
-      s.key === o && n();
+    function e(i) {
+      i.key === t && n();
     }
     return window.addEventListener("keydown", e), () => {
       window.removeEventListener("keydown", e);
     };
-  }, [t]);
+  }, [o]);
 }
 export {
-  i as default
+  f as default
 };
 //# sourceMappingURL=useEscapeKey.js.map

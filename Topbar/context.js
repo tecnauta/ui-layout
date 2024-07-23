@@ -1,6 +1,6 @@
 import { createContext as t } from "use-context-selector";
-const e = t({});
+const o = t({});
 export {
-  e as default
+  o as default
 };
 //# sourceMappingURL=context.js.map

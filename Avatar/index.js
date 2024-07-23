@@ -1,18 +1,18 @@
-import { jsx as r } from "react/jsx-runtime";
-import { useState as i, useMemo as z, useCallback as s } from "react";
-function n(e) {
+import { jsx as e } from "react/jsx-runtime";
+import { useState as i, useMemo as r, useCallback as s } from "react";
+function c(u) {
   let t = "";
-  const o = e.split(" ");
-  for (const u of o)
-    if (t += u.charAt(0), t.length >= 2)
+  const o = u.split(" ");
+  for (const a of o)
+    if (t += a.charAt(0), t.length >= 2)
       break;
   return t;
 }
-const c = ({ src: e, children: t }) => {
-  const [o, u] = i(!1), a = z(() => n(t ?? ""), [t]), l = s(() => u(!0), []);
-  return /* @__PURE__ */ r("div", { className: "uizz-layout-flex uizz-layout-h-7 uizz-layout-w-7 uizz-layout-items-center uizz-layout-justify-center uizz-layout-overflow-hidden uizz-layout-rounded-[50%] uizz-layout-bg-[var(--eduzz-theme-primary)] uizz-layout-text-xs uizz-layout-text-white dark:uizz-layout-text-black", children: e && !o ? /* @__PURE__ */ r("img", { src: e, onError: l, className: "uizz-layout-max-h-full uizz-layout-max-w-full" }) : a });
+const m = ({ src: u, children: t }) => {
+  const [o, a] = i(!1), l = r(() => c(t ?? ""), [t]), z = s(() => a(!0), []);
+  return /* @__PURE__ */ e("div", { className: "uizz-layout-flex uizz-layout-h-7 uizz-layout-w-7 uizz-layout-items-center uizz-layout-justify-center uizz-layout-overflow-hidden uizz-layout-rounded-[50%] uizz-layout-bg-[var(--eduzz-theme-primary)] uizz-layout-text-xs uizz-layout-text-white dark:uizz-layout-text-black", children: u && !o ? /* @__PURE__ */ e("img", { src: u, onError: z, className: "uizz-layout-max-h-full uizz-layout-max-w-full" }) : l });
 };
 export {
-  c as default
+  m as default
 };
 //# sourceMappingURL=index.js.map
