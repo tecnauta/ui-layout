@@ -1,6 +1,6 @@
 import d from "./import.js";
 function f(o) {
-  return "f33975c80d2402c6858d1a9db0f60a94";
+  return "865b006f4733ca82bc33b5a7a976040e";
 }
 const m = ({ jwtToHyperflow: o, helpUser: n }) => {
   const i = n, p = d("https://webchat.hyperflow.global/sdk.js"), l = f();
