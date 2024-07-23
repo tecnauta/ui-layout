@@ -1,7 +1,7 @@
-import { jsx as o } from "react/jsx-runtime";
-import e from "./Base.js";
-const t = ({ ...a }) => /* @__PURE__ */ o(e, { ...a, viewBox: "0 0 16 16", children: /* @__PURE__ */ o("path", { d: "M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" }) });
+import { jsx as a } from "react/jsx-runtime";
+import t from "./Base.js";
+const d = ({ ...o }) => /* @__PURE__ */ a(t, { ...o, viewBox: "0 0 16 16", children: /* @__PURE__ */ a("path", { d: "M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" }) });
 export {
-  t as default
+  d as default
 };
 //# sourceMappingURL=Close.js.map

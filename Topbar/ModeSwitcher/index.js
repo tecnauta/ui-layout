@@ -1,22 +1,22 @@
 import { jsx as t } from "react/jsx-runtime";
-import { memo as c } from "react";
-import { BulbFilled as d, BulbOutlined as u } from "@ant-design/icons";
-import { useContextSelector as e } from "use-context-selector";
-import r from "../../context.js";
-import p from "../Action/index.js";
-const a = ({ tooltip: m, badgeDot: i }) => {
-  const l = e(r, (o) => o.layout.mode), n = e(r, (o) => o.layout.toggle);
+import { memo as p } from "react";
+import { BulbFilled as n, BulbOutlined as u } from "@ant-design/icons";
+import { useContextSelector as r } from "use-context-selector";
+import m from "../../context.js";
+import d from "../Action/index.js";
+const f = ({ tooltip: e, badgeDot: l }) => {
+  const i = r(m, (o) => o.layout.mode), a = r(m, (o) => o.layout.toggle);
   return /* @__PURE__ */ t(
-    p,
+    d,
     {
-      onClick: () => n(),
-      badgeDot: i,
-      icon: l === "dark" ? /* @__PURE__ */ t(d, {}) : /* @__PURE__ */ t(u, {}),
-      tooltip: m ?? "Tema"
+      onClick: () => a(),
+      badgeDot: l,
+      icon: i === "dark" ? /* @__PURE__ */ t(n, {}) : /* @__PURE__ */ t(u, {}),
+      tooltip: e ?? "Tema"
     }
   );
-}, M = c(a);
+}, y = p(f);
 export {
-  M as default
+  y as default
 };
 //# sourceMappingURL=index.js.map

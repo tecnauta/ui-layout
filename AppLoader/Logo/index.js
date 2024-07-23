@@ -1,5 +1,5 @@
-import { jsxs as e, Fragment as o, jsx as a } from "react/jsx-runtime";
-import { useMemo as z } from "react";
+import { jsxs as e, Fragment as z, jsx as a } from "react/jsx-runtime";
+import { useMemo as t } from "react";
 import i from "./ImageRender/index.js";
 const m = () => (
   // This is needed to prevent images to show unstyled before the css loads =[
@@ -8,9 +8,9 @@ const m = () => (
         display: none;
       }
     ` })
-), y = ({ logo: l, logoDarkMode: u }) => {
-  const t = z(() => ({ light: l ?? "https://cdn.eduzzcdn.com/topbar/myeduzz.svg", dark: u ?? "https://cdn.eduzzcdn.com/topbar/myeduzz-white.svg" }), [l, u]);
-  return /* @__PURE__ */ e(o, { children: [
+), c = ({ logo: o, logoDarkMode: l }) => {
+  const u = t(() => ({ light: o ?? "https://cdn.eduzzcdn.com/topbar/myeduzz.svg", dark: l ?? "https://cdn.eduzzcdn.com/topbar/myeduzz-white.svg" }), [o, l]);
+  return /* @__PURE__ */ e(z, { children: [
     /* @__PURE__ */ a(m, {}),
     /* @__PURE__ */ e(
       "div",
@@ -21,17 +21,17 @@ const m = () => (
           /* @__PURE__ */ a("div", { className: "uizz-layout-w-full dark:uizz-layout-hidden", children: /* @__PURE__ */ a(
             i,
             {
-              image: t.light,
+              image: u.light,
               className: "uizz-layout-max-h-[5.625rem] uizz-layout-w-full  uizz-layout-max-w-[9.375rem]"
             }
           ) }),
-          /* @__PURE__ */ a("div", { className: "uizz-layout-hidden uizz-layout-w-full dark:uizz-layout-block", children: /* @__PURE__ */ a(i, { image: t.dark, className: "uizz-layout-max-h-[5.625rem]  uizz-layout-max-w-[9.375rem]" }) })
+          /* @__PURE__ */ a("div", { className: "uizz-layout-hidden uizz-layout-w-full dark:uizz-layout-block", children: /* @__PURE__ */ a(i, { image: u.dark, className: "uizz-layout-max-h-[5.625rem]  uizz-layout-max-w-[9.375rem]" }) })
         ]
       }
     )
   ] });
 };
 export {
-  y as default
+  c as default
 };
 //# sourceMappingURL=index.js.map

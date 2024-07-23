@@ -1,6 +1,6 @@
-import { jsx as o } from "react/jsx-runtime";
+import { jsx as l } from "react/jsx-runtime";
 import a from "./Base.js";
-const t = ({ ...e }) => /* @__PURE__ */ o(a, { ...e, viewBox: "0 0 16 16", children: /* @__PURE__ */ o(
+const d = ({ ...o }) => /* @__PURE__ */ l(a, { ...o, viewBox: "0 0 16 16", children: /* @__PURE__ */ l(
   "path",
   {
     fillRule: "evenodd",
@@ -8,6 +8,6 @@ const t = ({ ...e }) => /* @__PURE__ */ o(a, { ...e, viewBox: "0 0 16 16", child
   }
 ) });
 export {
-  t as default
+  d as default
 };
 //# sourceMappingURL=ChevronLeft.js.map

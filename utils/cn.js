@@ -1,9 +1,9 @@
 import { clsx as o } from "clsx";
 import { twMerge as t } from "tailwind-merge";
-function n(...r) {
+function m(...r) {
   return t(o(r));
 }
 export {
-  n as cn
+  m as cn
 };
 //# sourceMappingURL=cn.js.map

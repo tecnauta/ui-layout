@@ -1,25 +1,25 @@
 import { jsxs as o, Fragment as a, jsx as t } from "react/jsx-runtime";
-import { useState as l, useMemo as p, Suspense as h } from "react";
+import { useState as e, useMemo as h, Suspense as p } from "react";
 import { AppLoaderContext as f } from "./context.js";
-import x from "./Logo/index.js";
+import g from "./Logo/index.js";
 import { cn as r } from "../utils/cn.js";
 import b from "../utils/errorFormatter.js";
-const k = ({ children: y, logo: n, logoDarkMode: s }) => {
-  const [i, e] = l(!0), [u, z] = l(null), c = p(
+const A = ({ children: y, logo: n, logoDarkMode: s }) => {
+  const [i, z] = e(!0), [u, l] = e(null), c = h(
     () => ({
-      show: () => e(!0),
-      error: (m, d) => z({
-        message: b(m),
+      show: () => z(!0),
+      error: (d, m) => l({
+        message: b(d),
         tryAgain: () => {
-          d(), z(null);
+          m(), l(null);
         }
       }),
-      hide: () => e(!1)
+      hide: () => z(!1)
     }),
     []
   );
   return /* @__PURE__ */ o(a, { children: [
-    /* @__PURE__ */ t(f.Provider, { value: c, children: /* @__PURE__ */ t(h, { children: y }) }),
+    /* @__PURE__ */ t(f.Provider, { value: c, children: /* @__PURE__ */ t(p, { children: y }) }),
     /* @__PURE__ */ t(
       "section",
       {
@@ -51,7 +51,7 @@ const k = ({ children: y, logo: n, logoDarkMode: s }) => {
                 }
               )
             ] }) : /* @__PURE__ */ o(a, { children: [
-              /* @__PURE__ */ t(x, { logo: n, logoDarkMode: s }),
+              /* @__PURE__ */ t(g, { logo: n, logoDarkMode: s }),
               /* @__PURE__ */ t("div", { className: "uizz-layout-relative uizz-layout-block uizz-layout-h-1 uizz-layout-w-full uizz-layout-overflow-hidden uizz-layout-bg-[#0d2871]/25", children: /* @__PURE__ */ o("div", { className: "uizz-layout-bg-primary", children: [
                 /* @__PURE__ */ t("div", { className: "uizz-layout-absolute uizz-layout-inset-y-0 uizz-layout-left-0 uizz-layout-animate-loader uizz-layout-bg-inherit" }),
                 /* @__PURE__ */ t("div", { className: "l uizz-layout-absolute uizz-layout-inset-y-0 uizz-layout-left-0 uizz-layout-animate-loaderShort uizz-layout-bg-inherit" })
@@ -64,6 +64,6 @@ const k = ({ children: y, logo: n, logoDarkMode: s }) => {
   ] });
 };
 export {
-  k as default
+  A as default
 };
 //# sourceMappingURL=index.js.map

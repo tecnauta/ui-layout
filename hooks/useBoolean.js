@@ -1,9 +1,9 @@
-import { useState as r, useCallback as t } from "react";
-function f(o) {
-  const [a, e] = r(o ?? !1), s = t(() => e((n) => !n), []), l = t(() => e(() => !0), []), u = t(() => e(() => !1), []);
-  return [a, s, l, u];
+import { useState as l, useCallback as e } from "react";
+function c(a) {
+  const [u, t] = l(a ?? !1), o = e(() => t((f) => !f), []), r = e(() => t(() => !0), []), s = e(() => t(() => !1), []);
+  return [u, o, r, s];
 }
 export {
-  f as default
+  c as default
 };
 //# sourceMappingURL=useBoolean.js.map
