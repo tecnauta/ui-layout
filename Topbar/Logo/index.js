@@ -1,4 +1,4 @@
-import { jsxs as i, jsx as t } from "react/jsx-runtime";
+import { jsxs as d, jsx as t } from "react/jsx-runtime";
 import { useContextSelector as c } from "use-context-selector";
 import p from "../../context.js";
 (function() {
@@ -11,22 +11,22 @@ import p from "../../context.js";
     console.error("vite-plugin-css-injected-by-js", e);
   }
 })();
-const l = ({ image: o, className: e }) => typeof o == "string" ? /* @__PURE__ */ t("img", { className: e, src: o }) : o, y = ({ logo: o, logoMobile: e, logoDarkMode: d, logoMobileDarkMode: m, wrapper: u }) => {
-  const r = c(p, (s) => s.layout.mode);
+const l = ({ image: o, className: e }) => typeof o == "string" ? /* @__PURE__ */ t("img", { className: e, src: o }) : o, y = ({ logo: o, logoMobile: e, logoDarkMode: i, logoMobileDarkMode: r, wrapper: u }) => {
+  const m = c(p, (s) => s.layout.mode);
   function z() {
-    return r === "dark" ? {
-      desktop: d ?? "//cdn.eduzzcdn.com/topbar/myeduzz-white.svg",
-      mobile: m ?? "//cdn.eduzzcdn.com/topbar/myeduzz-mobile.svg"
+    return m === "dark" ? {
+      desktop: i ?? "//cdn.eduzzcdn.com/topbar/myeduzz-white.svg",
+      mobile: r ?? "//cdn.eduzzcdn.com/topbar/myeduzz-mobile.svg"
     } : {
       desktop: o ?? "//cdn.eduzzcdn.com/topbar/myeduzz.svg",
       mobile: e ?? "//cdn.eduzzcdn.com/topbar/myeduzz-mobile.svg"
     };
   }
   const a = z();
-  return u ? /* @__PURE__ */ i(u, { className: "eduzz-ui-layout-topbar-logo", children: [
+  return u ? /* @__PURE__ */ d(u, { className: "eduzz-ui-layout-topbar-logo", children: [
     /* @__PURE__ */ t(l, { className: "eduzz-ui-layout-topbar-logo-default", image: a.desktop }),
     /* @__PURE__ */ t(l, { className: "eduzz-ui-layout-topbar-logo-mobile", image: a.mobile })
-  ] }) : /* @__PURE__ */ i("div", { className: "eduzz-ui-layout-topbar-logo", children: [
+  ] }) : /* @__PURE__ */ d("div", { className: "eduzz-ui-layout-topbar-logo", children: [
     /* @__PURE__ */ t(l, { className: "eduzz-ui-layout-topbar-logo-default", image: a.desktop }),
     /* @__PURE__ */ t(l, { className: "eduzz-ui-layout-topbar-logo-mobile", image: a.mobile })
   ] });

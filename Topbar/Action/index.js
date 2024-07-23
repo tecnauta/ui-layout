@@ -4,21 +4,21 @@ import { useContext as h } from "use-context-selector";
 import g from "../../Badge/index.js";
 import v from "../../Tooltip/index.js";
 import { cn as e } from "../../utils/cn.js";
-import w from "../Actions/context.js";
-const k = x(
-  ({ active: a, icon: z, right: l, label: n, onClick: r, tooltip: c, className: y, badgeCount: t, badgeDot: u, ...d }, m) => {
-    const i = h(w);
+import k from "../Actions/context.js";
+const w = x(
+  ({ active: a, icon: z, right: l, label: n, onClick: r, tooltip: c, className: y, badgeCount: t, badgeDot: i, ...d }, m) => {
+    const u = h(k);
     return f(() => {
-      const s = i({ badgeCount: t ?? 0, badgeDot: u ?? !1 });
+      const s = u({ badgeCount: t ?? 0, badgeDot: i ?? !1 });
       return () => s();
-    }, [t, u, i]), /* @__PURE__ */ o(
+    }, [t, i, u]), /* @__PURE__ */ o(
       "div",
       {
         className: e("[&_.anticon]:uizz-layout-align-text-bottom [&_.anticon]:uizz-layout-text-[20px]", y),
         onClick: r,
         ...d,
         ref: m,
-        children: /* @__PURE__ */ o(v, { title: c, children: /* @__PURE__ */ o(g, { count: t === 0 ? void 0 : t, dot: t ? !1 : u, children: /* @__PURE__ */ p(
+        children: /* @__PURE__ */ o(v, { title: c, children: /* @__PURE__ */ o(g, { count: t === 0 ? void 0 : t, dot: t ? !1 : i, children: /* @__PURE__ */ p(
           "div",
           {
             className: e(
@@ -35,8 +35,8 @@ const k = x(
       }
     );
   }
-), E = b(k);
+), q = b(w);
 export {
-  E as default
+  q as default
 };
 //# sourceMappingURL=index.js.map

@@ -1,15 +1,15 @@
-import { createContext as e, useContext as o } from "react";
-const t = e({
+import { createContext as e, useContext as t } from "react";
+const o = e({
   show: () => null,
   error: () => null,
   hide: () => null
 });
-function r() {
-  return o(t);
+function n() {
+  return t(o);
 }
 export {
-  t as AppLoaderContext,
-  t as default,
-  r as useAppLoader
+  o as AppLoaderContext,
+  o as default,
+  n as useAppLoader
 };
 //# sourceMappingURL=context.js.map

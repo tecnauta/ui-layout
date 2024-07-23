@@ -1,28 +1,28 @@
-import { jsx as o, jsxs as b } from "react/jsx-runtime";
-import { useEffect as r, useMemo as c } from "react";
+import { jsx as o, jsxs as m } from "react/jsx-runtime";
+import { useEffect as r, useMemo as b } from "react";
 import { useContextSelector as u } from "use-context-selector";
-import m from "./context.js";
+import c from "./context.js";
 import p from "./Group/index.js";
 import f from "./Item/index.js";
 import e from "../context.js";
 import x from "../Overlay/index.js";
 import { cn as h } from "../utils/cn.js";
 import w from "../utils/nestedComponent.js";
-const v = ({ currentLocation: i, children: z }) => {
-  const s = u(e, (t) => t.topbar.exists), a = u(e, (t) => t.sidebar.register), l = u(e, (t) => t.sidebar.opened), d = u(e, (t) => t.sidebar.toogleOpened), y = u(e, (t) => t.sidebar.falseOpened);
+const v = ({ currentLocation: a, children: z }) => {
+  const s = u(e, (t) => t.topbar.exists), i = u(e, (t) => t.sidebar.register), l = u(e, (t) => t.sidebar.opened), d = u(e, (t) => t.sidebar.toogleOpened), y = u(e, (t) => t.sidebar.falseOpened);
   r(() => {
-    const t = a();
+    const t = i();
     return () => t();
-  }, [a]);
-  const n = c(
+  }, [i]);
+  const n = b(
     () => ({
-      isActiveItem: (t) => t ? t === i : !1
+      isActiveItem: (t) => t ? t === a : !1
     }),
-    [i]
+    [a]
   );
   return r(() => {
     y();
-  }, [i]), /* @__PURE__ */ o(m.Provider, { value: n, children: /* @__PURE__ */ b("div", { className: "eduzz-ui-layout-sidebar uizz-layout-relative uizz-layout-box-border uizz-layout-h-auto uizz-layout-text-content-title xl:uizz-layout-w-[var(--eduzz-ui-layout-sidebar-width-rem)]", children: [
+  }, [a]), /* @__PURE__ */ o(c.Provider, { value: n, children: /* @__PURE__ */ m("div", { className: "eduzz-ui-layout-sidebar uizz-layout-relative uizz-layout-box-border uizz-layout-h-auto uizz-layout-text-content-title xl:uizz-layout-w-[var(--eduzz-ui-layout-sidebar-width-rem)]", children: [
     /* @__PURE__ */ o(x, { visible: l, className: "xl:uizz-layout-hidden", onClick: d, underTopbar: !0 }),
     /* @__PURE__ */ o(
       "aside",
@@ -38,11 +38,11 @@ const v = ({ currentLocation: i, children: z }) => {
       }
     )
   ] }) });
-}, $ = w(v, {
+}, D = w(v, {
   Item: f,
   Group: p
 });
 export {
-  $ as default
+  D as default
 };
 //# sourceMappingURL=index.js.map

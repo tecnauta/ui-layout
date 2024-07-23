@@ -1,12 +1,12 @@
-function c(n) {
-  return parseInt(n, 16);
+function c(r) {
+  return parseInt(r, 16);
 }
-function o(n) {
-  var r;
+function o(r) {
+  var t;
   try {
-    if (!n)
+    if (!r)
       return null;
-    const t = /\w\w/g, [u, a, e] = ((r = n.match(t)) == null ? void 0 : r.map(c)) ?? [];
+    const n = /\w\w/g, [u, a, e] = ((t = r.match(n)) == null ? void 0 : t.map(c)) ?? [];
     return `${u}, ${a}, ${e}`;
   } catch {
     return null;

@@ -2,15 +2,15 @@
 import { default as p } from "./AppLoader/index.js";
 import { default as d } from "./Content/index.js";
 import r from "./Layout/index.js";
-import { default as s } from "./Sidebar/index.js";
-import { default as x } from "./Topbar/index.js";
+import { default as l } from "./Sidebar/index.js";
+import { default as u } from "./Topbar/index.js";
 
 import { useAppLoader as i } from "./AppLoader/context.js";
 export {
   p as AppLoader,
   d as Content,
-  s as Sidebar,
-  x as Topbar,
+  l as Sidebar,
+  u as Topbar,
   r as default,
   i as useAppLoader
 };

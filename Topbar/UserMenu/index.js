@@ -14,12 +14,12 @@ import { cn as m } from "../../utils/cn.js";
     console.error("vite-plugin-css-injected-by-js", r);
   }
 })();
-const x = ({ children: t, className: r, ...d }) => {
-  const s = o(u, (e) => e.userMenu.opened), i = o(u, (e) => e.userMenu.register), a = o(u, (e) => e.userMenu.containerPortal);
+const x = ({ children: t, className: r, ...s }) => {
+  const d = o(u, (e) => e.userMenu.opened), i = o(u, (e) => e.userMenu.register), a = o(u, (e) => e.userMenu.containerPortal);
   return l(() => {
     const e = i();
     return () => e();
-  }, [i]), a ? /* @__PURE__ */ n(c, { target: a, children: /* @__PURE__ */ n("div", { ...d, className: m(r, "eduzz-ui-layout-topbar-user-menu", s && "--opened"), children: t }) }) : null;
+  }, [i]), a ? /* @__PURE__ */ n(c, { target: a, children: /* @__PURE__ */ n("div", { ...s, className: m(r, "eduzz-ui-layout-topbar-user-menu", d && "--opened"), children: t }) }) : null;
 };
 export {
   x as default

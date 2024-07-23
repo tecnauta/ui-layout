@@ -1,13 +1,13 @@
 import { jsx as a, jsxs as f } from "react/jsx-runtime";
 import { memo as h, useState as x, useRef as g, useCallback as v, useMemo as r } from "react";
-import { useContextSelector as w } from "use-context-selector";
-import k from "./context.js";
+import { useContextSelector as k } from "use-context-selector";
+import w from "./context.js";
 import C from "../../hooks/useBoolean.js";
 import N from "../../hooks/useClickOutside.js";
 import j from "../../Icons/ChevronLeft.js";
 import { cn as l } from "../../utils/cn.js";
-import $ from "../Action/index.js";
-import S from "../context.js";
+import D from "../Action/index.js";
+import $ from "../context.js";
 (function() {
   try {
     if (typeof document < "u") {
@@ -18,10 +18,10 @@ import S from "../context.js";
     console.error("vite-plugin-css-injected-by-js", e);
   }
 })();
-const D = ({ children: u }) => {
+const E = ({ children: u }) => {
   const [e, n] = x([]), [i, c, , s] = C(!1), d = g(null);
   N(d, s, []);
-  const z = w(S, (t) => !!t.user), p = v((t) => (n((o) => [...o, t]), () => n((o) => o.filter((m) => m !== t))), []), y = r(() => e.reduce((t, o) => t + o.badgeCount, 0), [e]), b = r(() => e.some((t) => t.badgeDot), [e]);
+  const z = k($, (t) => !!t.user), p = v((t) => (n((o) => [...o, t]), () => n((o) => o.filter((m) => m !== t))), []), y = r(() => e.reduce((t, o) => t + o.badgeCount, 0), [e]), b = r(() => e.some((t) => t.badgeDot), [e]);
   return /* @__PURE__ */ a(
     "div",
     {
@@ -33,7 +33,7 @@ const D = ({ children: u }) => {
       }),
       children: /* @__PURE__ */ f("div", { className: "eduzz-ui-layout-topbar-actions-content", children: [
         /* @__PURE__ */ a(
-          $,
+          D,
           {
             className: "eduzz-ui-layout-topbar-actions-content-expand",
             badgeCount: i ? 0 : y,
@@ -42,12 +42,12 @@ const D = ({ children: u }) => {
             onClick: c
           }
         ),
-        /* @__PURE__ */ a(k.Provider, { value: p, children: /* @__PURE__ */ a("div", { className: "eduzz-ui-layout-topbar-actions-content-icons", children: u }) })
+        /* @__PURE__ */ a(w.Provider, { value: p, children: /* @__PURE__ */ a("div", { className: "eduzz-ui-layout-topbar-actions-content-icons", children: u }) })
       ] })
     }
   );
-}, H = h(D);
+}, G = h(E);
 export {
-  H as default
+  G as default
 };
 //# sourceMappingURL=index.js.map

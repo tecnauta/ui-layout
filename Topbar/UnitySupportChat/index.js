@@ -12,7 +12,7 @@ import u from "../context.js";
     console.error("vite-plugin-css-injected-by-js", t);
   }
 })();
-const s = ({ token: e }) => {
+const a = ({ token: e }) => {
   const t = n(u, (o) => o.user);
   return r(() => {
     if (!(t != null && t.isClubeBlack))
@@ -22,6 +22,6 @@ const s = ({ token: e }) => {
   }, [t, e]), null;
 };
 export {
-  s as default
+  a as default
 };
 //# sourceMappingURL=index.js.map

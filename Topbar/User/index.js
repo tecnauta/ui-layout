@@ -1,5 +1,5 @@
-import { jsxs as p, jsx as u } from "react/jsx-runtime";
-import { memo as c, useRef as f } from "react";
+import { jsxs as f, jsx as u } from "react/jsx-runtime";
+import { memo as p, useRef as c } from "react";
 import { useContextSelector as t } from "use-context-selector";
 import d from "../../Avatar/index.js";
 import r from "../../context.js";
@@ -9,9 +9,9 @@ import x from "../../Icons/CaretDown.js";
 import { cn as l } from "../../utils/cn.js";
 import b from "../Action/index.js";
 import M from "../context.js";
-const S = c(() => {
-  const n = f(null), i = t(M, (e) => e.user), a = t(r, (e) => e.userMenu.opened), o = t(r, (e) => e.userMenu.exists), s = t(r, (e) => e.userMenu.toogleOpened), m = t(r, (e) => e.userMenu.falseOpened), z = t(r, (e) => e.userMenu.registerContainerPortal);
-  return y(n, () => o && m(), [o]), v(() => o && m(), [o]), i ? /* @__PURE__ */ p(
+const R = p(() => {
+  const n = c(null), i = t(M, (e) => e.user), a = t(r, (e) => e.userMenu.opened), o = t(r, (e) => e.userMenu.exists), s = t(r, (e) => e.userMenu.toogleOpened), m = t(r, (e) => e.userMenu.falseOpened), z = t(r, (e) => e.userMenu.registerContainerPortal);
+  return y(n, () => o && m(), [o]), v(() => o && m(), [o]), i ? /* @__PURE__ */ f(
     "div",
     {
       ref: n,
@@ -42,6 +42,6 @@ const S = c(() => {
   ) : null;
 });
 export {
-  S as default
+  R as default
 };
 //# sourceMappingURL=index.js.map

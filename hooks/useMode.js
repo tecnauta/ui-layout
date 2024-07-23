@@ -1,18 +1,15 @@
-import { useState as l, useCallback as c, useEffect as f } from "react";
-import { getLocalStorageInstance as g } from "../utils/localStorage.js";
-function b({ mode: d, acceptModeBySearchParam: s, persistMode: r, onModeChange: n }) {
-  const t = g(), [o, a] = l(() => {
-    const e = ((m) => m ? new URL(window.location.href).searchParams.get("eduzzMode") : void 0)(s);
-    return e || (t == null ? void 0 : t.getItem("eduzz-ui-mode")) || d || "light";
-  }), i = c(() => (a((e) => e === "dark" ? "light" : "dark"), () => a(d || "light")), [d]), u = c(
-    (e) => {
-      document != null && document.body && (document.body.setAttribute("data-eduzz-theme", e), r && (t == null || t.setItem("eduzz-ui-mode", e)));
+import { useState as s, useCallback as c, useEffect as g } from "react";
+import { getLocalStorageInstance as h } from "../utils/localStorage.js";
+function b({ mode: a, acceptModeBySearchParam: i, persistMode: u, onModeChange: d }) {
+  const e = h(), [o, r] = s(() => ((l) => l ? new URL(window.location.href).searchParams.get("eduzzMode") : void 0)(i) || (e == null ? void 0 : e.getItem("eduzz-ui-mode")) || a || "light"), m = c(() => (r((t) => t === "dark" ? "light" : "dark"), () => r(a || "light")), [a]), n = c(
+    (t) => {
+      document != null && document.body && (document.body.setAttribute("data-eduzz-theme", t), u && (e == null || e.setItem("eduzz-ui-mode", t)));
     },
-    [t, r]
+    [e, u]
   );
-  return f(() => {
-    u(o), n && n(o);
-  }, [u, o, n]), [o, i];
+  return g(() => {
+    n(o), d && d(o);
+  }, [n, o, d]), [o, m];
 }
 export {
   b as default

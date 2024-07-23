@@ -1,6 +1,6 @@
 import { jsx as o } from "react/jsx-runtime";
 import { cn as t } from "../utils/cn.js";
-const z = ({ children: u, disablePadding: i }) => /* @__PURE__ */ o(
+const l = ({ children: u, disablePadding: i }) => /* @__PURE__ */ o(
   "div",
   {
     className: t(
@@ -13,6 +13,6 @@ const z = ({ children: u, disablePadding: i }) => /* @__PURE__ */ o(
   }
 );
 export {
-  z as default
+  l as default
 };
 //# sourceMappingURL=index.js.map

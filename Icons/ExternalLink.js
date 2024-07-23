@@ -1,6 +1,6 @@
 import { jsx as C } from "react/jsx-runtime";
-import e from "./Base.js";
-const r = ({ ...d }) => /* @__PURE__ */ C(e, { ...d, children: /* @__PURE__ */ C(
+import o from "./Base.js";
+const r = ({ ...e }) => /* @__PURE__ */ C(o, { ...e, children: /* @__PURE__ */ C(
   "path",
   {
     fillRule: "evenodd",
