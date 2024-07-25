@@ -1,22 +1,22 @@
-import d from "./import.js";
-function f(o) {
-  return "865b006f4733ca82bc33b5a7a976040e";
+import m from "./import.js";
+function k(i, a) {
+  const o = a.chatUnityID, d = a.chatBlackID, p = a.chatEliteID, h = ["Black", "Golden", "Sensei"].includes(((i == null ? void 0 : i.belt) || "").split(" ")[0]);
+  return (i == null ? void 0 : i.tag) === "unity" ? o : h || i != null && i.isClubeBlack ? d : p;
 }
-const m = ({ jwtToHyperflow: o, helpUser: n }) => {
-  const i = n, p = d("https://webchat.hyperflow.global/sdk.js"), l = f();
-  return p === "ready" && Hyperflow.init(l).on("getStarted", () => {
-    var t;
-    const a = {
-      id: i == null ? void 0 : i.id,
-      name: i == null ? void 0 : i.name.split(" ")[0],
-      email: i == null ? void 0 : i.email,
-      eliteChatToken: l,
-      sender: o
+const w = ({ jwtToHyperflow: i, currentUser: a, hyperflowConfig: o }) => {
+  const d = m("https://webchat.hyperflow.global/sdk.js"), p = k(a, o);
+  return d === "ready" && Hyperflow.init(p).on("getStarted", () => {
+    var h;
+    const l = {
+      id: a == null ? void 0 : a.id,
+      name: a == null ? void 0 : a.name.split(" ")[0],
+      email: a == null ? void 0 : a.email,
+      sender: i
     };
-    i != null && i.isAccessPolicy && (a.original_id = i == null ? void 0 : i.originalUserId, a.original_name = (t = i == null ? void 0 : i.originalUserName) == null ? void 0 : t.split(" ")[0], a.original_email = i == null ? void 0 : i.originalUserEmail), Hyperflow.initFlow("faknvewds", a);
+    a != null && a.isAccessPolicy && (l.original_id = a == null ? void 0 : a.originalUserId, l.original_name = (h = a == null ? void 0 : a.originalUserName) == null ? void 0 : h.split(" ")[0], l.original_email = a == null ? void 0 : a.originalUserEmail), Hyperflow.initFlow(o.flowId, l);
   }), null;
 };
 export {
-  m as default
+  w as default
 };
 //# sourceMappingURL=chat.js.map
