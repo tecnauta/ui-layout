@@ -37,7 +37,7 @@ declare const _default: import('react').ComponentType<TopbarProps> & {
         onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
     } & import('react').RefAttributes<HTMLDivElement>>>;
     UnitySupportChat: ({ token }: import('./UnitySupportChat').TopbarUnitySupportChatProps) => null;
-    HyperflowSupportChat: ({ jwtToHyperflow, helpUser }: import('./HyperflowSupportChat').TopbarHyperflowSupportChatProps) => import("react/jsx-runtime").JSX.Element | null;
+    HyperflowSupportChat: ({ jwtToHyperflow, currentUser, hyperflowConfig }: import('./HyperflowSupportChat').TopbarHyperflowSupportChatProps) => import("react/jsx-runtime").JSX.Element | null;
     UserMenu: ({ children, className, ...rest }: import('./UserMenu').UserMenuProps) => import("react/jsx-runtime").JSX.Element | null;
     UserMenuItem: import('react').ForwardRefExoticComponent<Omit<import('./UserMenu/Item').UserMenuItemProps, "ref"> & import('react').RefAttributes<HTMLButtonElement>>;
     UserMenuDivider: () => import("react/jsx-runtime").JSX.Element;

@@ -1,6 +1,7 @@
 export interface TopbarHyperflowSupportChatProps {
     jwtToHyperflow?: string;
-    helpUser?: any;
+    currentUser?: any;
+    hyperflowConfig?: any;
 }
-declare const TopbarHyperflowSupportChat: ({ jwtToHyperflow, helpUser }: TopbarHyperflowSupportChatProps) => import("react/jsx-runtime").JSX.Element | null;
+declare const TopbarHyperflowSupportChat: ({ jwtToHyperflow, currentUser, hyperflowConfig }: TopbarHyperflowSupportChatProps) => import("react/jsx-runtime").JSX.Element | null;
 export default TopbarHyperflowSupportChat;
